@@ -1,46 +1,78 @@
 import { useEffect, useState } from "preact/hooks";
+import { ColumnText } from "./column-text";
+import { ColumnEnum } from "./column-enum";
+import { ColumnOperator } from "./column-operator";
+import { ColumnSignal } from "./column-signal";
 
-enum TableColumnTypes {
+export enum TableColumnTypes {
+  Enum,
   Text,
   Signal,
   Operator,
 }
 
-interface TableColumn {
-  type: TableColumnTypes;
+export interface TableColumn {
+  type?: TableColumnTypes;
+  data?: any;
 }
 
-interface TextColumnProps {
+export interface TextColumnProps extends TableColumn {
   text: string;
 }
 
-interface RssiColumnProps {
+export interface SignalColumnProps extends TableColumn {
   text: string;
 }
 
-interface OperatorColumnProps {
+export interface OperatorColumnProps extends TableColumn {
   name?: string;
   iconPath?: string;
   code: number;
 }
 
-interface TableRowProps {
+export interface TableRowProps {
   columns: TableColumn[];
 }
 
-export const TableBody = ({ rows }: TableRowProps) => {
+export interface TableBodyProps {
+  rows: TableRowProps[];
+}
+
+export const TableBody = ({ rows }: TableBodyProps) => {
   return (
-    <thead className="table-body">
+    <tbody className="table-body">
       {rows.map((row, index) => {
         <tr className="table-body-row">
-          <th>#</th>
           return (
           <td key={index} className="table-body-column">
-            {row.label}
+            {row.columns.map((column, index) => {
+              switch (column.type) {
+                case TableColumnTypes.Enum:
+                  return <ColumnEnum index={index} />;
+                case TableColumnTypes.Text:
+                  return (
+                    <ColumnText text={(column.data as TextColumnProps).text} />
+                  );
+                case TableColumnTypes.Operator:
+                  return (
+                    <ColumnOperator
+                      name={(column.data as OperatorColumnProps).name}
+                      code={(column.data as OperatorColumnProps).code}
+                      iconPath={(column.data as OperatorColumnProps).iconPath}
+                    />
+                  );
+                case TableColumnTypes.Signal:
+                  return (
+                    <ColumnSignal
+                      text={(column.data as SignalColumnProps).text}
+                    />
+                  );
+              }
+            })}
           </td>
           );
         </tr>;
       })}
-    </thead>
+    </tbody>
   );
 };
