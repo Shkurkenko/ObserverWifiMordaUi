@@ -4,6 +4,8 @@ import { ColumnEnum } from "./column-enum";
 import { ColumnOperator } from "./column-operator";
 import { ColumnSignal } from "./column-signal";
 
+import "./table-body.css";
+
 export enum TableColumnTypes {
   Enum,
   Text,
@@ -41,21 +43,24 @@ export interface TableBodyProps {
 export const TableBody = ({ rows }: TableBodyProps) => {
   return (
     <tbody className="table-body">
-      {rows.map((row, index) => {
-        <tr className="table-body-row">
-          return (
-          <td key={index} className="table-body-column">
+      {rows.map((row, rowIndex) => {
+        return (
+          <tr key={rowIndex} className="table-body-row">
             {row.columns.map((column, index) => {
               switch (column.type) {
                 case TableColumnTypes.Enum:
-                  return <ColumnEnum index={index} />;
+                  return <ColumnEnum key={index} index={rowIndex} />;
                 case TableColumnTypes.Text:
                   return (
-                    <ColumnText text={(column.data as TextColumnProps).text} />
+                    <ColumnText
+                      key={index}
+                      text={(column.data as TextColumnProps).text}
+                    />
                   );
                 case TableColumnTypes.Operator:
                   return (
                     <ColumnOperator
+                      key={index}
                       name={(column.data as OperatorColumnProps).name}
                       code={(column.data as OperatorColumnProps).code}
                       iconPath={(column.data as OperatorColumnProps).iconPath}
@@ -64,14 +69,14 @@ export const TableBody = ({ rows }: TableBodyProps) => {
                 case TableColumnTypes.Signal:
                   return (
                     <ColumnSignal
+                      key={index}
                       text={(column.data as SignalColumnProps).text}
                     />
                   );
               }
             })}
-          </td>
-          );
-        </tr>;
+          </tr>
+        );
       })}
     </tbody>
   );

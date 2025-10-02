@@ -1,0 +1,14 @@
+.table-body {
+  height: 70vh;
+  overflow: scroll;
+  color: white;
+}
+
+.table-body-row {
+    border-bottom: 1px solid #252b36;
+    height: 50px;
+}
+
+.table-body-row > td {
+    padding-left: 10px;
+}

@@ -15,5 +15,12 @@ export const Led = () => {
     setIsOn(is_on);
   };
 
-  return <div class={`w-48 h-48 border-8 border-black rounded-full ${isOn ? "bg-blue-600" : ""}`} onClick={onClick} />;
+  return (
+    <div
+      class={`w-48 h-48 border-8 border-black rounded-full ${
+        isOn ? "bg-blue-600" : ""
+      }`}
+      onClick={onClick}
+    />
+  );
 };

@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.table-header-container {
-    width: 90%;
-    height: 60px;
-    background-color: "black";
+body {
+    background-color: #141a21 !important;
 }
+
+
+
+

@@ -1,58 +1,49 @@
 import { Link, Route } from "wouter";
-import { Magnetometer } from "./views/Magnetometer";
 import { ReoScan } from "./views/reo-scan";
-import { PushButton } from "./views/button-push";
-import { Servo } from "./views/servo";
-import { Led } from "./views/led";
+import { HeaderSection } from "./components/header-section";
+
+import "./app.css";
+import { DownloadIcon } from "./components/download-icon";
+import { HistoryIcon } from "./components/history-icon";
 
 export const App = () => (
   <div>
+    <HeaderSection />
+    {/* <div class="drawer drawer-mobile"> */}
     <div class="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col items-center justify-center">
         {/* <!-- Page content here --> */}
 
         <Route path="/">
-          <ReoScan/>
+          <ReoScan />
         </Route>
-        {/* <Route path="/btn-push"> */}
-          {/* <PushButton /> */}
-        {/* </Route> */}
-        {/* <Route path="/led" component={Led} /> */}
-        {/* <Route path="/magnetometer" component={Magnetometer} /> */}
-        {/* <Route path="/servo" component={Servo} /> */}
 
-        <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">
+        <label
+          for="my-drawer-2"
+          class="btn btn-primary drawer-button lg:hidden"
+        >
           Open drawer
         </label>
       </div>
-      <div class="drawer-side">
-        <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-60 md:w-80 bg-base-100 text-base-content">
+      <div class="observer-sidebar drawer-side">
+        {/* <label for="my-drawer-2" class="drawer-overlay"></label> */}
+        <ul class="menu p-4 overflow-y-auto w-60 md:w-80 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <Link href="/">
-            <li>
-              <a>Home</a>
+            <li className="observer-sidebar-item">
+              <a className="observer-sidebar-item-link">
+                <DownloadIcon width={28} height={28} color={"white"} />
+                <b>Инженерное РЭО</b>
+              </a>
             </li>
           </Link>
-          <Link href="/led">
-            <li>
-              <a>LED</a>
-            </li>
-          </Link>
-          <Link href="/btn-push">
-            <li>
-              <a>Button push</a>
-            </li>
-          </Link>
-          <Link href="/magnetometer">
-            <li>
-              <a>magnetometer</a>
-            </li>
-          </Link>
-          <Link href="/servo">
-            <li>
-              <a>Servo</a>
+          <Link href="/history">
+            <li className="observer-sidebar-item">
+              <a className="observer-sidebar-item-link">
+                <HistoryIcon width={28} height={28} color={"white"} />
+                <b>История замеров</b>
+              </a>
             </li>
           </Link>
         </ul>

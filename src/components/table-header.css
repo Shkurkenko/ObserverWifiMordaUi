@@ -1,0 +1,16 @@
+tr {
+    text-align: left;
+}
+
+th {
+    padding-left: 20px;
+}
+
+.table-header {
+    background-color: #252b36;
+    height: 60px;
+}
+
+.table-header-row > td {
+    padding-left: 7px;
+}

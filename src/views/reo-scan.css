@@ -1,0 +1,19 @@
+.reo-scan-top {
+    width: 100%;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.reo-scan-top-item {
+    display: inline-block;
+    max-width: 350px;
+    width: 30%;
+    margin-left: 20px;
+}
+
+.table-header-info > h1 {
+    font-weight: bold;
+}
+
+.observer-tabs {
+}

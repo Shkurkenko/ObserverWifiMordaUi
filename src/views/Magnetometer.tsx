@@ -1,8 +1,26 @@
 import { useEffect, useRef, useState } from "preact/hooks";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, LineOptions } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  LineOptions,
+} from "chart.js";
 import { Line } from "react-chartjs-2";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 export const options = {
   responsive: true,
@@ -46,7 +64,8 @@ export function Magnetometer() {
   const chartRef = useRef<typeof Line | null>(null);
   useEffect(() => {
     var socket = new WebSocket("ws://observer-web/ws-api/magnetometer");
-    socket.onopen = () => socket.send(JSON.stringify({ cmd: "start", interval: 200 }));
+    socket.onopen = () =>
+      socket.send(JSON.stringify({ cmd: "start", interval: 200 }));
     let max = 0;
     let min = 0;
     socket.onmessage = (event) => {
@@ -75,5 +94,11 @@ export function Magnetometer() {
     };
   }, []);
 
-  return <div className="w-1/2">{data.datasets && <Line ref={chartRef} options={options} data={update} redraw={true} />}</div>;
+  return (
+    <div className="w-1/2">
+      {data.datasets && (
+        <Line ref={chartRef} options={options} data={update} redraw={true} />
+      )}
+    </div>
+  );
 }
