@@ -42,7 +42,7 @@ export interface TableBodyProps {
 
 export const TableBody = ({ rows }: TableBodyProps) => {
   return (
-    <tbody className="table-body">
+    <tbody className="table-body w-full">
       {rows.map((row, rowIndex) => {
         return (
           <tr key={rowIndex} className="table-body-row">

@@ -18,35 +18,6 @@ export const App = () => (
         <Route path="/">
           <ReoScan />
         </Route>
-
-        <label
-          for="my-drawer-2"
-          class="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
-      </div>
-      <div class="observer-sidebar drawer-side">
-        {/* <label for="my-drawer-2" class="drawer-overlay"></label> */}
-        <ul class="menu p-4 overflow-y-auto w-60 md:w-80 text-base-content">
-          {/* <!-- Sidebar content here --> */}
-          <Link href="/">
-            <li className="observer-sidebar-item">
-              <a className="observer-sidebar-item-link">
-                <DownloadIcon width={28} height={28} color={"white"} />
-                <b>Инженерное РЭО</b>
-              </a>
-            </li>
-          </Link>
-          <Link href="/history">
-            <li className="observer-sidebar-item">
-              <a className="observer-sidebar-item-link">
-                <HistoryIcon width={28} height={28} color={"white"} />
-                <b>История замеров</b>
-              </a>
-            </li>
-          </Link>
-        </ul>
       </div>
     </div>
   </div>

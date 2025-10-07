@@ -1,0 +1,7 @@
+table {
+  position: relative;
+}
+
+td {
+  min-width: 130px;
+}

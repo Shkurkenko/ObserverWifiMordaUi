@@ -13,3 +13,8 @@
   background-color: #222936;
   line-height: 40px;
 }
+
+
+.observer-sidebar-item-link:active {
+  background-color: #36B37E;
+}

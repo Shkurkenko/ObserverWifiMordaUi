@@ -1,16 +1,22 @@
 tr {
-    text-align: left;
+  text-align: left;
 }
 
 th {
-    padding-left: 20px;
+  text-align: center;
 }
 
 .table-header {
-    background-color: #252b36;
-    height: 60px;
+  background-color: #252b36;
+  height: 55px;
+  position: sticky;
+  top: 50px;
 }
 
 .table-header-row > td {
-    padding-left: 7px;
+  padding-left: 8px;
+}
+
+.table-header-column {
+  line-height: 55px;
 }

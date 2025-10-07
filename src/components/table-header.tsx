@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 
-import "./table-header.css"
+import "./table-header.css";
 
 interface HeaderColumn {
   label: string;
@@ -12,7 +12,7 @@ interface TableHeaderProps {
 
 export const TableHeader = ({ headers }: TableHeaderProps) => {
   return (
-    <thead className="table-header">
+    <thead className="table-header w-full">
       <tr className="table-header-row">
         <th>#</th>
         {headers.map((header: HeaderColumn, index) => {

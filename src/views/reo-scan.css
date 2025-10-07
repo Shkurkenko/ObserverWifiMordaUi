@@ -1,19 +1,64 @@
 .reo-scan-top {
-    width: 100%;
-    margin-left: 20px;
-    font-size: 30px;
+  width: 100%;
+  margin-left: 20px;
+  font-size: 30px;
+  position: sticky;
+  /* background-color: #141a21; */
+  height: 9vh;
+  line-height: 9vh;
+  z-index: 0;
+}
+
+.iterface-list {
+  width: 100%;
+}
+
+.interface-item {
+  width: 90%;
+  display: block;
+}
+
+.interface-item:last-child {
+  width: 100%;
 }
 
 .reo-scan-top-item {
-    display: inline-block;
-    max-width: 350px;
-    width: 30%;
-    margin-left: 20px;
-}
-
-.table-header-info > h1 {
-    font-weight: bold;
+  display: inline-block;
+  max-width: 450px;
+  width: 30%;
+  margin-left: 20px;
+  padding-bottom: 20px;
 }
 
 .observer-tabs {
+  width: 100%;
+}
+
+.table-header-info {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.table-header-info > h1 {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1280px) {
+  .reo-scan-top-item {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .reo-scan-top-item:last-child {
+    width: 100%;
+  }
+
+  .iterface-list {
+    margin-top: 150px;
+  }
+
+  .reo-scan-top {
+    height: auto;
+  }
 }
