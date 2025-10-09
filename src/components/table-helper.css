@@ -9,15 +9,15 @@
 }
 
 .table-helper-item:first-child {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .table-helper-item {
-    display: inline-block;
+  display: inline-block;
 }
 
 .table-helper-item:last-child {
-    margin-left: 40px;
+  margin-left: 30px;
 }
 
 .scan-count-label {
@@ -28,4 +28,8 @@
 
 .scan-count {
   color: white;
+}
+
+.table-helper-action-button:disabled {
+  background-color: rgb(88, 86, 86);
 }
