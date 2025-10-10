@@ -1,0 +1,40 @@
+.menubar {
+  width: 75px;
+  min-width: 75px;
+  max-width: 75px;
+  background-color: #0d1014;
+  display: flex;
+}
+
+.menubar-container {
+  width: 100%;
+  display: flex;
+}
+
+.menubar-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menubar-list-item {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid #4e617b;
+  justify-content: center;
+}
+
+.menubar-active {
+  border-left: 3px solid #36b37e;
+}
+
+.menubar-list-item svg {
+}
+
+.task-toggle:hover {
+  cursor: pointer;
+  background-color: #1d242d;
+}
