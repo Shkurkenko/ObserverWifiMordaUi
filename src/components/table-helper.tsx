@@ -39,8 +39,6 @@ export function TableHelper({ headers, rows, currentCycle }) {
 
     return resultData;
   }
-  // st csvConfig = mkConfig({ useKeysAsHeaders: true });
-  // const csv = generateCsv(csvConfig)(getValidData());
 
   return (
     <div className="table-helper">

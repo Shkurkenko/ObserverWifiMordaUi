@@ -6,7 +6,7 @@ import "./app.css";
 
 export const App = () => (
   <div>
-    <HeaderSection />
+    {/* <HeaderSection /> */}
     {/* <div class="drawer drawer-mobile"> */}
     <div class="main">
       <div class="flex flex-col items-center justify-center">

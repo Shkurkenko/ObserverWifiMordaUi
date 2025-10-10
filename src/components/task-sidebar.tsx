@@ -7,7 +7,7 @@ export function TaskSidebar({ reoScanTaskListModel }) {
   const [active, setActive] = useState(true);
 
   return (
-    <div className="w-full">
+    <div className="task-sidebar h-full w-full">
       <div className="task-content-search">
         <div className="task-content-search-icon relative">
           <div className="task-content-search-icon-container flex items-center">

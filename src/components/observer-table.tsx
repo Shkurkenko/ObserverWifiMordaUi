@@ -1,8 +1,9 @@
 import { useState } from "preact/hooks";
 import { TableBody } from "./table-body";
 import { TableHeader } from "./table-header";
-import { Logo } from "../logo";
 import { TableHelper } from "./table-helper";
+
+import { Logo } from "../logo";
 
 import "./observer-table.css";
 

@@ -23,7 +23,7 @@ export function ScanLightStatus({ statusType }) {
 
   return (
     <div className="scan-light" style={{ background: getColor() }}>
-      <div className="scan-light-core" style={{background: getColor()}}></div>
+      <div className="scan-light-core" style={{ background: getColor() }}></div>
     </div>
   );
 }
