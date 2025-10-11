@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc.json"
   },
   "dependencies": {
     "chart.js": "^3.7.1",
@@ -21,6 +22,7 @@
     "@types/lodash.debounce": "^4.0.6",
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
+    "prettier": "^3.6.2",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.4",
     "vite": "^2.9.0"

@@ -1,28 +1,28 @@
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from 'preact/hooks'
 
-import "./table-header.css";
+import './table-header.css'
 
 interface HeaderColumn {
-  label: string;
+  label: string
 }
 
 interface TableHeaderProps {
-  headers: Array<HeaderColumn>;
+  headers: Array<HeaderColumn>
 }
 
 export const TableHeader = ({ headers }: TableHeaderProps) => {
   return (
-    <thead className="table-header w-full">
-      <tr className="table-header-row">
+    <thead className='table-header w-full'>
+      <tr className='table-header-row'>
         <th>#</th>
         {headers.map((header: HeaderColumn, index) => {
           return (
-            <td key={index} className="table-header-column">
+            <td key={index} className='table-header-column'>
               <b>{header.label}</b>
             </td>
-          );
+          )
         })}
       </tr>
     </thead>
-  );
-};
+  )
+}

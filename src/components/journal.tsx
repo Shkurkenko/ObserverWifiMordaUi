@@ -1,9 +1,7 @@
-import { useState } from "preact/hooks";
+import { useState } from 'preact/hooks'
 
-import "./journal.css";
+import './journal.css'
 
 export function Journal() {
-  return <div className="journal-container">
-    
-  </div>;
+  return <div className='journal-container'></div>
 }

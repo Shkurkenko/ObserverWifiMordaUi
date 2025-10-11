@@ -1,4 +1,4 @@
-import { TableColumnTypes } from "./table-body";
+import { TableColumnTypes } from './table-body'
 
 export const scanRows = [
   {
@@ -6,56 +6,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -64,56 +35,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -122,56 +64,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -180,56 +93,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -238,56 +122,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Tele2', code: 2 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -296,56 +151,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'Beeline', code: 3 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { name: 'SomeText' },
       },
     ],
   },
@@ -354,56 +180,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'Megafon', code: 4 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -412,56 +209,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -470,56 +238,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -528,56 +267,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -586,56 +296,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Tele2', code: 2 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -644,56 +325,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Beeline', code: 3 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { name: 'SomeText' },
       },
     ],
   },
@@ -702,56 +354,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
+        data: { name: 'Megafon', code: 4 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -760,56 +383,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -818,56 +412,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -876,56 +441,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -934,56 +470,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Tele2', code: 2 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -992,56 +499,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Beeline', code: 3 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { name: 'SomeText' },
       },
     ],
   },
@@ -1050,56 +528,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
+        data: { name: 'Megafon', code: 4 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1108,56 +557,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1166,56 +586,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1224,56 +615,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1282,56 +644,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-    ],
-  },
-  {
-    columns: [
-      { type: TableColumnTypes.Enum },
-      {
-        type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
-      },
-      {
-        type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1340,27 +673,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Tele2', code: 2 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1369,27 +702,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Beeline', code: 3 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { name: 'SomeText' },
       },
     ],
   },
@@ -1398,27 +731,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'Megafon', code: 4 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1427,27 +760,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1456,27 +789,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1485,27 +818,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1514,27 +847,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Tele2', code: 2 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1543,27 +876,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "MTS", code: 1 },
+        data: { name: 'Beeline', code: 3 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { name: 'SomeText' },
       },
     ],
   },
@@ -1572,27 +905,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Tele2", code: 2 },
+        data: { name: 'Megafon', code: 4 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1601,27 +934,27 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Beeline", code: 3 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { name: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
@@ -1630,28 +963,695 @@ export const scanRows = [
       { type: TableColumnTypes.Enum },
       {
         type: TableColumnTypes.Operator,
-        data: { name: "Megafon", code: 4 },
+        data: { name: 'MTS', code: 1 },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
       {
         type: TableColumnTypes.Text,
-        data: { text: "SomeText" },
+        data: { text: 'SomeText' },
       },
     ],
   },
-];
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Tele2', code: 2 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Beeline', code: 3 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { name: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Megafon', code: 4 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Tele2', code: 2 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Beeline', code: 3 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { name: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Megafon', code: 4 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Tele2', code: 2 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Beeline', code: 3 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { name: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Megafon', code: 4 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'MTS', code: 1 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Tele2', code: 2 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Beeline', code: 3 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { name: 'SomeText' },
+      },
+    ],
+  },
+  {
+    columns: [
+      { type: TableColumnTypes.Enum },
+      {
+        type: TableColumnTypes.Operator,
+        data: { name: 'Megafon', code: 4 },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+      {
+        type: TableColumnTypes.Text,
+        data: { text: 'SomeText' },
+      },
+    ],
+  },
+]
