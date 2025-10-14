@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 
-import "./notification-item.css"
+import "./alert-item.css"
 
 export enum NotificationTypes {
     Error = "Error",
