@@ -35,7 +35,7 @@ export const ReoScan = () => {
   const [wssRows, setWssRow] = useState(scanRows)
   const [menubarCurrentIndex, setMenubarCurrentIndex] = useState(0)
 
-  function menubarHandleClick(clickedIndex) {
+  function menubarHandleClick(clickedIndex: number) {
     setMenubarCurrentIndex(clickedIndex)
   }
 
