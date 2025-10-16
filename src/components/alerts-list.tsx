@@ -12,7 +12,7 @@ export interface AlertType {
 
 export function AlertList({ model }) {
   return (
-    <div className='alert-list w-full'>
+    <div className='alert-list w-full scrollbar-thin'>
       {model.map((alert: AlertType, index: number) => (
         <Alert type={alert.type} header={alert.header} message={alert.message} key={alert.id} />
       ))}

@@ -1,0 +1,34 @@
+.fast-notifications {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 25%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.fast-notification-item {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 20px;
+  font-weight: bold;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.fast-notification-item:hover {
+  cursor: pointer;
+}
+
+.close-fast-notification {
+  position: absolute;
+  right: 10px;
+}

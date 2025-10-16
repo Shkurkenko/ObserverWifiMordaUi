@@ -20,7 +20,7 @@ export function ObserverTable({ data }) {
 
   // Get socket based data about currentCycle from Anduha using some ESP server enpoint here.
   return (
-    <div className='table-container overflow-x-auto relative w-full'>
+    <div className='table-container overflow-x-auto relative w-full scrollbar-thin'>
       <TableHelper headers={labels} rows={data} currentCycle={4} />
       <table className='reo-data-table w-full'>
         {data.length !== 0 && <TableHeader headers={labels} />}
