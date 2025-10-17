@@ -1,5 +1,6 @@
-import './alert-item.css'
 import { AlertGeneric } from './alert-generic'
+
+import './alert-item.css'
 
 export enum NotificationTypes {
   Error = 'Error',

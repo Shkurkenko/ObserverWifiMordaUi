@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'preact/hooks'
+import { createContext } from 'preact'
+import { useCallback, useEffect, useState, useRef, useContext } from 'preact/hooks'
 import { useAlerts } from '../Context/alert-context'
 import { deafultNotificationSetup, NotificationTypes } from './alert-item'
 import { AlertType } from './alerts-list'
@@ -47,9 +48,10 @@ const defaultFastNotificationSetup: FastNotificationStyle = {
   },
 }
 
-export function useFastNotifications() {
-  const { alerts } = useAlerts()
-  const [currentNotificationListModel, setCurrentNotificationModel] = useState<AlertType[]>([
+const FastNotificationsContext = createContext(null)
+
+export const FastNotificationsProvider = ({ children }) => {
+  const [fastAlerts, setFastAlerts] = useState<AlertType[]>([
     {
       id: 100,
       type: NotificationTypes.Success,
@@ -76,40 +78,63 @@ export function useFastNotifications() {
     },
   ])
 
-//   useEffect(() => {
-    // currentNotificationListModel.push(alerts[alerts.length - 1])
-//   }, [alerts.length])
+  const deleteFastNotification = useCallback((id: number) => {
+    setFastAlerts((prev: AlertType[]) => prev.filter((notification) => notification.id !== id))
+  }, [])
 
-  const deleteFastNotification = (id: number) => {
-    console.log('Delete from hook', id)
-    setCurrentNotificationModel((prev) =>
-      prev.filter((notification: AlertType) => id !== notification.id),
-    )
+  const addFastNotification = useCallback((alert: AlertType) => {
+    setFastAlerts((prev: AlertType[]) => [...prev, alert])
+  }, [])
+
+  const clearFastNotification = useCallback(() => {
+    setFastAlerts((prev: AlertType[]) => [])
+  }, [])
+
+  return (
+    <FastNotificationsContext.Provider
+      value={{ fastAlerts, addFastNotification, deleteFastNotification }}
+    >
+      {children}
+    </FastNotificationsContext.Provider>
+  )
+}
+
+export function useFastNotifications() {
+  const [fastAlertIds, setFastAlertIds] = useState([])
+  const fastAlertIdsRef = useRef(fastAlertIds)
+  const { fastAlerts, addFastNotification, deleteFastNotification } =
+    useContext(FastNotificationsContext)
+
+  const addFastAlertWithId = (alert: AlertType) => {
+    const id = addFastNotification(alert)
+    fastAlertIdsRef.current.push(id)
+    setFastAlertIds(fastAlertIdsRef.current)
   }
 
-  const addFastNotification = (alert: AlertType) => {
-    setCurrentNotificationModel((prev) => [...prev, alert])
-  }
-
-  const clearFastNotification = () => {
-    setCurrentNotificationModel((prev) => [])
+  const clearFastAlertsIds = () => {
+    fastAlertIdsRef.current.forEach((id) => deleteFastNotification(id))
+    fastAlertIdsRef.current = []
+    setFastAlertIds([])
   }
 
   return {
-    currentNotificationListModel,
+    fastAlerts,
     addFastNotification,
     deleteFastNotification,
-    clearFastNotification,
   }
 }
 
 export function FastNotifications() {
   const {
-    currentNotificationListModel,
+    fastAlerts,
     addFastNotification,
     deleteFastNotification,
-    clearFastNotification,
+    // clearFastNotification,
   } = useFastNotifications()
+
+  useEffect(() => {
+    console.log('Alert data changed')
+  }, [fastAlerts.alertData])
 
   const renderFastNotification = (
     type: NotificationTypes,
@@ -162,13 +187,22 @@ export function FastNotifications() {
           />
         )
       default:
-        return <h1>Hz cho za nah?</h1>
+        return (
+          <FastNotificationItem
+            backgroundColor={defaultFastNotificationSetup.success.backgroundColor}
+            borderColor={defaultFastNotificationSetup.success.borderColor}
+            color={defaultFastNotificationSetup.success.color}
+            icon={deafultNotificationSetup.success.icon}
+            message={message}
+            data={alertObject}
+          />
+        )
     }
   }
 
   return (
     <div className='fast-notifications'>
-      {currentNotificationListModel.map((notification: AlertType) => (
+      {fastAlerts.map((notification: AlertType) => (
         <div className='notification-item-container'>
           {renderFastNotification(notification.type, notification.header, notification)}
         </div>
