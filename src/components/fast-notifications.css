@@ -1,0 +1,8 @@
+.fast-notification-show {
+    transition: .2s all;
+}
+
+.fast-notification-hide {
+    transform: translateX(105%);
+    transition: .2s all;
+}

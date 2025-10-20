@@ -2,13 +2,11 @@ import { useState } from 'preact/hooks'
 import { TableBody } from './table-body'
 import { TableHeader } from './table-header'
 import { TableHelper } from './table-helper'
-
-import { Logo } from '../logo'
+import { TableSearch } from './table-search'
 
 import './observer-table.css'
 
 export function ObserverTable({ data }) {
-  const [nav, setNav] = useState(true)
   const [labels, setLables] = useState([
     { label: 'Operator' },
     { label: 'CID' },
@@ -18,11 +16,12 @@ export function ObserverTable({ data }) {
     { label: 'RSSI' },
   ])
 
-  // Get socket based data about currentCycle from Anduha using some ESP server enpoint here.
+  // TODO: Get socket based data about currentCycle from Anduha using some ESP server enpoint here.
   return (
-    <div className='table-container overflow-x-auto relative w-full scrollbar-thin'>
+    <div className='table-container overflow-auto relative w-full h-full scrollbar-thin'>
+      <TableSearch />
       <TableHelper headers={labels} rows={data} currentCycle={4} />
-      <table className='reo-data-table w-full'>
+      <table className='reo-data-table w-full h-auto'>
         {data.length !== 0 && <TableHeader headers={labels} />}
         <TableBody rows={data} />
       </table>

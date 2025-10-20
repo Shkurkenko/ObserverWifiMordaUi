@@ -1,8 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
-import { ColumnText } from './column-text'
-import { ColumnEnum } from './column-enum'
-import { ColumnOperator } from './column-operator'
-import { ColumnSignal } from './column-signal'
+import { ObserverTableRow } from './observer-table-row'
 
 import './table-body.css'
 
@@ -33,6 +29,7 @@ export interface OperatorColumnProps extends TableColumn {
 }
 
 export interface TableRowProps {
+  index: number
   columns: TableColumn[]
 }
 
@@ -43,30 +40,9 @@ export interface TableBodyProps {
 export const TableBody = ({ rows }: TableBodyProps) => {
   return (
     <tbody className='table-body w-full'>
-      {rows.map((row, rowIndex) => {
-        return (
-          <tr key={rowIndex} className='table-body-row'>
-            {row.columns.map((column, index) => {
-              switch (column.type) {
-                case TableColumnTypes.Enum:
-                  return <ColumnEnum key={index} index={rowIndex} />
-                case TableColumnTypes.Text:
-                  return <ColumnText key={index} text={(column.data as TextColumnProps).text} />
-                case TableColumnTypes.Operator:
-                  return (
-                    <ColumnOperator
-                      key={index}
-                      name={(column.data as OperatorColumnProps).name}
-                      code={(column.data as OperatorColumnProps).code}
-                      iconPath={(column.data as OperatorColumnProps).iconPath}
-                    />
-                  )
-                case TableColumnTypes.Signal:
-                  return <ColumnSignal key={index} text={(column.data as SignalColumnProps).text} />
-              }
-            })}
-          </tr>
-        )
+      {rows.map((row: TableRowProps, rowIndex: number) => {
+        row.index = rowIndex
+        return <ObserverTableRow data={row} />
       })}
     </tbody>
   )

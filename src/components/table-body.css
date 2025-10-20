@@ -3,17 +3,11 @@ tr {
 }
 
 tbody {
-  overflow: auto;
-  min-width: 100%;
-  height: 100px;
-}
-
-.table-container {
-  height: 90vh;
+  width: 100%;
 }
 
 .table-body {
-  color: white;
+  color: rgb(217, 217, 237);
   width: 100%;
 }
 

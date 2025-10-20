@@ -53,44 +53,19 @@ export function ReoContentView({ model }) {
                 </div>
               </li>
             </ul>
-
-            <div className='reo-scan-search'>
-              <div class='w-full min-w-[200px]'>
-                <div class='table-search-component flex items-center relative'>
-                  <div className='table-search-input-container w-full flex items-center'>
-                    <div className='w-6 h-6 table-search-component-icon ml-2'>
-                      <svg viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6 text-slate-600'>
-                        <path
-                          fill-rule='evenodd'
-                          d='M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z'
-                          clip-rule='evenodd'
-                        />
-                      </svg>
-                    </div>
-                    <div className='table-search-input-container w-full'>
-                      <input
-                        class='table-search-input w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-base pl-10 pr-3 py-2 transition duration-300 ease focus:outline-none shadow-sm focus:shadow'
-                        placeholder='Поиск по таблице'
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </li>
 
           <li className='interface-item'>
-            <div className='interface-item-data-exploer-list w-full'>
-              <div className='data-explorer-item'>
-                <div className='table-tabview tab-view mt-3'>
+            <div className='interface-item-data-exploer-list w-full h-full'>
+              <div className='data-explorer-item w-full h-full'>
+                <div className='table-tabview w-full h-full tab-view'>
                   <div
                     id='tabs-with-underline-1'
                     role='tabpanel'
                     aria-labelledby='tabs-with-underline-item-1'
+                    className='w-full h-full'
                   >
-                    <div className='overflow-x-auto w-full'>
-                      <ObserverTable data={model[activeIndex].data} />
-                    </div>
+                    <ObserverTable data={model[activeIndex].data} />
                   </div>
                 </div>
               </div>

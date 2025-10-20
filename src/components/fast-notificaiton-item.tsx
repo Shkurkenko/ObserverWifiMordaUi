@@ -1,13 +1,34 @@
 import { useFastNotifications } from './fast-notifications'
 
 import './fast-notification-item.css'
-import { useEffect } from 'preact/hooks'
 
-export function FastNotificationItem({ icon, backgroundColor, color, borderColor, message, data }) {
-  const { deleteFastNotification } = useFastNotifications()
+interface FastNotificationItemProps {
+  icon: JSX.Element
+  backgroundColor: string
+  color: string
+  borderColor: string
+  message: string
+  data: any
+  transitionTime: number
+}
+
+export function FastNotificationItem({
+  icon,
+  backgroundColor,
+  borderColor,
+  color,
+  message,
+  data,
+  transitionTime,
+}: FastNotificationItemProps) {
+  const { deleteFastNotification, hideFastNotification } = useFastNotifications()
 
   function closeHandler() {
-    deleteFastNotification(data.id)
+    hideFastNotification(data.id, () => {
+      setTimeout(() => {
+        deleteFastNotification(data.id)
+      }, transitionTime * 1000)
+    })
   }
 
   return (

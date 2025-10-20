@@ -8,6 +8,7 @@ export interface AlertType {
   type: NotificationTypes
   header: string
   message: string
+  show: boolean
 }
 
 export function AlertList({ model }) {

@@ -1,14 +1,16 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import { TaskSidebar } from '../components/task-sidebar'
 import { Menubar } from '../components/menubar'
 import { Journal } from '../components/journal'
 import { SlideSidebar } from '../components/slide-sidebar'
 import { ReoContentView } from '../components/reo-content-view'
 
-import './reo-scan.css'
-
 import { scanRows } from '../components/example-row-data'
 import { anotherRows } from '../components/example-row-data-another'
+
+import { useSidebar } from '../Context/sidebar-context'
+
+import './reo-scan.css'
 
 export enum ReoMenuBarSetup {
   Notifications = 'Notifications',
@@ -31,13 +33,9 @@ export enum ReoScanStatusTypes {
 }
 
 export const ReoScan = () => {
-  // const [message, setMessage] = useState("");
   const [wssRows, setWssRow] = useState(scanRows)
   const [menubarCurrentIndex, setMenubarCurrentIndex] = useState(0)
-
-  function menubarHandleClick(clickedIndex: number) {
-    setMenubarCurrentIndex(clickedIndex)
-  }
+  const { show, toggleSidebar } = useSidebar()
 
   const menubarModel = [
     {
@@ -154,13 +152,11 @@ export const ReoScan = () => {
     { id: 'tabs-with-underline-item-6', label: '5G', data: scanRows },
   ]
 
-  // WebSocket request here
-  // useEffect(() => {
-  //   fetch("/")
-  //     .then((res) => res.text())
-  //     .then((res) => setMessage(res))
-  //     .catch((err) => console.error(err));
-  // }, []);
+  const menuClickCounter = new Map<number, number>()
+
+  function menubarHandleClick(clickedIndex: number) {
+    setMenubarCurrentIndex(clickedIndex)
+  }
 
   const renderMenubarContent = (item) => {
     switch (item.role) {
@@ -180,9 +176,7 @@ export const ReoScan = () => {
         itemOnClick={menubarHandleClick}
         currentIndex={menubarCurrentIndex}
       />
-      <SlideSidebar show={true}>
-        {renderMenubarContent(menubarModel[menubarCurrentIndex])}
-      </SlideSidebar>
+      <SlideSidebar>{renderMenubarContent(menubarModel[menubarCurrentIndex])}</SlideSidebar>
       <ReoContentView model={reoScanTabsModel} />
     </div>
   )

@@ -9,7 +9,7 @@ export enum NotificationTypes {
   Warning = 'Warning',
 }
 
-export const deafultNotificationSetup = {
+export const defaultNotificationSetup = {
   error: {
     color: '#F44336',
     icon: (
@@ -33,10 +33,10 @@ export const deafultNotificationSetup = {
     ),
   },
   info: {
-    color: '#9C27B0',
+    color: '#2a86cf',
     icon: (
       <svg
-        class='w-8 h-8 text-[#9C27B0]'
+        class={`w-8 h-8 text-[#0288D1]`}
         aria-hidden='true'
         xmlns='http://www.w3.org/2000/svg'
         width='24'
@@ -110,8 +110,8 @@ const renderNotificationItem = (
     case NotificationTypes.Error:
       return (
         <AlertGeneric
-          color={deafultNotificationSetup.error.color}
-          icon={deafultNotificationSetup.error.icon}
+          color={defaultNotificationSetup.error.color}
+          icon={defaultNotificationSetup.error.icon}
           header={header}
           message={message}
           dismissAlert={dismissAlert}
@@ -120,8 +120,8 @@ const renderNotificationItem = (
     case NotificationTypes.Success:
       return (
         <AlertGeneric
-          color={deafultNotificationSetup.success.color}
-          icon={deafultNotificationSetup.success.icon}
+          color={defaultNotificationSetup.success.color}
+          icon={defaultNotificationSetup.success.icon}
           header={header}
           message={message}
           dismissAlert={dismissAlert}
@@ -130,8 +130,8 @@ const renderNotificationItem = (
     case NotificationTypes.Warning:
       return (
         <AlertGeneric
-          color={deafultNotificationSetup.warning.color}
-          icon={deafultNotificationSetup.warning.icon}
+          color={defaultNotificationSetup.warning.color}
+          icon={defaultNotificationSetup.warning.icon}
           header={header}
           message={message}
           dismissAlert={dismissAlert}
@@ -140,8 +140,8 @@ const renderNotificationItem = (
     case NotificationTypes.Info:
       return (
         <AlertGeneric
-          color={deafultNotificationSetup.info.color}
-          icon={deafultNotificationSetup.info.icon}
+          color={defaultNotificationSetup.info.color}
+          icon={defaultNotificationSetup.info.icon}
           header={header}
           message={message}
           dismissAlert={dismissAlert}
@@ -150,8 +150,8 @@ const renderNotificationItem = (
     default:
       return (
         <AlertGeneric
-          color={deafultNotificationSetup.info.color}
-          icon={deafultNotificationSetup.info.icon}
+          color={defaultNotificationSetup.info.color}
+          icon={defaultNotificationSetup.info.icon}
           header={header}
           message={message}
           dismissAlert={dismissAlert}
@@ -161,7 +161,7 @@ const renderNotificationItem = (
 }
 
 export function Alert({ type, header, message, handleDismiss = null }) {
-  const dismissAlert = (e) => {
+  const dismissAlert = (e: Event) => {
     e.preventDefault()
     handleDismiss()
   }

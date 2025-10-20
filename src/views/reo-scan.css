@@ -1,24 +1,22 @@
 .reo-scan-top {
   width: 100%;
-  margin-left: 20px;
   font-size: 30px;
   position: sticky;
-  height: 9vh;
-  line-height: 9vh;
+  padding-top: 30px;
+  padding-left: 20px;
   z-index: 0;
 }
 
 .iterface-list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .interface-item {
-  width: 90%;
-  display: block;
-}
-
-.interface-item:last-child {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .reo-scan-top-item {
@@ -70,6 +68,7 @@
 
 .reo-content {
   width: 70%;
+  height: 100vh;
 }
 
 .table-search-component-icon {
@@ -124,10 +123,6 @@
 
   .reo-scan-top-item:last-child {
     width: 100%;
-  }
-
-  .iterface-list {
-    margin-top: 150px;
   }
 
   .reo-scan-top {
