@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks'
-import { ReoScanStatusTypes } from '../views/reo-scan'
+import { Reo } from '../shared/interfaces/reo.interface'
 
 import './scan-light-status.css'
 
@@ -12,11 +12,11 @@ export function ScanLightStatus({ statusType }) {
 
   function getColor() {
     switch (statusType) {
-      case ReoScanStatusTypes.Running:
+      case Reo.ScanStatusTypes.Running:
         return defaultStatusColors.running
-      case ReoScanStatusTypes.Pending:
+      case Reo.ScanStatusTypes.Pending:
         return defaultStatusColors.pending
-      case ReoScanStatusTypes.Failed:
+      case Reo.ScanStatusTypes.Failed:
         return defaultStatusColors.failed
     }
   }

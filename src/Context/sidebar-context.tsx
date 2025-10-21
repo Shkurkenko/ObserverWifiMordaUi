@@ -3,7 +3,7 @@ import { useState, useContext } from 'preact/hooks'
 
 const SidebarContext = createContext(null)
 export const SidebarProvider = ({ children }) => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const toggleSidebar = () => {
     setShow((prev) => !prev)

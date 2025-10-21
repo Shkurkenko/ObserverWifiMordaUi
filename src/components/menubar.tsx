@@ -1,43 +1,30 @@
-import { useState } from 'preact/hooks'
+import { useEffect } from 'preact/hooks'
+import { MenubarItem } from './menubar-item'
 
 import './menubar.css'
-import { useSidebar } from '../Context/sidebar-context'
+interface MenubarProps {
+  model: MenubarModel
+  itemOnClick: Function
+}
+export interface MenubarModel {
+  currentIndex: number
+  items: MenubarItem[]
+}
 
-export function Menubar({ model, currentIndex, itemOnClick }) {
-  const [doubleClicked, setDoubleClicked] = useState<boolean>(false)
-  const [clickedCount, setClickedCount] = useState<number>(0)
-  const { toggleSidebar } = useSidebar()
+export function Menubar({ model, itemOnClick }: MenubarProps) {
+  useEffect(() => {}, [])
 
   return (
     <div className='menubar w-full'>
-      <div className='menubar-container w-full'>
-        <ul className='menubar-list w-full'>
-          {model.map((menubarItem) => (
-            <li
-              key={menubarItem.id}
-              onClick={() => {
-                setClickedCount((prev: number) => {
-                  const currentCount = prev++
-                  if (currentCount == 1) {
-                    setDoubleClicked((prev) => true)
-                    return 0
-                  }
-                  return currentCount
-                })
-
-                itemOnClick(menubarItem.id)
-                console.log(`Setting click count: ${clickedCount}`)
-                if (doubleClicked) toggleSidebar()
-              }}
-              className={`menubar-list-item task-toggle  ${
-                currentIndex === menubarItem.id && 'menubar-active'
-              }`}
-            >
-              {menubarItem.icon}
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className='menubar-list w-full'>
+        {model.items.map((menubarItem: any) => (
+          <MenubarItem
+            data={menubarItem}
+            isActive={menubarItem.currentIndex === menubarItem.id}
+            itemOnClick={itemOnClick}
+          />
+        ))}
+      </ul>
     </div>
   )
 }

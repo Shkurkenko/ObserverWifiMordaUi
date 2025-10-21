@@ -1,5 +1,3 @@
-import { useEffect } from 'preact/hooks'
-
 import './table-search.css'
 
 export function TableSearch() {

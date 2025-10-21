@@ -11,15 +11,13 @@ export const App = () => (
   <SidebarProvider>
     <FastNotificationsProvider>
       <AlertsProvider>
-        <div>
-          {/* <HeaderSection /> */}
-          <div class='main'>
-            <div class='flex flex-col items-center justify-center'>
-              <Route path='/'>
-                <ReoScan />
-                <FastNotifications />
-              </Route>
-            </div>
+        {/* <HeaderSection /> */}
+        <div class='main'>
+          <div class='flex flex-col items-center justify-center'>
+            <Route path='/'>
+              <ReoScan />
+              <FastNotifications />
+            </Route>
           </div>
         </div>
       </AlertsProvider>

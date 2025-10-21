@@ -1,7 +1,6 @@
 import { createContext } from 'preact'
 import { useRef, useState, useContext } from 'preact/hooks'
-import { NotificationTypes } from '../components/alert-item'
-import { AlertList, AlertType } from '../components/alerts-list'
+import { Alerts } from '../shared/interfaces/alerts.interface'
 
 // const journalModelExample: Array<AlertType> = [
 //   {
@@ -58,7 +57,7 @@ const AlertsContext = createContext(null)
 export const AlertsProvider = ({ children }) => {
   const [alerts, setAlerts] = useState([])
 
-  const addAlert = (alert: AlertType) => {
+  const addAlert = (alert: Alerts.AlertType) => {
     const id = Math.random().toString(36).slice(2, 9) + new Date().getTime().toString(36)
     setAlerts((prev) => [{ ...alert, id: id }, ...prev])
     return id
@@ -80,7 +79,7 @@ export const useAlerts = () => {
   const alertIdsRef = useRef(alertIds)
   const { alerts, addAlert, dismissAlert } = useContext(AlertsContext)
 
-  const addAlertWithId = (alert: AlertType) => {
+  const addAlertWithId = (alert: Alerts.AlertType) => {
     const id = addAlert(alert)
     alertIdsRef.current.push(id)
     setAlertIds(alertIdsRef.current)

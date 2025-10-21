@@ -1,20 +1,13 @@
 import { useEffect } from 'preact/hooks'
-import { Alert, NotificationTypes } from './alert-item'
+import { Alert } from './alert-item'
+import { Alerts } from '../shared/interfaces/alerts.interface'
 
 import './alerts-list.css'
-
-export interface AlertType {
-  id: number
-  type: NotificationTypes
-  header: string
-  message: string
-  show: boolean
-}
 
 export function AlertList({ model }) {
   return (
     <div className='alert-list w-full scrollbar-thin'>
-      {model.map((alert: AlertType, index: number) => (
+      {model.map((alert: Alerts.AlertType, index: number) => (
         <Alert type={alert.type} header={alert.header} message={alert.message} key={alert.id} />
       ))}
     </div>
