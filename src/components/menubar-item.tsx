@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks'
-import { useSidebar } from '../Context/sidebar-context'
+import { useSidebar } from '../hooks/use-sidebar'
 import { Reo } from '../shared/interfaces/reo.interface'
 
 interface MenubarItemProps {

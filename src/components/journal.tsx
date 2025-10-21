@@ -1,69 +1,11 @@
 import { useEffect } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
 import { AlertList } from './alerts-list'
-import { useAlerts } from '../Context/alert-context'
-import { useFastNotifications } from './fast-notifications'
+import { useAlerts } from '../hooks/use-alerts'
+import { useFastNotifications } from '../hooks/use-notifications'
+import { journalAlertsData } from '../data/journal-alerts'
 
 import './journal.css'
-
-const journalModelExample: Alerts.AlertType[] = [
-  {
-    id: 0,
-    type: Alerts.Level.Error,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 1,
-    type: Alerts.Level.Info,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 2,
-    type: Alerts.Level.Warning,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 3,
-    type: Alerts.Level.Success,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 4,
-    type: Alerts.Level.Success,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 5,
-    type: Alerts.Level.Success,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 6,
-    type: Alerts.Level.Success,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-  {
-    id: 7,
-    type: Alerts.Level.Success,
-    header: 'First alert',
-    message: 'All right bro!',
-    show: true,
-  },
-]
 
 export function Journal() {
   const { alerts, addAlert } = useAlerts()
@@ -82,8 +24,8 @@ export function Journal() {
   }
 
   useEffect(() => {
-    emitTestAlerts(journalModelExample)
-  }, [journalModelExample])
+    emitTestAlerts(journalAlertsData)
+  }, [journalAlertsData])
 
   return (
     <div className='journal-container w-full'>

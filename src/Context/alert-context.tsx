@@ -1,10 +1,8 @@
 import { createContext } from 'preact'
-import { useRef, useState, useContext } from 'preact/hooks'
+import { useState } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
 
-
-
-const AlertsContext = createContext(null)
+export const AlertsContext = createContext(null)
 export const AlertsProvider = ({ children }) => {
   const [alerts, setAlerts] = useState([])
 
@@ -23,26 +21,6 @@ export const AlertsProvider = ({ children }) => {
       {children}
     </AlertsContext.Provider>
   )
-}
-
-export const useAlerts = () => {
-  const [alertIds, setAlertIds] = useState([])
-  const alertIdsRef = useRef(alertIds)
-  const { alerts, addAlert, dismissAlert } = useContext(AlertsContext)
-
-  const addAlertWithId = (alert: Alerts.AlertType) => {
-    const id = addAlert(alert)
-    alertIdsRef.current.push(id)
-    setAlertIds(alertIdsRef.current)
-  }
-
-  const clearAlerts = () => {
-    alertIdsRef.current.forEach((id) => dismissAlert(id))
-    alertIdsRef.current = []
-    setAlertIds([])
-  }
-
-  return { alerts, addAlert: addAlertWithId, clearAlerts }
 }
 
 export default AlertsProvider

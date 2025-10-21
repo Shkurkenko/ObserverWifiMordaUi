@@ -13,6 +13,12 @@ export namespace Reo {
     FiveG = '5G',
   }
 
+  export enum ScanStatusTypes {
+    Running,
+    Pending,
+    Failed,
+  }
+
   export interface ScanTask {
     name: string
     date: string
@@ -21,9 +27,9 @@ export namespace Reo {
     status: ScanStatusTypes
   }
 
-  export enum ScanStatusTypes {
-    Running,
-    Pending,
-    Failed,
+  export interface Tab {
+    id: string
+    label: string
+    data: any
   }
 }

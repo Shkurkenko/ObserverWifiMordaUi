@@ -1,4 +1,4 @@
-import { useFastNotifications } from './fast-notifications'
+import { useFastNotifications } from '../hooks/use-notifications'
 
 import './fast-notification-item.css'
 
