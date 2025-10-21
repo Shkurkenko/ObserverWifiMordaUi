@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'preact/hooks'
-import { download, generateCsv, mkConfig } from 'export-to-csv'
+import { useState } from 'preact/hooks'
+// import { download, generateCsv, mkConfig } from 'export-to-csv'
+import { generateCsv, mkConfig, download } from 'export-to-csv'
+
 import './table-helper.css'
 
 export function TableHelper({ headers, rows, currentCycle }) {
-  const [csvConfig, setCsvConfig] = useState(mkConfig({ useKeysAsHeaders: true }))
+  const csvConfig = mkConfig({ useKeysAsHeaders: true })
 
   function emptyTable() {
     console.log('Empty rows here')
