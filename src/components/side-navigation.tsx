@@ -8,6 +8,7 @@ import { Journal } from './journal'
 import { ObserverConfig } from '../config/ObserverConfig/observer-config'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ReoTestData } from '../data/reo-tasks'
+import { h, Fragment } from 'preact'
 
 import './side-navigation.css'
 
@@ -25,7 +26,7 @@ export function SideNavigation() {
       case Reo.MenubarSetup.Notifications:
         return <Journal />
       default:
-        return <h1>Странная тема</h1>
+        return <h1>Unreachable</h1>
     }
   }
 
