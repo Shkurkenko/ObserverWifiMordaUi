@@ -2,56 +2,7 @@ import { createContext } from 'preact'
 import { useRef, useState, useContext } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
 
-// const journalModelExample: Array<AlertType> = [
-//   {
-//     id: 0,
-//     type: NotificationTypes.Error,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 1,
-//     type: NotificationTypes.Info,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 2,
-//     type: NotificationTypes.Warning,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 3,
-//     type: NotificationTypes.Success,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 4,
-//     type: NotificationTypes.Success,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 5,
-//     type: NotificationTypes.Success,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 6,
-//     type: NotificationTypes.Success,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-//   {
-//     id: 7,
-//     type: NotificationTypes.Success,
-//     header: 'First alert',
-//     message: 'All right bro!',
-//   },
-// ]
+
 
 const AlertsContext = createContext(null)
 export const AlertsProvider = ({ children }) => {

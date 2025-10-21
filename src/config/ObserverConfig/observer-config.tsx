@@ -3,9 +3,9 @@ import { Notifications } from '../../shared/interfaces/notifications.interface'
 import { MenubarModel } from '../../components/menubar'
 
 export namespace ObserverConfig {
-  export const AlertsConfig: Notifications.StyleConfig = {
+  export const AlertsConfig = {
     general: {
-        transition: 0.2,
+      transition: 0.2,
     },
     error: {
       color: '#F44336',
