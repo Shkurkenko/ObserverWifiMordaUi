@@ -1,6 +1,6 @@
 import { useEffect } from 'preact/hooks'
 import { Alert } from './alert-item'
-import { Alerts } from '../shared/interfaces/alerts.interface'
+import { Alerts } from '../../shared/interfaces/alerts.interface'
 
 import './alerts-list.css'
 

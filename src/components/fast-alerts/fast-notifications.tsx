@@ -1,7 +1,7 @@
-import { Alerts } from '../shared/interfaces/alerts.interface'
+import { Alerts } from '../../shared/interfaces/alerts.interface'
 import { FastNotificationItem } from './fast-notificaiton-item'
-import { ObserverConfig } from '../config/ObserverConfig/observer-config'
-import { useFastNotifications } from '../hooks/use-notifications'
+import { ObserverConfig } from '../../config/ObserverConfig/observer-config'
+import { useFastNotifications } from '../../hooks/use-notifications'
 
 import './fast-notifications.css'
 

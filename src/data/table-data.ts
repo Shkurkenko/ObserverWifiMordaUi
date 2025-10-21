@@ -1,4 +1,4 @@
-import { TableColumnTypes } from '../components/table-body'
+import { TableColumnTypes } from "../components/table/table-body"
 
 export const scanRowsData1 = [
   {

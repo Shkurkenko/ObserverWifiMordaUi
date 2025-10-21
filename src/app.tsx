@@ -1,7 +1,7 @@
 import { Link, Route } from 'wouter'
 import { ReoScan } from './views/reo-scan'
 import { HeaderSection } from './components/header-section'
-import { FastNotifications } from './components/fast-notifications'
+import { FastNotifications } from './components/fast-alerts/fast-notifications'
 import { FastNotificationsProvider } from './Context/fast-notifications-context'
 import AlertsProvider from './Context/alert-context'
 import SidebarProvider from './Context/sidebar-context'

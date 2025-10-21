@@ -1,6 +1,6 @@
 import { AlertGeneric } from './alert-generic'
-import { Alerts } from '../shared/interfaces/alerts.interface'
-import { ObserverConfig } from '../config/ObserverConfig/observer-config'
+import { Alerts } from '../../shared/interfaces/alerts.interface'
+import { ObserverConfig } from '../../config/ObserverConfig/observer-config'
 
 import './alert-item.css'
 

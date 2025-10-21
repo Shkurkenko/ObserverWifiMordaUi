@@ -1,6 +1,6 @@
 import { useEffect } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
-import { AlertList } from './alerts-list'
+import { AlertList } from './alerts/alerts-list'
 import { useAlerts } from '../hooks/use-alerts'
 import { useFastNotifications } from '../hooks/use-notifications'
 import { journalAlertsData } from '../data/journal-alerts'

@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks'
-import { ObserverTable } from './observer-table'
+import { ObserverTable } from './table/observer-table'
 
 import './reo-content-view.css'
 
