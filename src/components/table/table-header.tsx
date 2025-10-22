@@ -12,7 +12,7 @@ interface TableHeaderProps {
 
 export const TableHeader = ({ headers }: TableHeaderProps) => {
   return (
-    <thead className='table-header w-full'>
+    <thead className='sticky top-0 z-10 shadow-lg table-header w-full'>
       <tr className='table-header-row'>
         <th>#</th>
         {headers.map((header: HeaderColumn, index) => {

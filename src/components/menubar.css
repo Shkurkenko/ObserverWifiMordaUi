@@ -31,9 +31,6 @@
   border-left: 3px solid #36b37e;
 }
 
-.menubar-list-item svg {
-}
-
 .task-toggle:hover {
   cursor: pointer;
   background-color: #1d242d;

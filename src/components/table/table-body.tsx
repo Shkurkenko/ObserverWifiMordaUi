@@ -12,6 +12,8 @@ export enum TableColumnTypes {
 export interface TableColumn {
   type?: TableColumnTypes
   data?: any
+  selected?: boolean
+  hovered?: boolean
 }
 
 export interface TextColumnProps extends TableColumn {
@@ -39,7 +41,7 @@ export interface TableBodyProps {
 
 export const TableBody = ({ rows }: TableBodyProps) => {
   return (
-    <tbody className='table-body w-full'>
+    <tbody className='table-body w-full h-full'>
       {rows.map((row: TableRowProps, rowIndex: number) => {
         row.index = rowIndex
         return <ObserverTableRow data={row} />

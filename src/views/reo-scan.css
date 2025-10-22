@@ -1,83 +1,9 @@
-.reo-scan-top {
-  width: 100%;
-  font-size: 30px;
-  position: sticky;
-  padding-top: 30px;
-  padding-left: 20px;
-  z-index: 0;
-}
-
-.iterface-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.interface-item {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.reo-scan-top-item {
-  display: inline-block;
-  max-width: 450px;
-  width: 30%;
-  margin-left: 20px;
-  padding-bottom: 20px;
-}
-
-.table-search-input {
-  border: none;
-  background-color: #0d1014 !important;
-  border-radius: none !important;
-  height: 100%;
-  align-items: center;
-}
-
-.table-search-input:focus {
-  outline: none;
-  border: 2px solid #36b37e;
-}
-
-.table-search-component {
-  display: flex;
-  align-items: center;
-}
-
-.observer-tabs {
-  width: 100%;
-}
-
-.table-header-info {
-  height: 50px;
-  margin-bottom: 15px;
-}
-
-.table-header-info > h1 {
-  font-weight: bold;
-}
-
 .task-sidebar {
   width: 100%;
   box-shadow:
     rgba(0, 0, 0, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   background-color: #11161c;
-}
-
-.reo-content {
-  width: 70%;
-  height: 100vh;
-}
-
-.table-search-component-icon {
-  z-index: 9999;
-}
-
-.table-search-icon {
-  display: flex;
-  align-items: center;
 }
 
 .scan-time-icon {
@@ -93,39 +19,4 @@
   padding: 6px 6px 6px 6px;
   border-radius: 4px;
   margin-left: 5px;
-}
-
-.table-search-input-container {
-  width: 70%;
-  height: 60px;
-}
-
-.table-search-component-icon {
-  position: absolute;
-}
-
-.scan-light-container {
-  display: flex;
-  margin-right: 20px;
-  align-items: center;
-}
-
-.reo-scan-interface-item {
-  display: inline-block;
-}
-
-@media screen and (max-width: 1280px) {
-  .reo-scan-top-item {
-    display: block;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .reo-scan-top-item:last-child {
-    width: 100%;
-  }
-
-  .reo-scan-top {
-    height: auto;
-  }
 }

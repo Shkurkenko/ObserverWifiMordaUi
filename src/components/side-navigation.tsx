@@ -1,3 +1,4 @@
+import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 import { Menubar } from './menubar'
 import { MenubarItem } from './menubar-item'
@@ -8,7 +9,6 @@ import { Journal } from './journal'
 import { ObserverConfig } from '../config/ObserverConfig/observer-config'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ReoTestData } from '../data/reo-tasks'
-import { h, Fragment } from 'preact'
 
 import './side-navigation.css'
 

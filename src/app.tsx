@@ -1,4 +1,4 @@
-import { Link, Route } from 'wouter'
+import { Route } from 'wouter'
 import { ReoScan } from './views/reo-scan'
 import { HeaderSection } from './components/header-section'
 import { FastNotifications } from './components/fast-alerts/fast-notifications'
@@ -13,14 +13,10 @@ export const App = () => (
     <FastNotificationsProvider>
       <AlertsProvider>
         {/* <HeaderSection /> */}
-        <div class='main'>
-          <div class='flex flex-col items-center justify-center'>
-            <Route path='/'>
-              <ReoScan />
-              <FastNotifications />
-            </Route>
-          </div>
-        </div>
+        <Route path='/'>
+          <ReoScan />
+          <FastNotifications />
+        </Route>
       </AlertsProvider>
     </FastNotificationsProvider>
   </SidebarProvider>

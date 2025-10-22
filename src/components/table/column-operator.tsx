@@ -4,5 +4,5 @@ import { OperatorColumnProps } from './table-body'
 import './column-operator.css'
 
 export const ColumnOperator = ({ name, code, iconPath }: OperatorColumnProps) => {
-  return <td className='column-operator'>{name}</td>
+  return <div className='w-full h-full column-operator'>{name}</div>
 }

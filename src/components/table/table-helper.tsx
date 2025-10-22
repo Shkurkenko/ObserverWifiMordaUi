@@ -1,15 +1,14 @@
-import { useState } from 'preact/hooks'
-// import { download, generateCsv, mkConfig } from 'export-to-csv'
 import { generateCsv, mkConfig, download } from 'export-to-csv'
 
 import './table-helper.css'
+import { useTable } from './hooks/use-table'
 
-export function TableHelper({ headers, rows, currentCycle }) {
+export function TableHelper({ currentCycle }) {
+  const { rows, headers, clearRows } = useTable()
   const csvConfig = mkConfig({ useKeysAsHeaders: true })
 
   function emptyTable() {
-    console.log('Empty rows here')
-    rows = []
+    clearRows()
   }
 
   function getValidData() {

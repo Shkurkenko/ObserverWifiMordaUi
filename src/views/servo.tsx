@@ -19,7 +19,7 @@ export const Servo = () => {
     socket.send(JSON.stringify({ angle }))
   }
 
-  //const debounceOnSlide = debounce((value) => onSlide(value), 500);
+  const debounceOnSlide = debounce((value) => onSlide(value), 500);
 
   return (
     <>

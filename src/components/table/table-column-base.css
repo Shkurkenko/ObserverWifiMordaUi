@@ -1,0 +1,10 @@
+.table-basecol-hovered {
+  background-color: black;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.table-basecol-selected {
+  background-color: black;
+  border: 2px solid green;
+}

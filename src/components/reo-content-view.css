@@ -1,0 +1,19 @@
+.reo-content {
+  height: 100vh;
+}
+
+.reo-content-top {
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+  height: 8vh;
+}
+
+.reo-content-header {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.reo-header-info {
+  width: 50%;
+}

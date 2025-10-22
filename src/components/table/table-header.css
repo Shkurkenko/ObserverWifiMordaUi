@@ -9,8 +9,6 @@ th {
 .table-header {
   background-color: #252b36;
   height: 55px;
-  position: sticky;
-  top: 50px;
 }
 
 .table-header-row > td {

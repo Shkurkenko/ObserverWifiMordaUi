@@ -4,5 +4,5 @@ import { TextColumnProps } from './table-body'
 import './column-text.css'
 
 export const ColumnText = ({ text }: TextColumnProps) => {
-  return <td className='column-text'>{text}</td>
+  return <div className='w-full h-full column-text'>{text}</div>
 }
