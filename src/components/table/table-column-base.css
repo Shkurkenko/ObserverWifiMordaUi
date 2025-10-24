@@ -1,3 +1,9 @@
+.table-basecol {
+  height: 50px;
+  border-bottom: 1px solid #262b36;
+  line-height: 50px;
+}
+
 .table-basecol-hovered {
   background-color: black;
   transform: scale(1.2);

@@ -2,6 +2,7 @@ import { useState } from 'preact/hooks'
 import { ObserverTable } from './table/observer-table'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ObserverTableProvider } from './table/context/table-context'
+import { ObserverTableEmpty } from './table/observer-table-empty-state'
 
 import './reo-content-view.css'
 
@@ -10,7 +11,7 @@ export function ReoContentView({ model }) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   const handlRenderEmpty = (): JSX.Element => {
-    return <div style={{ width: 100, height: 100, backgroundColor: 'red' }}></div>
+    return <ObserverTableEmpty />
   }
 
   return (

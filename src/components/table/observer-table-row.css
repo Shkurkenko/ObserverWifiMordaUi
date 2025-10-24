@@ -1,0 +1,8 @@
+.observer-table-body-row {
+    transition: .2s all;
+}
+
+.observer-table-body-row:hover {
+    cursor: pointer;
+    background-color: #1d242c;
+}

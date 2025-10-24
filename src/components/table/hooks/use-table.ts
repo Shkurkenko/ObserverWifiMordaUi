@@ -1,4 +1,4 @@
-import { useRef, useContext, useState } from 'preact/hooks'
+import { useContext } from 'preact/hooks'
 import { ObserverTableContext } from '../context/table-context'
 
 export const useTable = () => {
@@ -12,6 +12,7 @@ export const useTable = () => {
     currentSelectedColumn,
     setCurrentSelectedColumn,
     selectRow,
+    renderEmpty,
   } = useContext(ObserverTableContext)
 
   return {
@@ -24,5 +25,6 @@ export const useTable = () => {
     currentSelectedColumn,
     setCurrentSelectedColumn,
     selectRow,
+    renderEmpty,
   }
 }

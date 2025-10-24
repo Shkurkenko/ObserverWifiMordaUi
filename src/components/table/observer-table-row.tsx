@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks'
 import { ColumnSignal } from './column-signal'
 import { ColumnOperator } from './column-operator'
 import { ColumnEnum } from './column-enum'
@@ -9,7 +10,6 @@ import { SignalColumnProps } from './table-body'
 import { TableColumnBase } from './table-column-base'
 
 import './observer-table-row.css'
-import { useState } from 'preact/hooks'
 
 export function ObserverTableRow({ data }) {
   const [rowSelected, setRowSelected] = useState(false)
