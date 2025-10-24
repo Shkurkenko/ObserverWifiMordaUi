@@ -12,15 +12,15 @@ export function Journal() {
   const { addFastNotification, showFastNotification } = useFastNotifications()
 
   const emitTestAlerts = (data: Alerts.AlertType[]) => {
-    // for (let i = 0; i < data.length; i++) {
-    //   setTimeout(() => {
-    //     console.log('Emiting test alerts', data[i])
-    //     data[i].show = false
-    //     addAlert(data[i])
-    //     addFastNotification(data[i])
-    //     showFastNotification(data[i].id)
-    //   }, 3000 * i)
-    // }
+    for (let i = 0; i < data.length; i++) {
+      setTimeout(() => {
+        console.log('Emiting test alerts', data[i])
+        data[i].show = false
+        addAlert(data[i])
+        addFastNotification(data[i])
+        showFastNotification(data[i].id)
+      }, 3000 * i)
+    }
   }
 
   useEffect(() => {

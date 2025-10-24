@@ -1,4 +1,3 @@
-import { useState } from 'preact/hooks'
 import { useSidebar } from '../hooks/use-sidebar'
 import { Reo } from '../shared/interfaces/reo.interface'
 
@@ -16,23 +15,14 @@ export interface MenubarItem {
 }
 
 export function MenubarItem({ data, itemOnClick, isActive }: MenubarItemProps) {
-  const [doubleClicked, setDoubleClicked] = useState<boolean>(false)
-  const [clickedCount, setClickedCount] = useState<number>(0)
-  const { show, toggleSidebar } = useSidebar()
 
   return (
     <li
       key={data.id}
       onClick={() => {
         itemOnClick(data.id)
-        setClickedCount(clickedCount + 1)
-
-        if (doubleClicked) toggleSidebar()
-
-        console.log(`current clicked count: ${clickedCount}`)
-        console.log(`current sidebar state show: ${show}`)
       }}
-      className={`menubar-list-item task-toggle ${isActive && 'menubar-active'}`}
+      className={`menubar-list-item task-toggle ${isActive ? 'menubar-active' : ''}`}
     >
       {data.icon}
     </li>

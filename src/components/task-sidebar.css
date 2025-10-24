@@ -16,7 +16,7 @@
 }
 
 .task-item-header {
-  height: 85px;
+  height: 105px;
   text-align-last: left;
   padding-left: 15px;
   width: 100%;
@@ -71,4 +71,12 @@
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.scan-types {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 14px;
 }

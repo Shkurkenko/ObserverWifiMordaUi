@@ -1,4 +1,3 @@
-import { useEffect } from 'preact/hooks'
 import { MenubarItem } from './menubar-item'
 
 import './menubar.css'
@@ -12,8 +11,6 @@ export interface MenubarModel {
 }
 
 export function Menubar({ model, itemOnClick }: MenubarProps) {
-  useEffect(() => {}, [])
-
   return (
     <div className='menubar w-full'>
       <ul className='menubar-list w-full'>
