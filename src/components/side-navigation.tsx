@@ -15,14 +15,23 @@ import './side-navigation.css'
 
 export function SideNavigation() {
   const [menubarModel, setMenubarModel] = useState<MenubarModel>(ObserverConfig.MenubarConfig)
-  const { prevId, currentId, toggleSidebar, setPrevId, setCurrentId } = useSidebar()
+  const [currentId, setCurrentId] = useState<number>(0)
+  const [doubleClicked, setDoubleClicked] = useState<boolean>(false)
+  const { show, toggleSidebar } = useSidebar()
 
   function menubarHandleClick(clickedIndex: number): void {
-    setCurrentId(clickedIndex)
-    if (currentId !== prevId || prevId === -1) {
-      setPrevId((prev: number) => currentId)
+    if (!show) {
       toggleSidebar()
     }
+
+    if (currentId === clickedIndex) {
+      console.log("ToggleSidebar")
+      setDoubleClicked((prev: boolean) => true)
+      toggleSidebar()
+    }
+
+    setDoubleClicked((prev: boolean) => false)
+    setCurrentId((prev: number) => clickedIndex)
     setMenubarModel((prev: MenubarModel) => ({
       ...prev,
       currentIndex: clickedIndex,
