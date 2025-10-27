@@ -1,6 +1,9 @@
 import { Reo } from '../../shared/interfaces/reo.interface'
 import { Notifications } from '../../shared/interfaces/notifications.interface'
 import { MenubarModel } from '../../components/menubar'
+import { TaskSidebar } from '../../components/task-sidebar'
+import { Journal } from '../../components/journal'
+import { ReoTestData } from '../../data/reo-tasks'
 
 export namespace ObserverConfig {
   export const AlertsConfig = {
@@ -137,7 +140,7 @@ export namespace ObserverConfig {
       {
         id: 0,
         role: Reo.MenubarSetup.TaskManager,
-        active: true,
+        active: false,
         icon: (
           <svg
             class='w-9 h-9 text-gray-800 dark:text-white'
@@ -156,6 +159,7 @@ export namespace ObserverConfig {
             />
           </svg>
         ),
+        content: <TaskSidebar reoScanTaskListModel={ReoTestData.scanTasks} />,
       },
       {
         id: 1,
@@ -179,6 +183,7 @@ export namespace ObserverConfig {
             />
           </svg>
         ),
+        content: <Journal />,
       },
     ],
   }

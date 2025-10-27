@@ -1,4 +1,3 @@
-import { useSidebar } from '../hooks/use-sidebar'
 import { Reo } from '../shared/interfaces/reo.interface'
 
 interface MenubarItemProps {
@@ -12,10 +11,10 @@ export interface MenubarItem {
   role: Reo.MenubarSetup
   active: boolean
   icon: JSX.Element
+  content: JSX.Element
 }
 
 export function MenubarItem({ data, itemOnClick, isActive }: MenubarItemProps) {
-
   return (
     <li
       key={data.id}

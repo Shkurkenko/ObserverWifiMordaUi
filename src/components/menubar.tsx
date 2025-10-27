@@ -14,10 +14,10 @@ export function Menubar({ model, itemOnClick }: MenubarProps) {
   return (
     <div className='menubar w-full'>
       <ul className='menubar-list w-full'>
-        {model.items.map((menubarItem: any) => (
+        {model.items.map((menubarItem: MenubarItem) => (
           <MenubarItem
             data={menubarItem}
-            isActive={menubarItem.currentIndex === menubarItem.id}
+            isActive={model.currentIndex === menubarItem.id && menubarItem.active}
             itemOnClick={itemOnClick}
           />
         ))}

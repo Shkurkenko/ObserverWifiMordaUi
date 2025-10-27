@@ -9,8 +9,16 @@ export const SidebarProvider = ({ children }) => {
     setShow((prev: boolean) => !prev)
   }
 
+  const showSidebar = () => {
+    setShow((prev: boolean) => true)
+  }
+
+  const hideSidebar = () => {
+    setShow((prev: boolean) => false)
+  }
+
   return (
-    <SidebarContext.Provider value={{ show, setShow, toggleSidebar }}>
+    <SidebarContext.Provider value={{ show, setShow, toggleSidebar, showSidebar, hideSidebar }}>
       {children}
     </SidebarContext.Provider>
   )
