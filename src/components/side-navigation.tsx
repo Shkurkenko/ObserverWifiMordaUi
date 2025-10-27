@@ -7,10 +7,10 @@ import { ObserverConfig } from '../config/ObserverConfig/observer-config'
 import { useSidebar } from '../hooks/use-sidebar'
 
 import './side-navigation.css'
+import { MenubarItem } from './menubar-item'
 
 export function SideNavigation() {
   const [menubarModel, setMenubarModel] = useState<MenubarModel>(ObserverConfig.MenubarConfig)
-  const [isSwitch, setSwitch] = useState<boolean>(false)
   const { show, toggleSidebar, showSidebar, hideSidebar } = useSidebar()
 
   const loadContent = (index: number) => {
@@ -20,8 +20,23 @@ export function SideNavigation() {
     }))
   }
 
+  const setActiveTab = (index: number) => {
+    setMenubarModel((prev: MenubarModel) => ({
+      items: prev.items.map((item: MenubarItem) =>
+        item.id === index ? { ...item, active: true } : item,
+      ),
+      currentIndex: index,
+    }))
+  }
+
   function menubarHandleClick(clickedIndex: number): void {
-    showSidebar()
+    if (!show) showSidebar()
+
+    if (clickedIndex === menubarModel.currentIndex) {
+      hideSidebar()
+    }
+
+    setActiveTab(clickedIndex)
     loadContent(clickedIndex)
   }
 
