@@ -1,7 +1,7 @@
 import { useContext } from 'preact/hooks'
 import { TasksContext } from '../Context/tasks-context'
 
-export const useSidebar = () => {
+export const useTasks = () => {
   const {
     tasks,
     setTasks,
