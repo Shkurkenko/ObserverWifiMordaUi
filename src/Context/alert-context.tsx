@@ -8,14 +8,12 @@ export const AlertsProvider = ({ children }) => {
 
   const addAlert = (alert: Alerts.AlertType) => {
     const id = Date.now()
-    setAlerts((prev) => [{ ...alert, id: id }, ...prev])
+    setAlerts((prev) => [{ ...alert, id }, ...prev])
     return id
   }
 
   const dismissAlert = (id: number) => {
-    console.log('DISMISS ALERT: ' + id)
     setAlerts((prev) => prev.filter((alert) => alert.id !== id))
-    console.log(alerts)
   }
 
   return (
