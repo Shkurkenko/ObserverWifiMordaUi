@@ -20,24 +20,36 @@ export const TasksProvider = ({ children }) => {
     )
   }
 
-  const startTask = (id: number) {
-    setTaskStatus(id, Reo.ScanStatusTypes.Running);
+  const startTask = (id: number) => {
+    setTaskStatus(id, Reo.ScanStatusTypes.Running)
   }
 
-  const stopTask = (id: number) {
-    setTaskStatus(id, Reo.ScanStatusTypes.Finished);
+  const stopTask = (id: number) => {
+    setTaskStatus(id, Reo.ScanStatusTypes.Finished)
   }
 
-  const waitTask = (id: number) {
-    setTaskStatus(id, Reo.ScanStatusTypes.Pending);
+  const waitTask = (id: number) => {
+    setTaskStatus(id, Reo.ScanStatusTypes.Pending)
   }
 
-  const failTask = (id: number) {
-    setTaskStatus(id, Reo.ScanStatusTypes.Failed);
+  const failTask = (id: number) => {
+    setTaskStatus(id, Reo.ScanStatusTypes.Failed)
   }
 
   return (
-    <TasksContext.Provider value={{ tasks, setTasks, addTask, deleteTask, startTask,  stopTask, waitTask, failTask }}>
+    <TasksContext.Provider
+      value={{
+        tasks,
+        setTasks,
+        addTask,
+        deleteTask,
+        setTaskStatus,
+        startTask,
+        stopTask,
+        waitTask,
+        failTask,
+      }}
+    >
       {children}
     </TasksContext.Provider>
   )
