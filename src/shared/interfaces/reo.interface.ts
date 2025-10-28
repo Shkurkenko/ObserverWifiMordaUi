@@ -14,6 +14,7 @@ export namespace Reo {
   }
 
   export enum ScanStatusTypes {
+    Finished,
     Running,
     Pending,
     Failed,
