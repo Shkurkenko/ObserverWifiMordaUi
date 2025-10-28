@@ -3,6 +3,7 @@ import { Reo } from '../shared/interfaces/reo.interface'
 export namespace ReoTestData {
   export const scanTasks: Reo.ScanTask[] = [
     {
+      id: 0,
       name: 'Сканирование #1',
       date: '22.04.24',
       time: '13:04',
@@ -10,6 +11,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
+      id: 1,
       name: 'Сканирование #2',
       date: '23.04.24',
       time: '16:34',
@@ -17,6 +19,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
+      id: 2,
       name: 'Сканирование #3',
       date: '24.04.24',
       time: '10:23',
@@ -31,6 +34,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
+      id: 3,
       name: 'Сканирование #4',
       date: '25.04.24',
       time: '18:12',
@@ -38,6 +42,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
+      id: 4,
       name: 'Сканирование #5',
       date: '26.04.24',
       time: '11:55',
@@ -45,6 +50,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
+      id: 5,
       name: 'Сканирование #6',
       date: '27.04.24',
       time: '12:09',
@@ -52,6 +58,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
+      id: 6,
       name: 'Сканирование #7',
       date: '28.04.24',
       time: '17:07',

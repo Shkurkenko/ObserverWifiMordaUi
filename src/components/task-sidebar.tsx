@@ -4,8 +4,6 @@ import { ScanLightStatus } from './scan-light-status'
 import './task-sidebar.css'
 
 export function TaskSidebar({ reoScanTaskListModel }) {
-  const [active, setActive] = useState(true)
-
   return (
     <div className='task-sidebar h-full w-full'>
       <div className='task-content-search'>

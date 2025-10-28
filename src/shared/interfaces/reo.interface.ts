@@ -20,6 +20,7 @@ export namespace Reo {
   }
 
   export interface ScanTask {
+    id: number
     name: string
     date: string
     time: string
