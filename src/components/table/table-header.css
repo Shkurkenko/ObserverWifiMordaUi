@@ -4,6 +4,8 @@ tr {
 
 th {
   text-align: center;
+  min-width: 50px;
+  width: 2%;
 }
 
 .table-header {
