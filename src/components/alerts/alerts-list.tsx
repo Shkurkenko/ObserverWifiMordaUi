@@ -8,6 +8,7 @@ export function AlertList({ model }) {
     <div className='alert-list w-full scrollbar-thin'>
       {model.map((alert: Alerts.AlertType, index: number) => (
         <Alert
+          id={alert.id}
           type={alert.type}
           header={alert.header}
           message={alert.message}

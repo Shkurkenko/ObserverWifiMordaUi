@@ -1,6 +1,11 @@
 import { useState } from 'preact/hooks'
 
-export function AlertGeneric({ color, icon, header, message, dismissAlert }) {
+export function AlertGeneric({ id, color, icon, header, message, dismissAlert }) {
+  const handleClose = (e: Event) => {
+    e.preventDefault()
+    dismissAlert(id)
+  }
+
   return (
     <div className='alert-item' style={{ borderLeft: `4px solid ${color}` }}>
       <div className='notification-icon'>{icon}</div>
@@ -8,7 +13,7 @@ export function AlertGeneric({ color, icon, header, message, dismissAlert }) {
         <h4 style={{ color: color }}>{header}</h4>
         <p>{message}</p>
       </div>
-      <div className='close-notification' onClick={dismissAlert}>
+      <div className='close-notification' onClick={handleClose}>
         <svg
           class='w-5 h-5 text-[#a6adb5]'
           aria-hidden='true'

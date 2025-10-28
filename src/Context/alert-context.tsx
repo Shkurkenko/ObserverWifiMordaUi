@@ -13,7 +13,7 @@ export const AlertsProvider = ({ children }) => {
   }
 
   const dismissAlert = (id: number) => {
-    console.log('DISMISS ALERT')
+    console.log('DISMISS ALERT: ' + id)
     setAlerts((prev) => prev.filter((alert) => alert.id !== id))
     console.log(alerts)
   }
