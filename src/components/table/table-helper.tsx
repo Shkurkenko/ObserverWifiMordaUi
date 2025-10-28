@@ -1,14 +1,21 @@
 import { generateCsv, mkConfig, download } from 'export-to-csv'
 import { useTable } from './hooks/use-table'
+import { useEffect, useState } from 'preact/hooks'
 
 import './table-helper.css'
 
-export function TableHelper({ currentCycle }) {
+export function TableHelper() {
+  const [currentCycle, setCurrentCycle] = useState<number>(4)
   const { rows, headers, clearRows } = useTable()
   const csvConfig = mkConfig({ useKeysAsHeaders: true })
 
-  function emptyTable() {
+  const clearCycles = () => {
+    setCurrentCycle(0)
+  }
+
+  const emptyTable = () => {
     clearRows()
+    clearCycles()
   }
 
   function getValidData() {
@@ -18,7 +25,6 @@ export function TableHelper({ currentCycle }) {
       const rowData = {}
       for (let j = 1; j < rows[i].columns.length; j++) {
         const column = rows[i].columns[j]
-        // NOTE: j - 1 here to exclude enumiration column
         if (headers[j - 1] !== undefined) {
           const currentHeaderName = headers[j - 1].label
           if (column.data.text) {
