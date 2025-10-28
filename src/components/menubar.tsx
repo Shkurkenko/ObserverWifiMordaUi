@@ -1,3 +1,4 @@
+import { useSidebar } from '../hooks/use-sidebar'
 import { MenubarItem } from './menubar-item'
 
 import './menubar.css'
@@ -11,13 +12,15 @@ export interface MenubarModel {
 }
 
 export function Menubar({ model, itemOnClick }: MenubarProps) {
+  const { show } = useSidebar()
+
   return (
     <div className='menubar w-full'>
       <ul className='menubar-list w-full'>
         {model.items.map((menubarItem: MenubarItem) => (
           <MenubarItem
             data={menubarItem}
-            isActive={model.currentIndex === menubarItem.id && menubarItem.active}
+            isActive={show && model.currentIndex === menubarItem.id}
             itemOnClick={itemOnClick}
           />
         ))}

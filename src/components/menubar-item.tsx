@@ -1,5 +1,7 @@
 import { Reo } from '../shared/interfaces/reo.interface'
 
+import './menubar-item.css'
+
 interface MenubarItemProps {
   data: any
   itemOnClick: Function
@@ -8,8 +10,8 @@ interface MenubarItemProps {
 
 export interface MenubarItem {
   id: number
-  role: Reo.MenubarSetup
   active: boolean
+  role: Reo.MenubarSetup
   icon: JSX.Element
   content: JSX.Element
 }

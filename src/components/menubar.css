@@ -18,19 +18,6 @@
   align-items: center;
 }
 
-.menubar-list-item {
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  border-left: 3px solid #4e617b;
-  justify-content: center;
-}
-
-.menubar-active {
-  border-left: 3px solid #36b37e;
-}
-
 .task-toggle:hover {
   cursor: pointer;
   background-color: #1d242d;

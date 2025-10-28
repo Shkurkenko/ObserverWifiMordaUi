@@ -11,7 +11,7 @@ import './side-navigation.css'
 
 export function SideNavigation() {
   const [menubarModel, setMenubarModel] = useState<MenubarModel>(ObserverConfig.MenubarConfig)
-  const { show, toggleSidebar, showSidebar, hideSidebar } = useSidebar()
+  const { show, showSidebar, hideSidebar } = useSidebar()
 
   const loadContent = (index: number) => {
     setMenubarModel((prev: MenubarModel) => ({
@@ -30,20 +30,21 @@ export function SideNavigation() {
   }
 
   function menubarHandleClick(clickedIndex: number): void {
-    if (!show) showSidebar()
+    if (!show) {
+      showSidebar()
+    }
 
     if (clickedIndex === menubarModel.currentIndex && show) {
       hideSidebar()
     }
 
-    setActiveTab(clickedIndex)
     loadContent(clickedIndex)
   }
 
   return (
     <>
       <Menubar model={menubarModel} itemOnClick={menubarHandleClick} />
-      <SlideSidebar>{menubarModel.items[menubarModel.currentIndex].content}</SlideSidebar>
+      <SlideSidebar>{show && menubarModel.items[menubarModel.currentIndex].content}</SlideSidebar>
     </>
   )
 }
