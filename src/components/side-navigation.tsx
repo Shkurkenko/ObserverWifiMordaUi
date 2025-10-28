@@ -1,13 +1,13 @@
 import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
-import { Menubar } from './menubar'
 import { MenubarModel } from './menubar'
+import { Menubar } from './menubar'
+import { MenubarItem } from './menubar-item'
 import { SlideSidebar } from './slide-sidebar'
 import { ObserverConfig } from '../config/ObserverConfig/observer-config'
 import { useSidebar } from '../hooks/use-sidebar'
 
 import './side-navigation.css'
-import { MenubarItem } from './menubar-item'
 
 export function SideNavigation() {
   const [menubarModel, setMenubarModel] = useState<MenubarModel>(ObserverConfig.MenubarConfig)
@@ -32,7 +32,7 @@ export function SideNavigation() {
   function menubarHandleClick(clickedIndex: number): void {
     if (!show) showSidebar()
 
-    if (clickedIndex === menubarModel.currentIndex) {
+    if (clickedIndex === menubarModel.currentIndex && show) {
       hideSidebar()
     }
 
