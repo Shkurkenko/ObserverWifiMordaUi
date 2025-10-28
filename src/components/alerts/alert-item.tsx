@@ -3,6 +3,7 @@ import { Alerts } from '../../shared/interfaces/alerts.interface'
 import { ObserverConfig } from '../../config/ObserverConfig/observer-config'
 
 import './alert-item.css'
+import { useAlerts } from '../../hooks/use-alerts'
 
 const renderNotificationItem = (
   type: Alerts.Level,
@@ -65,10 +66,7 @@ const renderNotificationItem = (
 }
 
 export function Alert({ type, header, message, handleDismiss = null }) {
-  const dismissAlert = (e: Event) => {
-    e.preventDefault()
-    handleDismiss()
-  }
+  const { dismissAlert } = useAlerts()
 
   return (
     <div className='alert-item-container w-full'>

@@ -4,15 +4,15 @@ export function TableColumnBase({
   children,
   hovered,
   selected,
-  handleHoverEnter,
-  handleHoverLeave,
+  handleHoverEnter = null,
+  handleHoverLeave = null,
 }) {
   const handleMouseEnter = () => {
-    handleHoverEnter()
+    if (handleHoverEnter) handleHoverEnter()
   }
 
   const handleMouseLeave = () => {
-    handleHoverLeave()
+    if (handleHoverEnter) handleHoverLeave()
   }
 
   return (

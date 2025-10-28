@@ -23,8 +23,8 @@ export function ObserverTableRow({ data }) {
               <TableColumnBase
                 hovered={column?.hovered}
                 selected={column?.selected}
-                handleHoverEnter={() => console.log('TextColumn hovered')}
-                handleHoverLeave={() => console.log('HoverLeave')}
+                handleHoverEnter={null}
+                handleHoverLeave={null}
               >
                 <ColumnEnum key={index} index={data.index} />
               </TableColumnBase>
@@ -34,8 +34,8 @@ export function ObserverTableRow({ data }) {
               <TableColumnBase
                 hovered={column?.hovered}
                 selected={column?.selected}
-                handleHoverEnter={() => console.log('TextColumn hovered')}
-                handleHoverLeave={() => console.log('HoverLeave')}
+                handleHoverEnter={null}
+                handleHoverLeave={null}
               >
                 <ColumnText key={index} text={(column.data as TextColumnProps).text} />
               </TableColumnBase>
@@ -45,8 +45,8 @@ export function ObserverTableRow({ data }) {
               <TableColumnBase
                 hovered={column?.hovered}
                 selected={column?.selected}
-                handleHoverEnter={() => console.log('TextColumn hovered')}
-                handleHoverLeave={() => console.log('HoverLeave')}
+                handleHoverEnter={null}
+                handleHoverLeave={null}
               >
                 <ColumnOperator
                   key={index}
@@ -61,8 +61,8 @@ export function ObserverTableRow({ data }) {
               <TableColumnBase
                 hovered={column?.hovered}
                 selected={column?.selected}
-                handleHoverEnter={() => console.log('TextColumn hovered')}
-                handleHoverLeave={() => console.log('HoverLeave')}
+                handleHoverEnter={null}
+                handleHoverLeave={null}
               >
                 <ColumnSignal key={index} text={(column.data as SignalColumnProps).text} />
               </TableColumnBase>

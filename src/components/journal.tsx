@@ -25,7 +25,7 @@ export function Journal() {
 
   useEffect(() => {
     emitTestAlerts(journalAlertsData)
-  }, [journalAlertsData])
+  }, [])
 
   return (
     <div className='journal-container w-full'>

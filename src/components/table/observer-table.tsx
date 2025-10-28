@@ -12,7 +12,7 @@ export function ObserverTable() {
   return (
     <div className='table-container relative w-full h-full flex flex-col'>
       <TableSearch />
-      <TableHelper currentCycle={4} />
+      <TableHelper />
       <div className='table-viewport w-full overflow-auto scrollbar-thin'>
         <table className='reo-data-table w-full'>
           {rows.length !== 0 && <TableHeader headers={headers} />}

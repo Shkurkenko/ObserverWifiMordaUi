@@ -7,17 +7,19 @@ export const AlertsProvider = ({ children }) => {
   const [alerts, setAlerts] = useState([])
 
   const addAlert = (alert: Alerts.AlertType) => {
-    const id = Math.random().toString(36).slice(2, 9) + new Date().getTime().toString(36)
+    const id = Date.now()
     setAlerts((prev) => [{ ...alert, id: id }, ...prev])
     return id
   }
 
-  const dismisAlert = (id: number) => {
+  const dismissAlert = (id: number) => {
+    console.log('DISMISS ALERT')
     setAlerts((prev) => prev.filter((alert) => alert.id !== id))
+    console.log(alerts)
   }
 
   return (
-    <AlertsContext.Provider value={{ alerts, addAlert, dismisAlert }}>
+    <AlertsContext.Provider value={{ alerts, addAlert, dismissAlert }}>
       {children}
     </AlertsContext.Provider>
   )

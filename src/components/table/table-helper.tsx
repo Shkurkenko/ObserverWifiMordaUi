@@ -1,6 +1,6 @@
 import { generateCsv, mkConfig, download } from 'export-to-csv'
 import { useTable } from './hooks/use-table'
-import { useEffect, useState } from 'preact/hooks'
+import { useState } from 'preact/hooks'
 
 import './table-helper.css'
 
