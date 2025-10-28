@@ -1,9 +1,23 @@
-import { useState } from 'preact/hooks'
+interface AlertGenericProps {
+  id: number
+  color: string
+  icon: JSX.Element
+  header: string
+  message: string
+  dismissAlert: Function | null
+}
 
-export function AlertGeneric({ id, color, icon, header, message, dismissAlert }) {
+export function AlertGeneric({
+  id,
+  color,
+  icon,
+  header,
+  message,
+  dismissAlert,
+}: AlertGenericProps) {
   const handleClose = (e: Event) => {
     e.preventDefault()
-    dismissAlert(id)
+    if (dismissAlert) dismissAlert(id)
   }
 
   return (

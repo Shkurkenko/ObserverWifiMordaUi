@@ -5,6 +5,14 @@ import { useAlerts } from '../../hooks/use-alerts'
 
 import './alert-item.css'
 
+interface AlertProps {
+  id: number
+  type: Alerts.Level
+  header: string
+  message: string
+  handleDismiss: Function | null
+}
+
 const renderNotificationItem = (
   id: number,
   type: Alerts.Level,
@@ -71,7 +79,7 @@ const renderNotificationItem = (
   }
 }
 
-export function Alert({ id, type, header, message, handleDismiss = null }) {
+export function Alert({ id, type, header, message, handleDismiss = null }: AlertProps) {
   const { dismissAlert } = useAlerts()
 
   return (
