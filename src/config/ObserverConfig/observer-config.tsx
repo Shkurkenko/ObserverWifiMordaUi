@@ -119,7 +119,7 @@ export namespace ObserverConfig {
       borderColor: '#0d3b30',
     },
     warning: {
-      icon: ObserverConfig.AlertsConfig.info.icon,
+      icon: ObserverConfig.AlertsConfig.warning.icon,
       iconColor: '#fad947',
       backgroundColor: '#262724',
       color: '#fef9b8',
