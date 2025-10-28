@@ -159,7 +159,7 @@ export namespace ObserverConfig {
             />
           </svg>
         ),
-        content: <TaskSidebar reoScanTaskListModel={ReoTestData.scanTasks} />,
+        content: <TaskSidebar model={ReoTestData.scanTasks} />,
       },
       {
         id: 1,

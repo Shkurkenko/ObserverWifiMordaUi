@@ -12,8 +12,6 @@ import { TableColumnBase } from './table-column-base'
 import './observer-table-row.css'
 
 export function ObserverTableRow({ data }) {
-  const [rowSelected, setRowSelected] = useState(false)
-
   return (
     <tr key={data.rowIndex} className='observer-table-body-row'>
       {data.columns.map((column: TableColumn, index: number) => {

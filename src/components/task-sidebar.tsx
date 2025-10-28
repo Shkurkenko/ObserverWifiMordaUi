@@ -1,9 +1,13 @@
-import { useState } from 'preact/hooks'
+import { Reo } from '../shared/interfaces/reo.interface'
 import { ScanLightStatus } from './scan-light-status'
 
 import './task-sidebar.css'
 
-export function TaskSidebar({ reoScanTaskListModel }) {
+interface TaskSidebarProps {
+  model: Reo.ScanTask[]
+}
+
+export function TaskSidebar({ model }: TaskSidebarProps) {
   return (
     <div className='task-sidebar h-full w-full'>
       <div className='task-content-search'>
@@ -56,7 +60,7 @@ export function TaskSidebar({ reoScanTaskListModel }) {
       </div>
       <div className='task-list-container'>
         <ul className='task-list'>
-          {reoScanTaskListModel.map((task, index) => (
+          {model.map((task, index) => (
             <li key={task.name} className='task-item'>
               <div className='task-item-header pr-8'>
                 <div className='task-item-left-side flex'>
