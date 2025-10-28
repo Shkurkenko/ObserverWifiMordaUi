@@ -3,11 +3,17 @@ import { ScanLightStatus } from './scan-light-status'
 
 interface TaskSidebarItem {
   task: Reo.ScanTask
+  handleClick?: Function
 }
 
-export function TaskSidebarItem({ task }) {
+export function TaskSidebarItem({ task, handleClick = null }) {
+  const loadTaskContent = () => {
+    if (handleClick) handleClick()
+    console.log('Open task content')
+  }
+
   return (
-    <li key={task.name} className='task-item'>
+    <li key={task.name} className='task-item' onClick={loadTaskContent}>
       <div className='task-item-header pr-8'>
         <div className='task-item-left-side flex'>
           <div className='task-item-header-more-button'>
