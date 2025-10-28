@@ -58,9 +58,9 @@ export function TaskSidebar({ model }: TaskSidebarProps) {
           <h2>Добавить новое сканирование</h2>
         </div>
       </div>
-      <div className='task-list-container'>
+      <div className='task-list-container scrollbar-thin'>
         <ul className='task-list'>
-          {model.map((task, index) => (
+          {model.map((task: Reo.ScanTask) => (
             <li key={task.name} className='task-item'>
               <div className='task-item-header pr-8'>
                 <div className='task-item-left-side flex'>
