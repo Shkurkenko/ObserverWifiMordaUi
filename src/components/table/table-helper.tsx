@@ -1,7 +1,7 @@
 import { generateCsv, mkConfig, download } from 'export-to-csv'
+import { useTable } from './hooks/use-table'
 
 import './table-helper.css'
-import { useTable } from './hooks/use-table'
 
 export function TableHelper({ currentCycle }) {
   const { rows, headers, clearRows } = useTable()

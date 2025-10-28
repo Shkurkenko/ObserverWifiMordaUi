@@ -14,7 +14,7 @@ export function ObserverTable() {
       <TableSearch />
       <TableHelper currentCycle={4} />
       <div className='table-viewport w-full overflow-auto scrollbar-thin'>
-        <table className='reo-data-table w-full h-full'>
+        <table className='reo-data-table w-full'>
           {rows.length !== 0 && <TableHeader headers={headers} />}
           {rows.length !== 0 ? <TableBody rows={rows} /> : renderEmpty()}
         </table>
