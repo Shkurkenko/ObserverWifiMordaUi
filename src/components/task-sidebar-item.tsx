@@ -65,7 +65,7 @@ export function TaskSidebarItem({ task, handleClick = null }) {
           </div>
         </div>
         <div className='scan-types'>
-          {task.types.map((type, index) => (
+          {task.types.map((type: Reo.ScanTypes, index: number) => (
             <div key={index} className='scan-type-label'>
               {type}
             </div>

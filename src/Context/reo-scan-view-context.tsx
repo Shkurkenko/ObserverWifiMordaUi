@@ -3,21 +3,24 @@ import { useState, useCallback } from 'preact/hooks'
 import { ReoView } from '../views/reo-scan'
 
 export const ScanViewContext = createContext(null)
-export const ScanViewContextProvider = ({ children }) => {
+const ScanViewProvider = ({ children }) => {
   // TODO: Make Map from scanViews when internet connection will work
   const [scanViews, setScanViews] = useState<ReoView[]>([])
 
-  const addView = useCallback((view: ReoView) => {
+  const addView = useCallback((view: ReoView): void => {
+    console.log('New view: ', view)
     setScanViews((prev: ReoView[]) => [...prev, view])
   }, [])
 
-  const deleteView = useCallback((id: number) => {
+  const deleteView = useCallback((id: number): void => {
     setScanViews((prev: ReoView[]) => prev.filter((view: ReoView) => id !== view.taskId))
   }, [])
 
   const setViewVisibility = useCallback((id: number, status: boolean): void => {
     setScanViews((prev: ReoView[]) =>
-      prev.map((view: ReoView) => (id === view.taskId ? { ...view, show: status } : view)),
+      prev.map((view: ReoView) =>
+        id === view.taskId ? { ...view, show: status } : { ...view, show: !status },
+      ),
     )
   }, [])
 
@@ -43,3 +46,5 @@ export const ScanViewContextProvider = ({ children }) => {
     </ScanViewContext.Provider>
   )
 }
+
+export default ScanViewProvider

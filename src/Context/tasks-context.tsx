@@ -7,6 +7,7 @@ export const TasksProvider = ({ children }) => {
   const [tasks, setTasks] = useState<Reo.ScanTask[]>([])
 
   const addTask = (task: Reo.ScanTask) => {
+    console.log('New task: ', task)
     setTasks((prev: Reo.ScanTask[]) => [...prev, task])
   }
 

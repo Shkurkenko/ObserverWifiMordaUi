@@ -3,10 +3,11 @@ import { SideNavigation } from '../components/side-navigation'
 import { useTasks } from '../hooks/use-tasks'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { scanRowsData1 } from '../data/table-data'
-import { useEffect, useState } from 'preact/hooks'
+import { useEffect } from 'preact/hooks'
+import { useScanView } from '../hooks/use-scan-view'
+import { ReoTestData } from '../data/reo-tasks'
 
 import './reo-scan.css'
-
 export interface ReoView {
   show: boolean
   taskId: number
@@ -14,8 +15,8 @@ export interface ReoView {
 }
 
 export const ReoScan = () => {
-  const { tasks } = useTasks()
-  const [reoViews, setReoViews] = useState<ReoView[]>([])
+  const { tasks, addTask } = useTasks()
+  const { scanViews, setScanViews, addView } = useScanView()
 
   const getTabs = (task: Reo.ScanTask): Reo.Tab[] => {
     return task.types.map((type: Reo.ScanTypes, index: number) => ({
@@ -25,28 +26,29 @@ export const ReoScan = () => {
     }))
   }
 
-  const getReoViewsFromTasks = (tasks: Reo.ScanTask[]): ReoView[] => {
-    const reoViews = []
-    for (let i = 0; i < tasks.length; i++) {
-      reoViews.push({
-        show: i === 0 ? true : false,
-        taskId: tasks[i].id,
-        tabsModel: getTabs(tasks[i]),
-      })
+  const loadTasks = () => {
+    for (let i = 0; i < ReoTestData.scanTasks.length; i++) {
+      setTimeout(() => {
+        addTask(ReoTestData.scanTasks[i])
+        addView({
+          show: i === 0,
+          taskId: ReoTestData.scanTasks[i].id,
+          tabsModel: getTabs(ReoTestData.scanTasks[i]),
+        })
+      }, i * 3000)
     }
-    return reoViews
   }
 
   useEffect(() => {
-    setReoViews((prev) => getReoViewsFromTasks(tasks))
-  }, [tasks])
+    loadTasks()
+  }, [])
 
   return (
     <div className='reo-scan-container w-full flex'>
       <SideNavigation />
-      {reoViews.map((view: ReoView) => (
-        <ReoContentView model={view} />
-      ))}
+      {tasks.length !== 0 &&
+        scanViews.length !== 0 &&
+        scanViews.map((view: ReoView) => <ReoContentView model={view} />)}
     </div>
   )
 }

@@ -1,26 +1,11 @@
-import { useEffect } from 'preact/hooks'
 import { Reo } from '../shared/interfaces/reo.interface'
-import { ScanLightStatus } from './scan-light-status'
 import { TaskSidebarItem } from './task-sidebar-item'
-import { ReoTestData } from '../data/reo-tasks'
 import { useTasks } from '../hooks/use-tasks'
 
 import './task-sidebar.css'
 
 export function TaskSidebar() {
-  const { tasks, addTask } = useTasks()
-
-  const loadTasks = () => {
-    for (let i = 0; i < ReoTestData.scanTasks.length; i++) {
-      setTimeout(() => {
-        addTask(ReoTestData.scanTasks[i])
-      }, i * 3000)
-    }
-  }
-
-  useEffect(() => {
-    loadTasks()
-  }, [])
+  const { tasks } = useTasks()
 
   return (
     <div className='task-sidebar h-full w-full'>
