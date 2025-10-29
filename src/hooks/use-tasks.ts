@@ -5,8 +5,8 @@ export const useTasks = () => {
   const {
     tasks,
     setTasks,
-    addTasks,
-    deleteTasks,
+    addTask,
+    deleteTask,
     setTaskStatus,
     startTask,
     stopTask,
@@ -17,8 +17,8 @@ export const useTasks = () => {
   return {
     tasks,
     setTasks,
-    addTasks,
-    deleteTasks,
+    addTask,
+    deleteTask,
     setTaskStatus,
     startTask,
     stopTask,

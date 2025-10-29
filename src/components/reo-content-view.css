@@ -1,9 +1,12 @@
+.reo-content-view-hide {
+  display: none;
+  visibility: hidden;
+}
+
 .reo-content-top {
   display: flex;
   align-items: center;
   padding-left: 40px;
-  /* padding-top: 30px; */
-  /* padding-bottom: 30px; */
   height: 8vh;
 }
 

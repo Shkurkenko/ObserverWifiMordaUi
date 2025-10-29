@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useState } from 'preact/hooks'
 import { ObserverTable } from './table/observer-table'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ObserverTableProvider } from './table/context/table-context'
@@ -7,18 +7,22 @@ import { ObserverTableEmpty } from './table/observer-table-empty-state'
 import './reo-content-view.css'
 
 export function ReoContentView({ model }) {
-  const [activeTab, setActiveTab] = useState('tabs-with-underline-item-1')
   const [activeIndex, setActiveIndex] = useState(0)
+  const [activeTab, setActiveTab] = useState(model.tabsModel[activeIndex].id)
+
+  useEffect(() => {
+    console.log(model)
+  }, [model])
 
   const handlRenderEmpty = (): JSX.Element => {
     return <ObserverTableEmpty />
   }
 
   return (
-    <div className='reo-content w-full'>
+    <div className={`reo-content w-full ${model.show ? '' : 'reo-content-view-hide'}`}>
       <div className='reo-content-top'>
         <div className='reo-header-info'>
-          <h1 className='reo-content-header'>{`Данные по ${model[activeIndex].label}`}</h1>
+          <h1 className='reo-content-header'>{`Данные по ${model.tabsModel[activeIndex].label}`}</h1>
         </div>
         <div className='observer-tabs w-full dark:border-neutral-700'>
           <nav
@@ -27,7 +31,7 @@ export function ReoContentView({ model }) {
             role='tablist'
             aria-orientation='horizontal'
           >
-            {model.map((tab: Reo.Tab, index: number) => (
+            {model.tabsModel.map((tab: Reo.Tab, index: number) => (
               <button
                 type='button'
                 key={tab.id}
@@ -60,7 +64,10 @@ export function ReoContentView({ model }) {
           aria-labelledby='tabs-with-underline-item-1'
           className='w-full h-full'
         >
-          <ObserverTableProvider data={model[activeIndex].data} renderEmpty={handlRenderEmpty}>
+          <ObserverTableProvider
+            data={model.tabsModel[activeIndex].data}
+            renderEmpty={handlRenderEmpty}
+          >
             <ObserverTable />
           </ObserverTableProvider>
         </div>

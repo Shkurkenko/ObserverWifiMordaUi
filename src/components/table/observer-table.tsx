@@ -5,9 +5,15 @@ import { TableSearch } from './table-search'
 import { useTable } from './hooks/use-table'
 
 import './observer-table.css'
+import { useEffect } from 'preact/hooks'
 
 export function ObserverTable() {
   const { rows, headers, renderEmpty } = useTable()
+
+  // useEffect(() => {
+    // console.log('Rows: ', rows)
+    // console.log('headers')
+  // }, [])
 
   return (
     <div className='table-container relative w-full h-full flex flex-col'>
