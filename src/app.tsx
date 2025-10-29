@@ -4,7 +4,7 @@ import { HeaderSection } from './components/header-section'
 import { FastNotifications } from './components/fast-alerts/fast-notifications'
 import { FastNotificationsProvider } from './Context/fast-notifications-context'
 import { TasksProvider } from './Context/tasks-context'
-import ScanViewContextProvider from './Context/reo-scan-view-context'
+import ScanViewProvider from './Context/reo-scan-view-context'
 import AlertsProvider from './Context/alert-context'
 import SidebarProvider from './Context/sidebar-context'
 
@@ -17,9 +17,9 @@ export const App = () => (
         <AlertsProvider>
           {/* <HeaderSection /> */}
           <Route path='/'>
-            <ScanViewContextProvider>
+            <ScanViewProvider>
               <ReoScan />
-            </ScanViewContextProvider>
+            </ScanViewProvider>
             <FastNotifications />
           </Route>
         </AlertsProvider>

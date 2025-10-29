@@ -7,21 +7,27 @@
   display: flex;
   align-items: center;
   padding-left: 40px;
-  height: 8vh;
+  height: 9vh;
 }
 
 .reo-content {
   width: 100%;
-  height: 92vh;
+  height: 91vh;
 }
 
 .table-tabview {
-  height: 92vh;
+  height: 91vh;
 }
 
 .reo-content-header {
   font-weight: bold;
   font-size: 26px;
+}
+
+.reo-content-scan-name {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: #a6adb5;
 }
 
 .reo-header-info {

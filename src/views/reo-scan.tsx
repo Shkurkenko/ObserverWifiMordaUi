@@ -8,6 +8,7 @@ import { useScanView } from '../hooks/use-scan-view'
 import { ReoTestData } from '../data/reo-tasks'
 
 import './reo-scan.css'
+
 export interface ReoView {
   show: boolean
   taskId: number
@@ -16,7 +17,7 @@ export interface ReoView {
 
 export const ReoScan = () => {
   const { tasks, addTask } = useTasks()
-  const { scanViews, setScanViews, addView } = useScanView()
+  const { scanViews, addView } = useScanView()
 
   const getTabs = (task: Reo.ScanTask): Reo.Tab[] => {
     return task.types.map((type: Reo.ScanTypes, index: number) => ({
@@ -48,7 +49,9 @@ export const ReoScan = () => {
       <SideNavigation />
       {tasks.length !== 0 &&
         scanViews.length !== 0 &&
-        scanViews.map((view: ReoView) => <ReoContentView model={view} />)}
+        scanViews.map((view: ReoView, index: number) => (
+          <ReoContentView header={tasks[index].name} model={view} />
+        ))}
     </div>
   )
 }

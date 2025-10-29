@@ -1,15 +1,18 @@
+import { useScanView } from '../hooks/use-scan-view'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ScanLightStatus } from './scan-light-status'
 
 interface TaskSidebarItem {
   task: Reo.ScanTask
-  handleClick?: Function
+  onClick?: Function
 }
 
-export function TaskSidebarItem({ task, handleClick = null }) {
+export function TaskSidebarItem({ task, onClick = null }) {
+  const { showView } = useScanView()
+
   const loadTaskContent = () => {
-    if (handleClick) handleClick()
-    console.log('Open task content')
+    if (onClick) onClick()
+    showView(task.id)
   }
 
   return (

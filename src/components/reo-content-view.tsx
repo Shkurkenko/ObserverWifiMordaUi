@@ -3,10 +3,16 @@ import { ObserverTable } from './table/observer-table'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ObserverTableProvider } from './table/context/table-context'
 import { ObserverTableEmpty } from './table/observer-table-empty-state'
+import { ReoView } from '../views/reo-scan'
 
 import './reo-content-view.css'
 
-export function ReoContentView({ model }) {
+interface ReoContentViewProps {
+  header: string
+  model: ReoView
+}
+
+export function ReoContentView({ header, model }: ReoContentViewProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeTab, setActiveTab] = useState(model.tabsModel[activeIndex].id)
 
@@ -22,7 +28,8 @@ export function ReoContentView({ model }) {
     <div className={`reo-content w-full ${model.show ? '' : 'reo-content-view-hide'}`}>
       <div className='reo-content-top'>
         <div className='reo-header-info'>
-          <h1 className='reo-content-header'>{`Данные по ${model.tabsModel[activeIndex].label}`}</h1>
+          <h1 className='reo-content-header'>{`Результаты сканирования`}</h1>
+          <h4 className='reo-content-scan-name'>{header}</h4>
         </div>
         <div className='observer-tabs w-full dark:border-neutral-700'>
           <nav
