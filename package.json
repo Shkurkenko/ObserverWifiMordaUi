@@ -9,12 +9,14 @@
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc.json"
   },
   "dependencies": {
+    "@types/uuid": "^10.0.0",
     "chart.js": "^3.7.1",
     "daisyui": "^2.13.4",
     "export-to-csv": "^1.4.0",
     "lodash.debounce": "^4.0.8",
-    "preact": "^10.5.15",
+    "preact": "^10.27.2",
     "react-chartjs-2": "^4.0.1",
+    "uuid": "^13.0.0",
     "wouter": "^2.8.0-alpha.2"
   },
   "devDependencies": {

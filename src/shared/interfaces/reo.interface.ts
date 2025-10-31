@@ -21,7 +21,7 @@ export namespace Reo {
   }
 
   export interface ScanTask {
-    id: number
+    id: string
     name: string
     date: string
     time: string

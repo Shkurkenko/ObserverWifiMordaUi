@@ -12,7 +12,7 @@ export function FastNotifications() {
     type: Alerts.Level,
     message: string,
     alertObject: Alerts.AlertType,
-  ): JSX.Element => {
+  ) => {
     switch (type) {
       case Alerts.Level.Error:
         return (
@@ -51,18 +51,6 @@ export function FastNotifications() {
           />
         )
       case Alerts.Level.Success:
-        return (
-          <FastNotificationItem
-            backgroundColor={ObserverConfig.FastAlerts.success.backgroundColor}
-            borderColor={ObserverConfig.FastAlerts.success.borderColor}
-            color={ObserverConfig.FastAlerts.success.color}
-            icon={ObserverConfig.FastAlerts.success.icon}
-            transitionTime={ObserverConfig.FastAlerts.general.transition}
-            message={message}
-            data={alertObject}
-          />
-        )
-      default:
         return (
           <FastNotificationItem
             backgroundColor={ObserverConfig.FastAlerts.success.backgroundColor}

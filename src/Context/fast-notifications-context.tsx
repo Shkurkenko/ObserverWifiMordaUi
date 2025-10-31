@@ -1,15 +1,14 @@
+import { useRef } from 'preact/hooks'
 import { createContext } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
-
 import { fastAlertsData } from '../data/fast-alerts'
 
 export const FastNotificationsContext = createContext(null)
-
 export const FastNotificationsProvider = ({ children }) => {
   const [fastAlerts, setFastAlerts] = useState<Alerts.AlertType[]>(fastAlertsData)
 
-  const toggleFastNotification = useCallback((id: number): void => {
+  const toggleFastNotification = useCallback((id: string): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
       prev.map((notification: Alerts.AlertType) => {
         return notification.id === id && { ...notification, show: !notification.show }
@@ -17,7 +16,7 @@ export const FastNotificationsProvider = ({ children }) => {
     )
   }, [])
 
-  const showFastNotification = useCallback((id: number): void => {
+  const showFastNotification = useCallback((id: string): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
       prev.map((notification: Alerts.AlertType) => {
         return notification.id === id && { ...notification, show: true }
@@ -25,7 +24,7 @@ export const FastNotificationsProvider = ({ children }) => {
     )
   }, [])
 
-  const hideFastNotification = useCallback((id: number, callback: Function): void => {
+  const hideFastNotification = useCallback((id: string, callback: Function): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
       prev.map((notification: Alerts.AlertType) => {
         if (notification.id === id) {
@@ -37,14 +36,25 @@ export const FastNotificationsProvider = ({ children }) => {
     callback()
   }, [])
 
+  const hideFastNotificationWithDelay = useCallback(
+    (delay: number, id: string, callback: Function) => {
+      setTimeout(() => hideFastNotification(id, callback), delay)
+    }, [])
+
   const addFastNotification = useCallback((alert: Alerts.AlertType): void => {
     setFastAlerts((prev: Alerts.AlertType[]) => [...prev, alert])
   }, [])
 
-  const deleteFastNotification = useCallback((id: number): void => {
+  const deleteFastNotification = useCallback((id: string): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
       prev.filter((notification) => notification.id !== id),
     )
+  }, [])
+
+  const deleteFastNotificationWithDelay = useCallback((delay: number, id: string): void => {
+    setTimeout(() => {
+      deleteFastNotification(id)
+    }, delay)
   }, [])
 
   const clearFastNotifications = useCallback(() => {
@@ -57,10 +67,12 @@ export const FastNotificationsProvider = ({ children }) => {
         fastAlerts,
         addFastNotification,
         deleteFastNotification,
+        deleteFastNotificationWithDelay,
         clearFastNotifications,
         toggleFastNotification,
         showFastNotification,
         hideFastNotification,
+        hideFastNotificationWithDelay,
       }}
     >
       {children}

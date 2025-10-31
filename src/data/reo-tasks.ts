@@ -1,9 +1,10 @@
 import { Reo } from '../shared/interfaces/reo.interface'
+import { v4 as uuidv4 } from 'uuid'
 
 export namespace ReoTestData {
   export const scanTasks: Reo.ScanTask[] = [
     {
-      id: 0,
+      id: uuidv4(),
       name: 'Сканирование #1',
       date: '22.04.24',
       time: '13:04',
@@ -11,7 +12,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 1,
+      id: uuidv4(),
       name: 'Сканирование #2',
       date: '23.04.24',
       time: '16:34',
@@ -19,7 +20,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 2,
+      id: uuidv4(),
       name: 'Сканирование #3',
       date: '24.04.24',
       time: '10:23',
@@ -34,7 +35,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 3,
+      id: uuidv4(),
       name: 'Сканирование #4',
       date: '25.04.24',
       time: '18:12',
@@ -42,7 +43,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 4,
+      id: uuidv4(),
       name: 'Сканирование #5',
       date: '26.04.24',
       time: '11:55',
@@ -50,7 +51,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 5,
+      id: uuidv4(),
       name: 'Сканирование #6',
       date: '27.04.24',
       time: '12:09',
@@ -58,7 +59,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 6,
+      id: uuidv4(),
       name: 'Сканирование #7',
       date: '28.04.24',
       time: '17:07',
@@ -66,7 +67,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 7,
+      id: uuidv4(),
       name: 'Сканирование #8',
       date: '22.04.24',
       time: '13:04',
@@ -74,7 +75,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 8,
+      id: uuidv4(),
       name: 'Сканирование #9',
       date: '23.04.24',
       time: '16:34',
@@ -82,7 +83,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 9,
+      id: uuidv4(),
       name: 'Сканирование #10',
       date: '24.04.24',
       time: '10:23',
@@ -97,7 +98,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 10,
+      id: uuidv4(),
       name: 'Сканирование #11',
       date: '25.04.24',
       time: '18:12',
@@ -105,7 +106,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 11,
+      id: uuidv4(),
       name: 'Сканирование #12',
       date: '26.04.24',
       time: '11:55',
@@ -113,7 +114,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 12,
+      id: uuidv4(),
       name: 'Сканирование #13',
       date: '27.04.24',
       time: '12:09',
@@ -121,7 +122,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 13,
+      id: uuidv4(),
       name: 'Сканирование #14',
       date: '28.04.24',
       time: '17:07',
@@ -129,7 +130,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 14,
+      id: uuidv4(),
       name: 'Сканирование #14',
       date: '22.04.24',
       time: '13:04',
@@ -137,7 +138,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 15,
+      id: uuidv4(),
       name: 'Сканирование #15',
       date: '23.04.24',
       time: '16:34',
@@ -145,7 +146,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 16,
+      id: uuidv4(),
       name: 'Сканирование #16',
       date: '24.04.24',
       time: '10:23',
@@ -160,7 +161,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 17,
+      id: uuidv4(),
       name: 'Сканирование #17',
       date: '25.04.24',
       time: '18:12',
@@ -168,7 +169,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 18,
+      id: uuidv4(),
       name: 'Сканирование #18',
       date: '26.04.24',
       time: '11:55',
@@ -176,7 +177,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 19,
+      id: uuidv4(),
       name: 'Сканирование #19',
       date: '27.04.24',
       time: '12:09',
@@ -184,7 +185,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 20,
+      id: uuidv4(),
       name: 'Сканирование #20',
       date: '28.04.24',
       time: '17:07',
@@ -192,7 +193,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 21,
+      id: uuidv4(),
       name: 'Сканирование #21',
       date: '22.04.24',
       time: '13:04',
@@ -200,7 +201,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 22,
+      id: uuidv4(),
       name: 'Сканирование #23',
       date: '23.04.24',
       time: '16:34',
@@ -208,7 +209,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Running,
     },
     {
-      id: 24,
+      id: uuidv4(),
       name: 'Сканирование #24',
       date: '24.04.24',
       time: '10:23',
@@ -223,7 +224,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 25,
+      id: uuidv4(),
       name: 'Сканирование #25',
       date: '25.04.24',
       time: '18:12',
@@ -231,7 +232,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 26,
+      id: uuidv4(),
       name: 'Сканирование #26',
       date: '26.04.24',
       time: '11:55',
@@ -239,7 +240,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Pending,
     },
     {
-      id: 27,
+      id: uuidv4(),
       name: 'Сканирование #27',
       date: '27.04.24',
       time: '12:09',
@@ -247,7 +248,7 @@ export namespace ReoTestData {
       status: Reo.ScanStatusTypes.Failed,
     },
     {
-      id: 28,
+      id: uuidv4(),
       name: 'Сканирование #28',
       date: '28.04.24',
       time: '17:07',

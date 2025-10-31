@@ -6,8 +6,10 @@ export function useFastNotifications() {
     fastAlerts,
     addFastNotification,
     deleteFastNotification,
+    deleteFastNotificationWithDelay,
     showFastNotification,
     hideFastNotification,
+    hideFastNotificationWithDelay,
     toggleFastNotification,
   } = useContext(FastNotificationsContext)
 
@@ -15,8 +17,10 @@ export function useFastNotifications() {
     fastAlerts,
     addFastNotification,
     deleteFastNotification,
+    deleteFastNotificationWithDelay,
     showFastNotification,
     hideFastNotification,
+    hideFastNotificationWithDelay,
     toggleFastNotification,
   }
 }

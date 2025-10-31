@@ -4,11 +4,9 @@ import { ReoView } from '../views/reo-scan'
 
 export const ScanViewContext = createContext(null)
 const ScanViewProvider = ({ children }) => {
-  // TODO: Make Map from scanViews when internet connection will work
   const [scanViews, setScanViews] = useState<ReoView[]>([])
 
   const addView = useCallback((view: ReoView): void => {
-    console.log('New view: ', view)
     setScanViews((prev: ReoView[]) => [...prev, view])
   }, [])
 

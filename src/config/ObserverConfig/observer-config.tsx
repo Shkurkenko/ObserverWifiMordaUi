@@ -3,8 +3,6 @@ import { Notifications } from '../../shared/interfaces/notifications.interface'
 import { MenubarModel } from '../../components/menubar'
 import { TaskSidebar } from '../../components/task-sidebar'
 import { Journal } from '../../components/journal'
-import { ReoTestData } from '../../data/reo-tasks'
-
 export namespace ObserverConfig {
   export const AlertsConfig = {
     general: {

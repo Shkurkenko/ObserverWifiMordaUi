@@ -1,4 +1,6 @@
+import { useEffect } from 'preact/hooks'
 import { useFastNotifications } from '../../hooks/use-notifications'
+import { Alerts } from '../../shared/interfaces/alerts.interface'
 
 import './fast-notification-item.css'
 
@@ -8,7 +10,7 @@ interface FastNotificationItemProps {
   color: string
   borderColor: string
   message: string
-  data: any
+  data: Alerts.AlertType
   transitionTime: number
 }
 
@@ -21,7 +23,8 @@ export function FastNotificationItem({
   data,
   transitionTime,
 }: FastNotificationItemProps) {
-  const { deleteFastNotification, hideFastNotification } = useFastNotifications()
+  const { deleteFastNotification, hideFastNotification, deleteFastNotificationWithDelay } =
+    useFastNotifications()
 
   function closeHandler() {
     hideFastNotification(data.id, () => {

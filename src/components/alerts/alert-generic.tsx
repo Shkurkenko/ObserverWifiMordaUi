@@ -1,5 +1,5 @@
 interface AlertGenericProps {
-  id: number
+  id: string
   color: string
   icon: JSX.Element
   header: string

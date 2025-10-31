@@ -6,7 +6,7 @@ import { useAlerts } from '../../hooks/use-alerts'
 import './alert-item.css'
 
 interface AlertProps {
-  id: number
+  id: string
   type: Alerts.Level
   header: string
   message: string
@@ -14,7 +14,7 @@ interface AlertProps {
 }
 
 const renderNotificationItem = (
-  id: number,
+  id: string,
   type: Alerts.Level,
   header: string,
   message: string,

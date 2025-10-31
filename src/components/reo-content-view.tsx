@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'preact/hooks'
+import { useState } from 'preact/hooks'
 import { ObserverTable } from './table/observer-table'
 import { Reo } from '../shared/interfaces/reo.interface'
 import { ObserverTableProvider } from './table/context/table-context'
@@ -15,10 +15,6 @@ interface ReoContentViewProps {
 export function ReoContentView({ header, model }: ReoContentViewProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeTab, setActiveTab] = useState(model.tabsModel[activeIndex].id)
-
-  useEffect(() => {
-    console.log(model)
-  }, [model])
 
   const handlRenderEmpty = (): JSX.Element => {
     return <ObserverTableEmpty />

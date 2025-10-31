@@ -1,8 +1,32 @@
+.fast-notifications {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 25%;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
 .fast-notification-show {
-    transition: .2s all;
+  animation: slidein 0.5s 1 ease-in-out;
 }
 
 .fast-notification-hide {
-    transform: translateX(105%);
-    transition: .2s all;
+  animation-name: slidein;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: reverse;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }

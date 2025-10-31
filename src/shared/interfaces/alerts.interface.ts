@@ -7,10 +7,11 @@ export namespace Alerts {
   }
 
   export interface AlertType {
-    id: number
+    id: string 
     type: Level
     header: string
     message: string
     show: boolean
+    ttl: number
   }
 }
