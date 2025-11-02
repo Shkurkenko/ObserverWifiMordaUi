@@ -2,11 +2,29 @@ import { useRef } from 'preact/hooks'
 import { createContext } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
-import { fastAlertsData } from '../data/fast-alerts'
+
+// NOTE: Test data save here to remember
+// import { fastAlertsData } from '../data/fast-alerts'
 
 export const FastNotificationsContext = createContext(null)
 export const FastNotificationsProvider = ({ children }) => {
-  const [fastAlerts, setFastAlerts] = useState<Alerts.AlertType[]>(fastAlertsData)
+  const [notificaitonDelay, setNotificationDelay] = useState<number>(1000)
+  const [maxCount, setMaxCount] = useState<number>(5)
+  const [queue, setQueue] = useState<Alerts.AlertType[]>([])
+  const [fastAlerts, setFastAlerts] = useState<Alerts.AlertType[]>([])
+
+  const processFastNotificationLoop = async () => {
+    while (true) {
+      let currentLength = fastAlerts.length >= maxCount ? maxCount : fastAlerts.length
+      if (queue.length !== 0) {
+        for (let i = 0; i < currentLength; i++) {
+          setTimeout(() => {
+            setFastAlerts((prev: Alerts.AlertType[]) => [...prev, queue[i]])
+          }, i * notificaitonDelay)
+        }
+      }
+    }
+  }
 
   const toggleFastNotification = useCallback((id: string): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
@@ -39,10 +57,12 @@ export const FastNotificationsProvider = ({ children }) => {
   const hideFastNotificationWithDelay = useCallback(
     (delay: number, id: string, callback: Function) => {
       setTimeout(() => hideFastNotification(id, callback), delay)
-    }, [])
+    },
+    [],
+  )
 
   const addFastNotification = useCallback((alert: Alerts.AlertType): void => {
-    setFastAlerts((prev: Alerts.AlertType[]) => [...prev, alert])
+    setQueue((prev: Alerts.AlertType[]) => [...prev, alert])
   }, [])
 
   const deleteFastNotification = useCallback((id: string): void => {
@@ -73,6 +93,7 @@ export const FastNotificationsProvider = ({ children }) => {
         showFastNotification,
         hideFastNotification,
         hideFastNotificationWithDelay,
+        processFastNotificationLoop,
       }}
     >
       {children}

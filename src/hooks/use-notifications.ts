@@ -11,6 +11,7 @@ export function useFastNotifications() {
     hideFastNotification,
     hideFastNotificationWithDelay,
     toggleFastNotification,
+    proccessFastNotificationLoop,
   } = useContext(FastNotificationsContext)
 
   return {
@@ -22,5 +23,6 @@ export function useFastNotifications() {
     hideFastNotification,
     hideFastNotificationWithDelay,
     toggleFastNotification,
+    proccessFastNotificationLoop,
   }
 }

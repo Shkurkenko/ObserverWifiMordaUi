@@ -24,7 +24,7 @@ export const journalAlertsData: Alerts.AlertType[] = [
     header: 'First alert 3',
     message: 'All right bro 3!',
     show: true,
-    ttl: 200,
+    ttl: 2000,
   },
   {
     id: uuidv4(),

@@ -67,13 +67,9 @@ export function FastNotifications() {
 
   return (
     <div className='fast-notifications'>
-      {fastAlerts.map((notification: Alerts.AlertType) => (
-        <div
-          className={`notification-item-container ${notification.show ? 'fast-notification-show' : 'fast-notification-hide'}`}
-        >
-          {renderFastNotification(notification.type, notification.header, notification)}
-        </div>
-      ))}
+      {fastAlerts.map((notification: Alerts.AlertType) =>
+        renderFastNotification(notification.type, notification.header, notification),
+      )}
     </div>
   )
 }

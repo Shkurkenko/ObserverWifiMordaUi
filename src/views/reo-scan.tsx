@@ -23,7 +23,7 @@ export const ReoScan = () => {
   const { tasks, addTask } = useTasks()
   const { scanViews, addView } = useScanView()
   const { addAlert } = useAlerts()
-  const { showFastNotification, addFastNotification } = useFastNotifications()
+  const { addFastNotification, proccessFastNotificationLoop } = useFastNotifications()
 
   const getTabs = (task: Reo.ScanTask): Reo.Tab[] => {
     return task.types.map((type: Reo.ScanTypes, index: number) => ({
@@ -33,22 +33,22 @@ export const ReoScan = () => {
     }))
   }
 
-  useEffect(() => {
-    const emitTestAlerts = async (data: Alerts.AlertType[], testDelay: number) => {
-      for (let i = 0; i < data.length; i++) {
-        setTimeout(() => {
-          data[i].show = false
-          addAlert(data[i])
-          addFastNotification(data[i])
-          showFastNotification(data[i].id)
-        }, testDelay * i)
-      }
+  const emitTestAlerts = async (data: Alerts.AlertType[], testDelay: number) => {
+    for (let i = 0; i < data.length; i++) {
+      setTimeout(() => {
+        addAlert(data[i])
+        addFastNotification(data[i])
+      }, testDelay * i)
     }
-
-    emitTestAlerts(journalAlertsData, 2000)
-  }, [])
+  }
 
   useEffect(() => {
+    emitTestAlerts(journalAlertsData, 1000)
+  }, [journalAlertsData])
+
+  useEffect(() => {
+    proccessFastNotificationLoop()
+
     const loadTasks = async () => {
       for (let i = 0; i < ReoTestData.scanTasks.length; i++) {
         setTimeout(() => {

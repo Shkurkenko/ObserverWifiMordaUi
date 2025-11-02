@@ -8,7 +8,7 @@ export const fastAlertsData: Alerts.AlertType[] = [
     header: 'Some header 1',
     message: 'Some message 1`',
     show: true,
-    ttl: 2000,
+    ttl: 3000,
   },
   {
     id: uuidv4(),
@@ -16,7 +16,7 @@ export const fastAlertsData: Alerts.AlertType[] = [
     header: 'Some header 2',
     message: 'Some message 2',
     show: true,
-    ttl: 2000,
+    ttl: 3000,
   },
   {
     id: uuidv4(),
@@ -24,7 +24,7 @@ export const fastAlertsData: Alerts.AlertType[] = [
     header: 'Some header 3',
     message: 'Some message 3',
     show: true,
-    ttl: 2000,
+    ttl: 3000,
   },
   {
     id: uuidv4(),
@@ -32,6 +32,6 @@ export const fastAlertsData: Alerts.AlertType[] = [
     header: 'Some header 4',
     message: 'Some message 4',
     show: true,
-    ttl: 2000,
+    ttl: 3000,
   },
 ]
