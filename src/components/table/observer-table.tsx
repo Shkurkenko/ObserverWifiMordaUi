@@ -3,17 +3,17 @@ import { TableHeader } from './table-header'
 import { TableHelper } from './table-helper'
 import { TableSearch } from './table-search'
 import { useTable } from './hooks/use-table'
-
-import './observer-table.css'
 import { useEffect } from 'preact/hooks'
 
-export function ObserverTable() {
-  const { rows, headers, renderEmpty } = useTable()
+import './observer-table.css'
 
-  // useEffect(() => {
-    // console.log('Rows: ', rows)
-    // console.log('headers')
-  // }, [])
+export function ObserverTable() {
+  const { rows, headers, setDefaultHeaders, mockAddRows, renderEmpty } = useTable()
+
+  useEffect(() => {
+    setDefaultHeaders()
+    mockAddRows(1500)
+  }, [])
 
   return (
     <div className='table-container relative w-full h-full flex flex-col'>

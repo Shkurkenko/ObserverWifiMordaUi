@@ -1,4 +1,3 @@
-import { useRef } from 'preact/hooks'
 import { createContext } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
 import { Alerts } from '../shared/interfaces/alerts.interface'
@@ -12,19 +11,6 @@ export const FastNotificationsProvider = ({ children }) => {
   const [maxCount, setMaxCount] = useState<number>(5)
   const [queue, setQueue] = useState<Alerts.AlertType[]>([])
   const [fastAlerts, setFastAlerts] = useState<Alerts.AlertType[]>([])
-
-  const processFastNotificationLoop = async () => {
-    while (true) {
-      let currentLength = fastAlerts.length >= maxCount ? maxCount : fastAlerts.length
-      if (queue.length !== 0) {
-        for (let i = 0; i < currentLength; i++) {
-          setTimeout(() => {
-            setFastAlerts((prev: Alerts.AlertType[]) => [...prev, queue[i]])
-          }, i * notificaitonDelay)
-        }
-      }
-    }
-  }
 
   const toggleFastNotification = useCallback((id: string): void => {
     setFastAlerts((prev: Alerts.AlertType[]) =>
@@ -62,7 +48,7 @@ export const FastNotificationsProvider = ({ children }) => {
   )
 
   const addFastNotification = useCallback((alert: Alerts.AlertType): void => {
-    setQueue((prev: Alerts.AlertType[]) => [...prev, alert])
+    setFastAlerts((prev: Alerts.AlertType[]) => [...prev, alert])
   }, [])
 
   const deleteFastNotification = useCallback((id: string): void => {
@@ -93,7 +79,6 @@ export const FastNotificationsProvider = ({ children }) => {
         showFastNotification,
         hideFastNotification,
         hideFastNotificationWithDelay,
-        processFastNotificationLoop,
       }}
     >
       {children}

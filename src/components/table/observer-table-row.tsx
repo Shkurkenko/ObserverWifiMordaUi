@@ -1,4 +1,3 @@
-import { useState } from 'preact/hooks'
 import { ColumnSignal } from './column-signal'
 import { ColumnOperator } from './column-operator'
 import { ColumnEnum } from './column-enum'
@@ -8,6 +7,7 @@ import { TextColumnProps } from './table-body'
 import { OperatorColumnProps } from './table-body'
 import { SignalColumnProps } from './table-body'
 import { TableColumnBase } from './table-column-base'
+import { ColumnCountry } from './column-country'
 
 import './observer-table-row.css'
 
@@ -63,6 +63,17 @@ export function ObserverTableRow({ data }) {
                 handleHoverLeave={null}
               >
                 <ColumnSignal key={index} text={(column.data as SignalColumnProps).text} />
+              </TableColumnBase>
+            )
+          case TableColumnTypes.Signal:
+            return (
+              <TableColumnBase
+                hovered={column?.hovered}
+                selected={column?.selected}
+                handleHoverEnter={null}
+                handleHoverLeave={null}
+              >
+                <ColumnCountry countryCode={'gr'} />
               </TableColumnBase>
             )
         }
