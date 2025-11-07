@@ -1,11 +1,6 @@
 import { Table } from './table.interface'
-export namespace Reo {
-  export enum TableRowStatus {
-    Legit = 'legit',
-    Illegit = 'illegit',
-    Unknown = 'unknown',
-  }
 
+export namespace Reo {
   export enum Roles {
     Enum = 'enumiration',
     Operator = 'operator',
@@ -15,13 +10,7 @@ export namespace Reo {
     Mcc = 'mcc',
     Mnc = 'mnc',
     RxLevel = 'rxLevel',
-  }
-
-  export type ColumnTypes = Table.ColumnTypes | Roles
-
-  export enum MenubarSetup {
-    Notifications = 'Notifications',
-    TaskManager = 'TaskManager',
+    Unknown = 'unknown',
   }
 
   export enum ScanTypes {
@@ -39,6 +28,7 @@ export namespace Reo {
     Pending,
     Failed,
   }
+
   export interface ScanTask {
     id: string
     name: string
@@ -48,24 +38,60 @@ export namespace Reo {
     status: ScanStatusTypes
   }
 
-  export interface Tab {
-    id: string
-    label: string
-    data: any
+  export enum AdditionalRowStatuses {
+    Stickable,
   }
 
-  export type RowStatus = Table.RowStatus | TableRowStatus
+  export enum AdditionalColumnTypes {
+    Signal,
+    Country,
+  }
 
-  export interface TableHeader {
-    role: Roles
+  export enum AdditionalRowTypes {
+    Legit = 'legit',
+    Illegit = 'illegit',
+    Unknown = 'unknown',
   }
-  export interface TableColumn {
-    type: Table.ColumnTypes
-    role: Roles
-    data: any
+
+  export interface AdditionalReoTableStyles {
+    illegitColor?: string
+    legitColor?: string
+    UnknownColor?: string
   }
-  export interface TableRow {
-    columns: TableColumn[]
+
+  export type RowStatus = Table.RowStatus & AdditionalRowStatuses
+
+  export type RowTypes = Table.RowTypes & AdditionalRowTypes
+
+  export type ColumnTypes = Table.ColumnTypes & AdditionalColumnTypes
+
+  export interface Column {
+    type: ColumnTypes
+    role: Roles
+    data: unknown
+  }
+  export interface Row {
+    columns: Column[]
     status: RowStatus
+    type: RowTypes
+  }
+
+  export interface SignalRange {
+    beginValue: number
+    endValue: number
+  }
+  export interface SignalCellData {
+    range: SignalRange
+    value: number
+  }
+
+  export interface CountryCellData {
+    name: string
+    countryCode: string
+  }
+
+  export interface CountryColumnProps extends Table.Column {
+    name: string
+    countryCode: number
   }
 }

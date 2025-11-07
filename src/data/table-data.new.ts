@@ -1,4 +1,4 @@
-import { TableColumnTypes } from '../components/table/table-body'
+import { Table } from "../components/table/observer-table"
 
 export const scanRowsData1 = [
   {
@@ -35,5 +35,5 @@ export const scanRowsData1 = [
         data: { text: 'SomeText' },
       },
     ],
-  }
-];
+  },
+]

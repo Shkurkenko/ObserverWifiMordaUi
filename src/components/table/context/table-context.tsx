@@ -1,70 +1,29 @@
 import { createContext } from 'preact'
 import { useCallback, useState } from 'preact/hooks'
-import { TableColumnTypes } from '../table-body'
 import { Reo } from '../../../shared/interfaces/reo.interface'
+import { Table } from '../../../shared/interfaces/table.interface'
 
-export interface TablePoint {
-  rowIndex: number
-  colIndex: number
-}
-
-export interface TableHeader {
-  label: string
-  role: string
-}
-
-export enum TableRowStatus {
-  Normal = 'normal',
-  Highlighted = 'highlighted',
-  Disabled = 'disabled',
-}
-
-export enum ReoTableRowStatus {
-  Legit = 'legit',
-  Illegit = 'illegit',
-  Unknown = 'unknown',
-}
-
-export type ReoRowStatus = TableRowStatus | ReoTableRowStatus
-
-export interface TableRow {
-  columns: Array<{ type: TableColumnTypes; data: any }>
-  status: ReoRowStatus
-}
-
-export interface ReoTableHeader extends TableHeader {
-  role: Reo.Roles
-}
-
-export interface ReoTableRow {
-  columns: ReoColumn[]
-  status: ReoRowStatus
-}
-export interface ReoColumn {
-  type: TableColumnTypes
-  role: Reo.Roles
-  data: any
-}
-export interface ObserverTableContext {
+export interface TableContext {
   rows: ReoTableRow[]
   headers: ReoTableHeader[]
   currentSelctedRow: { rowIndex: number }
   currentSelectedColumn: { colIndex: number }
   currentSlectedCell: { rowIndex: number; colIndex: number }
-  addRow: (row: ReoTableRow) => void
+  setHeaders: ()
+  addRow: (row: Table.Row) => void
   deleteRow: (index: number) => void
   clearRows: () => void
   selectColumn: (colIndex: number) => void
   selectRow: (rowIndex: number) => void
-  selectCell: (coords: TablePoint) => void
+  selectCell: (coords: Table.Point) => void
   setDefaultHeaders: () => void
   mockAddRows: (interval: number) => void
   renderEmpty: () => JSX.Element
 }
 
-export const ObserverTableContext = createContext<ObserverTableContext>(null)
+export const TableContext = createContext<TableContext>(null)
 
-export const ObserverTableProvider = ({ children, data, renderEmpty }) => {
+export const TableProvider = ({ children, data, renderEmpty }) => {
   const [rows, setRows] = useState([])
 
   const [currentSelectedRow, setCurrentSelectedRow] = useState<{ rowIndex: number }>({
@@ -75,12 +34,12 @@ export const ObserverTableProvider = ({ children, data, renderEmpty }) => {
     colIndex: -1,
   })
 
-  const [currentSelectedCell, setCurrentSelectedCell] = useState<TablePoint>({
+  const [currentSelectedCell, setCurrentSelectedCell] = useState<Table.Point>({
     rowIndex: -1,
     colIndex: -1,
   })
 
-  const [headers, setHeaders] = useState<ReoTableHeader[]>([
+  const [headers, setHeaders] = useState<Table.Header[]>([
     /* { label: 'CID' }, ... */
   ])
 
@@ -97,8 +56,8 @@ export const ObserverTableProvider = ({ children, data, renderEmpty }) => {
   const setDefaultHeaders = useCallback(() => {
     setHeaders(
       data.length > 0
-        ? data[0].columns.map((column: ReoColumn) =>
-            column.type !== TableColumnTypes.Enum
+        ? data[0].columns.map((column: Table.Column) =>
+            column.type !== Table.ColumnTypes.Enum
               ? {
                   label: column.role.toUpperCase(),
                 }
@@ -108,7 +67,7 @@ export const ObserverTableProvider = ({ children, data, renderEmpty }) => {
     )
   }, [])
 
-  const addRow = useCallback((row: ReoTableRow[]) => {
+  const addRow = useCallback((row: Table.Row[]) => {
     setRows((prev) => [...prev, row])
   }, [])
 

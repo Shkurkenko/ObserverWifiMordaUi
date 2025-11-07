@@ -1,21 +1,31 @@
-import { useState, useEffect } from 'preact/hooks'
+import { useState, useCallback } from 'preact/hooks'
+import { dequal as deepEqual } from 'dequal'
 
-export function useStorage(key: string, initialValue: any, storageType = 'localStorage') {
-  const [value, setValue] = useState(() => {
+export function useLocalStorage<T = any>(key: string, initialValue: any): [T, (value: T) => void] {
+  const [storedValue, setStoredValue] = useState<T>(() => {
     try {
-      const storedValue = window[storageType].getItem(key)
-      return storedValue ? JSON.parse(storedValue) : initialValue
+      const item = window.localStorage.getItem(key)
+      return item ? JSON.parse(item) : initialValue
     } catch (error) {
-      console.error(`Error reading ${key} from ${storageType}:`, error)
+      console.log(error)
+
       return initialValue
     }
   })
 
-  useEffect(() => {
-    try {
-      window[storageType].setItem(key, JSON.stringify(value))
-    } catch (error) {
-      console.error(`Error writing ${key} to ${storageType}:`, error)
-    }
-  }, [value, setValue])
+  const setValue = useCallback(
+    (value: T) => {
+      try {
+        if (!deepEqual(storedValue, value)) {
+          setStoredValue(value)
+          window.localStorage.setItem(key, JSON.stringify(value))
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    [key, storedValue],
+  )
+
+  return [storedValue, setValue]
 }

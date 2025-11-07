@@ -1,13 +1,14 @@
 import { useContext } from 'preact/hooks'
-import { ObserverTableContext } from '../context/table-context'
+import { TableContext } from '../context/table-context'
 
-export const useTable = (): ObserverTableContext => {
+export function useTable(): TableContext {
   const {
     rows,
     headers,
     currentSelctedRow,
     currentSelectedColumn,
     currentSlectedCell,
+    setHeaders,
     addRow,
     deleteRow,
     clearRows,
@@ -17,7 +18,7 @@ export const useTable = (): ObserverTableContext => {
     renderEmpty,
     setDefaultHeaders,
     mockAddRows,
-  } = useContext(ObserverTableContext)
+  } = useContext(TableContext)
 
   return {
     rows,
@@ -25,6 +26,7 @@ export const useTable = (): ObserverTableContext => {
     currentSelctedRow,
     currentSelectedColumn,
     currentSlectedCell,
+    setHeaders,
     addRow,
     deleteRow,
     clearRows,

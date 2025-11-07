@@ -2,6 +2,7 @@ import { useSidebar } from '../hooks/use-sidebar'
 import { MenubarItem } from './menubar-item'
 
 import './menubar.css'
+
 interface MenubarProps {
   model: MenubarModel
   itemOnClick: Function

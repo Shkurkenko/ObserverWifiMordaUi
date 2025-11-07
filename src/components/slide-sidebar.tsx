@@ -1,4 +1,5 @@
 import { useSidebar } from '../hooks/use-sidebar'
+
 import './slide-sedebar.css'
 
 export function SlideSidebar({ children }) {
