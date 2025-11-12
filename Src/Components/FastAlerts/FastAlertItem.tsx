@@ -1,20 +1,20 @@
 import { useEffect, useRef } from 'preact/hooks'
-import { useFastNotifications } from '../../Hooks/UseNotifications'
-import { Alerts } from '../../Shared/Interfaces/Alerts.interface'
+import { useFastAlerts } from './Hooks/UseFastAlerts'
+import { AlertsSpace } from '../../Shared/Interfaces/Alerts.interface'
 
-import './fast-notification-item.css'
+import './FastAlertItem.css'
 
-interface FastNotificationItemProps {
+interface IFastAlertItemProps {
   icon: JSX.Element
   backgroundColor: string
   color: string
   borderColor: string
   message: string
-  data: Alerts.IAlertType
+  data: AlertsSpace.IAlertType
   transitionTime: number
 }
 
-export function FastNotificationItem({
+export function FastAlertItem({
   icon,
   backgroundColor,
   borderColor,
@@ -22,11 +22,11 @@ export function FastNotificationItem({
   message,
   data,
   transitionTime,
-}: FastNotificationItemProps) {
+}: IFastAlertItemProps) {
   const { deleteFastNotification, hideFastNotification, deleteFastNotificationWithDelay } =
-    useFastNotifications()
+    useFastAlerts()
 
-  const notificationWrapper = useRef(null)
+  const notificationWrapper = useRef<HTMLDivElement | null>(null)
 
   function closeHandler() {
     hideFastNotification(data.id, () => {
@@ -37,7 +37,7 @@ export function FastNotificationItem({
   }
 
   useEffect(() => {
-    notificationWrapper.current.classList.toggle('fast-notification-fade-away')
+    notificationWrapper.current?.classList.toggle('fast-notification-fade-away')
     deleteFastNotificationWithDelay(6000, data.id)
   }, [])
 

@@ -1,28 +1,28 @@
 import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
-import { MenubarModel } from './Menubar'
-import { Menubar } from './Menubar'
-import { MenubarItem } from './MenubarItem'
+import { IMenubarModel } from '../Menubar'
+import { Menubar } from '../Menubar'
+import { IMenubarItem } from '../Menubar/MenubarItem'
 import { SlideSidebar } from './SlideSidebar'
-import { ObserverConfig } from '../Config/ObserverConfig'
-import { useSidebar } from '../Hooks/UseSidebar'
+import { ObserverConfig } from '../../Config/ObserverConfig'
+import { useSidebar } from './Hooks/UseSidebar'
 
-import './side-navigation.css'
+import './SideNavigation.css'
 
 export function SideNavigation() {
-  const [menubarModel, setMenubarModel] = useState<MenubarModel>(ObserverConfig.MenubarConfig)
+  const [menubarModel, setMenubarModel] = useState<IMenubarModel>(ObserverConfig.MenubarConfig)
   const { show, showSidebar, hideSidebar } = useSidebar()
 
   const loadContent = (index: number) => {
-    setMenubarModel((prev: MenubarModel) => ({
+    setMenubarModel((prev: IMenubarModel) => ({
       ...prev,
       currentIndex: index,
     }))
   }
 
   const setActiveTab = (index: number) => {
-    setMenubarModel((prev: MenubarModel) => ({
-      items: prev.items.map((item: MenubarItem) =>
+    setMenubarModel((prev: IMenubarModel) => ({
+      items: prev.items.map((item: IMenubarItem) =>
         item.id === index ? { ...item, active: true } : item,
       ),
       currentIndex: index,
@@ -44,7 +44,9 @@ export function SideNavigation() {
   return (
     <>
       <Menubar model={menubarModel} itemOnClick={menubarHandleClick} />
-      <SlideSidebar>{show && menubarModel.items[menubarModel.currentIndex].content}</SlideSidebar>
+      <SlideSidebar>
+        {show ? menubarModel.items[menubarModel.currentIndex].content : <></>}
+      </SlideSidebar>
     </>
   )
 }

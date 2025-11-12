@@ -1,28 +1,28 @@
 import { ComponentChildren } from 'preact'
 
-import './table-column-base.css'
+import './ColumnBase.css'
 
-interface TableColumnBaseProps {
+interface IColumnBaseProps {
   children?: ComponentChildren
   hovered?: boolean
   selected?: boolean
-  handleHoverEnter?: Function | null
-  handleHoverLeave?: Function | null
+  handleHoverEnter?: Function
+  handleHoverLeave?: Function
 }
 
-export function TableColumnBase({
+export function ColumnBase({
   children,
   hovered,
   selected,
-  handleHoverEnter = null,
-  handleHoverLeave = null,
-}: TableColumnBaseProps) {
+  handleHoverEnter,
+  handleHoverLeave,
+}: IColumnBaseProps) {
   const handleMouseEnter = () => {
     if (handleHoverEnter) handleHoverEnter()
   }
 
   const handleMouseLeave = () => {
-    if (handleHoverEnter) handleHoverLeave()
+    if (handleHoverLeave) handleHoverLeave()
   }
 
   return (

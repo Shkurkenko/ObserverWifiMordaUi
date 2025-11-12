@@ -1,7 +1,7 @@
 import { TableRow } from './TableRow'
 import { TableSpace } from '../../Shared/Interfaces/Table.interface'
 
-import './table-body.css'
+import './TableBody.css'
 
 interface ITableBodyProps {
   rows: TableSpace.IRow[]
@@ -12,7 +12,7 @@ export const TableBody = ({ rows }: ITableBodyProps) => {
     <tbody className='table-body w-full h-full'>
       {rows.map((row: TableSpace.IRow, rowIndex: number) => {
         row.index = rowIndex
-        return <TableRow data={row} />
+        return <TableRow key={rowIndex} rowData={row} />
       })}
     </tbody>
   )

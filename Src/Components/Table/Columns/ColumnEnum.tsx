@@ -1,4 +1,4 @@
-import './column-enum.css'
+import './ColumnEnum.css'
 
 interface IColumnEnumProps {
   index: number

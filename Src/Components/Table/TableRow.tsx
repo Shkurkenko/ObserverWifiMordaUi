@@ -1,47 +1,71 @@
+import { TableSpace } from '../../Shared/Interfaces/Table.interface'
+import { ColumnBase } from './Columns/ColumnBase'
 import { ColumnSignal } from './Columns/ColumnSignal'
 import { ColumnOperator } from './Columns/ColumnOperator'
 import { ColumnEnum } from './Columns/ColumnEnum'
 import { ColumnText } from './Columns/ColumnText'
-import { Table } from '../../Shared/Interfaces/Table.interface'
-import { TableColumnBase } from './TableColumnBase'
 import { ColumnCountry } from './Columns/ColumnCountry'
 
-import './observer-table-row.css'
+import './TableRow.css'
 
-export function TableRow({ data }) {
+export interface ITableRowProps {
+  rowData: TableSpace.IRow
+}
+
+export function TableRow({ rowData }: ITableRowProps) {
   return (
-    <tr key={data.rowIndex} className='observer-table-body-row'>
-      {data.columns.map((column: Table.Column, index: number) => {
+    <tr key={rowData.index} className='observer-table-body-row'>
+      {rowData.columns.map((column: TableSpace.ICell<unknown>, counter: number) => {
         switch (column.type) {
-          case Table.ColumnTypes.Enum:
+          case TableSpace.IColumnTypes.Enum:
             return (
-              <TableColumnBase>
-                <ColumnEnum key={index} index={data.index} />
-              </TableColumnBase>
+              <ColumnBase key={counter}>
+                <ColumnEnum
+                  index={(rowData.columns[counter].data as TableSpace.IEnumCellData).rowIndex}
+                />
+              </ColumnBase>
             )
-          case Table.ColumnTypes.Text:
+          case TableSpace.IColumnTypes.Text:
             return (
-              <TableColumnBase>
-                <ColumnText key={index} />
-              </TableColumnBase>
+              <ColumnBase key={counter}>
+                <ColumnText data={rowData.columns[counter].data as TableSpace.ITextCellData} />
+              </ColumnBase>
             )
-          case Table.ColumnTypes.Operator:
+          case TableSpace.IColumnTypes.Operator:
             return (
-              <TableColumnBase>
-                <ColumnOperator />
-              </TableColumnBase>
+              <ColumnBase key={counter}>
+                <ColumnOperator
+                  data={rowData.columns[counter].data as TableSpace.IOperatorCellData}
+                />
+              </ColumnBase>
             )
-          case Table.ColumnTypes.Signal:
+          case TableSpace.IColumnTypes.Signal:
             return (
-              <TableColumnBase>
-                <ColumnSignal key={index} />
-              </TableColumnBase>
+              <ColumnBase key={counter}>
+                <ColumnSignal data={rowData.columns[counter].data as TableSpace.ISignalCellData} />
+              </ColumnBase>
             )
-          case Table.ColumnTypes.Signal:
+          case TableSpace.IColumnTypes.Country:
             return (
-              <TableColumnBase>
-                <ColumnCountry countryCode={'gr'} />
-              </TableColumnBase>
+              <ColumnBase key={counter}>
+                <ColumnCountry
+                  data={rowData.columns[counter].data as TableSpace.ICountryCellData}
+                />
+              </ColumnBase>
+            )
+          case TableSpace.IColumnTypes.Checkbox:
+            return (
+              <ColumnBase key={counter}>
+                <ColumnCountry
+                  data={rowData.columns[counter].data as TableSpace.ICountryCellData}
+                />
+              </ColumnBase>
+            )
+          default:
+            return (
+              <ColumnBase key={counter}>
+                <span>Unknown Column Type</span>
+              </ColumnBase>
             )
         }
       })}

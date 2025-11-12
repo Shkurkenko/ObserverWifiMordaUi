@@ -1,6 +1,6 @@
 import { TableSpace } from '../../../Shared/Interfaces/Table.interface'
 
-import './column-operator.css'
+import './ColumnOperator.css'
 
 interface IColumnOperatorProps {
   iconPath?: string

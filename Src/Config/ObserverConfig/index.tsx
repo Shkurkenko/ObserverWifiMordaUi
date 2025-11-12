@@ -1,8 +1,8 @@
 import { IMenubarSetup } from '../../Shared/Interfaces/Main.interface'
-import { Notifications } from '../../Shared/Interfaces/Notifications.interface'
-import { MenubarModel } from '../../Components/Menubar'
-import { TaskSidebar } from '../../Components/TaskSidebar/TaskSidebar'
-import { Journal } from '../../Components/Journal/Journal'
+import { FastAlerts } from '../../Shared/Interfaces/FastAlerts.interface'
+import { IMenubarModel } from '../../Components/Menubar'
+import { TaskSidebar } from '../../Components/TaskSidebar'
+import { Journal } from '../../Components/Journal'
 
 export namespace ObserverConfig {
   export const AlertsConfig = {
@@ -99,7 +99,7 @@ export namespace ObserverConfig {
     },
   }
 
-  export const FastAlerts: Notifications.IStyleConfig = {
+  export const FastAlerts: FastAlerts.IStyleConfig = {
     general: {
       transition: 0.3,
     },
@@ -133,7 +133,7 @@ export namespace ObserverConfig {
     },
   }
 
-  export const MenubarConfig: MenubarModel = {
+  export const MenubarConfig: IMenubarModel = {
     currentIndex: 0,
     items: [
       {

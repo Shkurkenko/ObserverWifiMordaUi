@@ -1,13 +1,15 @@
 import { useScanView } from '../../Hooks/UseScanView'
-import { Reo } from '../../Shared/Interfaces/Reo.interface'
-import { ScanLightStatus } from '../ScanLightStatus'
+import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
+import { ScanLightStatus } from '../../Views/Components/ScanLightStatus'
+
+import './TaskSidebarItem.css'
 
 interface TaskSidebarItem {
-  task: Reo.ScanTask
+  task: ReoSpace.IScanTask
   onClick?: Function
 }
 
-export function TaskSidebarItem({ task, onClick = null }) {
+export function TaskSidebarItem({ task, onClick }: TaskSidebarItem) {
   const { showView } = useScanView()
 
   const loadTaskContent = () => {
@@ -68,7 +70,7 @@ export function TaskSidebarItem({ task, onClick = null }) {
           </div>
         </div>
         <div className='scan-types'>
-          {task.types.map((type: Reo.ScanTypes, index: number) => (
+          {task.types.map((type: ReoSpace.IScanTypes, index: number) => (
             <div key={index} className='scan-type-label'>
               {type}
             </div>

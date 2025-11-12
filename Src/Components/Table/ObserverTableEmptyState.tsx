@@ -1,4 +1,4 @@
-import './observer-table-empty-state.css'
+import './ObserverTableEmptyState.css'
 
 export function ObserverTableEmpty() {
   return (

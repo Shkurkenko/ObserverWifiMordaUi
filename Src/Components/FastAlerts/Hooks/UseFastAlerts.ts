@@ -1,7 +1,13 @@
 import { useContext } from 'preact/hooks'
-import { FastNotificationsContext } from '../Context/FastNotificationsContext'
+import { FastAlertsContext } from '../../../Context/FastAlertsContext'
 
-export function useFastNotifications() {
+export function useFastAlerts() {
+  const context = useContext(FastAlertsContext)
+
+  if (!context) {
+    throw new Error('FastAlertsContext is not available')
+  }
+
   const {
     fastAlerts,
     addFastNotification,
@@ -11,8 +17,7 @@ export function useFastNotifications() {
     hideFastNotification,
     hideFastNotificationWithDelay,
     toggleFastNotification,
-    proccessFastNotificationLoop,
-  } = useContext(FastNotificationsContext)
+  } = context
 
   return {
     fastAlerts,
@@ -23,6 +28,5 @@ export function useFastNotifications() {
     hideFastNotification,
     hideFastNotificationWithDelay,
     toggleFastNotification,
-    proccessFastNotificationLoop,
   }
 }

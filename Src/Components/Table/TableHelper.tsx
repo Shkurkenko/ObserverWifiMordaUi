@@ -1,12 +1,12 @@
+import { useState } from 'preact/hooks'
 import { generateCsv, mkConfig, download } from 'export-to-csv'
 import { useTable } from './Hooks/use-table'
-import { useState } from 'preact/hooks'
 
-import './table-helper.css'
+import './TableHelper.css'
 
 export function TableHelper() {
   const [currentCycle, setCurrentCycle] = useState<number>(4)
-  const { rows, headers, clearRows } = useTable()
+  const { rows, columns, clearRows } = useTable()
   const csvConfig = mkConfig({ useKeysAsHeaders: true })
 
   const clearCycles = () => {
@@ -19,26 +19,28 @@ export function TableHelper() {
   }
 
   function getValidData() {
-    const resultData = []
+    const resultData: any = []
 
-    for (let i = 0; i < rows.length; i++) {
-      const rowData = {}
-      for (let j = 1; j < rows[i].columns.length; j++) {
-        const column = rows[i].columns[j]
-        if (headers[j - 1] !== undefined) {
-          const currentHeaderName = headers[j - 1].label
-          if (column.data) {
-            rowData[currentHeaderName] = column.data.text
-          } else if (column.data.name) {
-            rowData[currentHeaderName] = column.data.name
-          } else {
-            rowData[currentHeaderName] = 'undefined'
-            console.log('Warning from TableHelper Component: Cannot parse unknown table type data')
-          }
-        }
-      }
-      resultData.push(rowData)
-    }
+    // Note: Think about generic implementation later
+
+    // for (let i = 0; i < rows.length; i++) {
+    //   const rowData = {}
+    //   for (let j = 1; j < rows[i].columns.length; j++) {
+    //     const column = rows[i].columns[j]
+    //     if (headers[j - 1] !== undefined) {
+    //       const currentHeaderName = headers[j - 1].label
+    //       if (column.data) {
+    //         rowData[currentHeaderName] = column.data.text
+    //       } else if (column.data.name) {
+    //         rowData[currentHeaderName] = column.data.name
+    //       } else {
+    //         rowData[currentHeaderName] = 'undefined'
+    //         console.log('Warning from TableHelper Component: Cannot parse unknown table type data')
+    //       }
+    //     }
+    //   }
+    //   resultData.push(rowData)
+    // }
 
     return resultData
   }

@@ -1,8 +1,12 @@
-import { ReoSpace } from '../Shared/Interfaces/Reo.interface'
+import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 
-import './scan-light-status.css'
+import './ScanLightStatus.css'
 
-export function ScanLightStatus({ statusType }) {
+interface IScanLightStatusProps {
+  statusType: ReoSpace.IScanStatusTypes | string
+}
+
+export function ScanLightStatus({ statusType }: IScanLightStatusProps) {
   const defaultStatusColors = {
     running: '#36b37e', // Some sort of green
     pending: '#FFEE58', // Some sort of yellow

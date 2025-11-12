@@ -1,9 +1,9 @@
-import { Reo } from '../../Shared/Interfaces/Reo.interface'
+import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 import { TaskSidebarItem } from './TaskSidebarItem'
-import { useTasks } from '../../Hooks/UseTasks'
+import { useTasks } from './UseTasks'
 import { AddTask } from './TaskSidebarItemAdd'
 
-import './task-sidebar.css'
+import './index.css'
 
 export function TaskSidebar() {
   const { tasks } = useTasks()
@@ -39,7 +39,7 @@ export function TaskSidebar() {
 
       <div className='task-list-container scrollbar-thin'>
         <ul className='task-list'>
-          {tasks.map((task: Reo.ScanTask) => (
+          {tasks.map((task: ReoSpace.IScanTask) => (
             <TaskSidebarItem task={task} />
           ))}
         </ul>

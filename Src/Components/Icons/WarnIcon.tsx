@@ -1,4 +1,6 @@
-export const WarnIcon = () => (
+import { IIconProps } from '../../Shared/Interfaces/Main.interface'
+
+export const WarnIcon = ({ width, height, color }: IIconProps) => (
   <svg
     width='80px'
     height='80px'

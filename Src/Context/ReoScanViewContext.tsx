@@ -1,24 +1,41 @@
 import { createContext, ComponentChildren } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
-import { ReoView } from '../Views/ReoScan'
+import { ReoView } from '../Views/Pages/ReoScan'
 
-interface ScanViewProviderProps {
+interface ISidebarContext {
+  scanViews: ReoView[]
+
+  setScanViews: (view: ReoView[]) => void
+
+  addView: (view: ReoView) => void
+
+  deleteView: (id: string) => void
+
+  setViewVisibility: (id: string, status: boolean) => void
+
+  toggleView: (id: string) => void
+
+  showView: (id: string) => void
+
+  hideView: (id: string) => void
+}
+interface IScanViewProviderProps {
   children: ComponentChildren
 }
 
-export const ScanViewContext = createContext(null)
-const ScanViewProvider = ({ children }: ScanViewProviderProps) => {
+export const ScanViewContext = createContext<ISidebarContext | null>(null)
+const ScanViewProvider = ({ children }: IScanViewProviderProps) => {
   const [scanViews, setScanViews] = useState<ReoView[]>([])
 
   const addView = useCallback((view: ReoView): void => {
     setScanViews((prev: ReoView[]) => [...prev, view])
   }, [])
 
-  const deleteView = useCallback((id: number): void => {
+  const deleteView = useCallback((id: string): void => {
     setScanViews((prev: ReoView[]) => prev.filter((view: ReoView) => id !== view.taskId))
   }, [])
 
-  const setViewVisibility = useCallback((id: number, status: boolean): void => {
+  const setViewVisibility = useCallback((id: string, status: boolean): void => {
     setScanViews((prev: ReoView[]) =>
       prev.map((view: ReoView) =>
         id === view.taskId ? { ...view, show: status } : { ...view, show: !status },
@@ -26,23 +43,32 @@ const ScanViewProvider = ({ children }: ScanViewProviderProps) => {
     )
   }, [])
 
-  const toggleView = useCallback((id: number): void => {
+  const toggleView = useCallback((id: string): void => {
     setScanViews((prev: ReoView[]) =>
       prev.map((view: ReoView) => (id === view.taskId ? { ...view, show: !view.show } : view)),
     )
   }, [])
 
-  const showView = useCallback((id: number): void => {
+  const showView = useCallback((id: string): void => {
     setViewVisibility(id, true)
   }, [])
 
-  const hideView = useCallback((id: number): void => {
+  const hideView = useCallback((id: string): void => {
     setViewVisibility(id, false)
   }, [])
 
   return (
     <ScanViewContext.Provider
-      value={{ scanViews, addView, deleteView, setScanViews, toggleView, showView, hideView }}
+      value={{
+        scanViews,
+        addView,
+        deleteView,
+        setScanViews,
+        setViewVisibility,
+        toggleView,
+        showView,
+        hideView,
+      }}
     >
       {children}
     </ScanViewContext.Provider>

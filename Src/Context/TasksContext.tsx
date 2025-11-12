@@ -2,12 +2,32 @@ import { createContext, ComponentChildren } from 'preact'
 import { useState } from 'preact/hooks'
 import { ReoSpace } from '../Shared/Interfaces/Reo.interface'
 
-interface TaskProviderProps {
+interface ITasksContext {
+  tasks: ReoSpace.IScanTask[]
+
+  setTasks: (tasks: ReoSpace.IScanTask[]) => void
+
+  addTask: (task: ReoSpace.IScanTask) => void
+
+  deleteTask: (id: string) => void
+
+  setTaskStatus: (id: string, status: ReoSpace.IScanStatusTypes) => void
+
+  startTask: (id: string) => void
+
+  stopTask: (id: string) => void
+
+  waitTask: (id: string) => void
+
+  failTask: (id: string) => void
+}
+
+interface ITaskProviderProps {
   children: ComponentChildren
 }
 
-export const TasksContext = createContext(null)
-export const TasksProvider = ({ children }: TaskProviderProps) => {
+export const TasksContext = createContext<ITasksContext | null>(null)
+export const TasksProvider = ({ children }: ITaskProviderProps) => {
   const [tasks, setTasks] = useState<ReoSpace.IScanTask[]>([])
 
   const addTask = (task: ReoSpace.IScanTask) => {

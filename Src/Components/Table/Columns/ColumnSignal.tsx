@@ -1,6 +1,6 @@
 import { TableSpace } from '../../../Shared/Interfaces/Table.interface'
 
-import './column-signal.css'
+import './ColumnSignal.css'
 
 interface ISignalColumnProps {
   data: TableSpace.ISignalCellData

@@ -1,22 +1,22 @@
-import { MenubarSetup } from '../Shared/Interfaces/Main.interface'
+import { IMenubarSetup } from '../../Shared/Interfaces/Main.interface'
 
-import './menubar-item.css'
+import './MenubarItem.css'
 
-interface MenubarItemProps {
+export interface IMenubarItemProps {
   data: any
   itemOnClick: Function
   isActive: boolean
 }
 
-export interface MenubarItem {
+export interface IMenubarItem {
   id: number
   active: boolean
-  role: MenubarSetup
+  role: IMenubarSetup
   icon: JSX.Element
   content: JSX.Element
 }
 
-export function MenubarItem({ data, itemOnClick, isActive }: MenubarItemProps) {
+export function MenubarItem({ data, itemOnClick, isActive }: IMenubarItemProps) {
   return (
     <li
       key={data.id}

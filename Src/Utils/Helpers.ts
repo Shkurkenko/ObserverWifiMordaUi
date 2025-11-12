@@ -19,7 +19,8 @@ export function runWithInterval<T>(
 ) {
   for (let i = 0; i < times; i++) {
     setTimeout(() => {
-      cb(data[i])
+      console.log('Data itoe: ', data[i])
+      if (data[i] !== undefined && data[i] !== null) cb(data[i])
     }, intervalMs * i)
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'preact/hooks'
 
 export function useDebounce(value: any, delay: number): any {
   const [debouncedValue, setDebouncedValue] = useState(value)

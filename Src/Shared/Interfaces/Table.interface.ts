@@ -20,7 +20,7 @@ export namespace TableSpace {
     tableStyleSettings?: IStyleSettings
   }
 
-  enum IColumnAlignment {
+  export enum IColumnAlignment {
     Left = 'left',
     Right = 'right',
     Center = 'center',
@@ -44,6 +44,7 @@ export namespace TableSpace {
     Country,
     Signal,
     Operator,
+    Date,
   }
 
   export enum IHeaderTypes {
@@ -63,9 +64,14 @@ export namespace TableSpace {
   }
 
   export interface ICell<T> {
+    data: T
     position: IPoint
     type: IColumnTypes
-    data: T
+    role: string
+  }
+
+  export enum IRoles {
+    Enum,
   }
 
   export interface IRow {

@@ -1,6 +1,4 @@
-import { JSX } from 'preact'
-
-interface AlertGenericProps {
+interface IAlertGenericProps {
   id: string
   color: string
   icon: JSX.Element
@@ -16,7 +14,7 @@ export function AlertGeneric({
   header,
   message,
   dismissAlert,
-}: AlertGenericProps) {
+}: IAlertGenericProps) {
   const handleClose = (e: Event) => {
     e.preventDefault()
     if (dismissAlert) dismissAlert(id)

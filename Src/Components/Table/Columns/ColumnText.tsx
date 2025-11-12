@@ -1,6 +1,6 @@
 import { TableSpace } from '../../../Shared/Interfaces/Table.interface'
 
-import './column-text.css'
+import './ColumnText.css'
 
 interface ITextColumnProps {
   data: TableSpace.ITextCellData

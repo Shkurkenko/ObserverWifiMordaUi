@@ -1,4 +1,6 @@
-export const EngineerIcon = () => (
+import { IIconProps } from '../../Shared/Interfaces/Main.interface'
+
+export const EngineerIcon = ({ width, height, color }: IIconProps) => (
   <svg version='1.1' id='Icons' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
     {/* <style type="text/css">
         .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}

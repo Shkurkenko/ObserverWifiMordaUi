@@ -11,7 +11,6 @@ export namespace ReoSpace {
   export enum IRoles {
     Enum = 'enumiration',
     Operator = 'operator',
-    Country = 'country',
     Cid = 'cid',
     LacTac = 'lacTac',
     Mcc = 'mcc',

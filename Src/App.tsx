@@ -1,29 +1,29 @@
 import { Route } from 'wouter'
-import { ReoScan } from './Views/ReoScan'
-import { FastNotifications } from './Components/FastAlerts/FastNotifications'
-import { FastNotificationsProvider } from './Context/FastNotificationsContext'
-import { HeaderSection } from './Components/HeaderSection'
+import { ReoScan } from './Views/Pages/ReoScan'
+import { FastAlerts } from './Components/FastAlerts'
+import { FastAlertsProvider } from './Context/FastAlertsContext'
+import { HeaderSection } from './Views/Components/HeaderSection'
 import ScanViewProvider from './Context/ReoScanViewContext'
 import TasksProvider from './Context/TasksContext'
 import AlertsProvider from './Context/AlertsContext'
 import SidebarProvider from './Context/SidebarContext'
 
-import './app.css'
+import './App.css'
 
 export const App = () => (
   <TasksProvider>
     <SidebarProvider>
-      <FastNotificationsProvider>
+      <FastAlertsProvider>
         <AlertsProvider>
           {/* <HeaderSection /> */}
           <Route path='/'>
             <ScanViewProvider>
               <ReoScan />
             </ScanViewProvider>
-            <FastNotifications />
+            <FastAlerts />
           </Route>
         </AlertsProvider>
-      </FastNotificationsProvider>
+      </FastAlertsProvider>
     </SidebarProvider>
   </TasksProvider>
 )

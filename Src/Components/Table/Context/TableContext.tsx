@@ -5,26 +5,57 @@ import { MockGenHelpers } from '../../../Utils/MockGen'
 
 export interface ITableContext {
   rows: TableSpace.IRow[]
-  headers: TableSpace.IHeader[]
+
+  columns: TableSpace.IColumn[]
+
   currentSelectedRow: { rowIndex: number }
+
   currentSelectedColumn: { colIndex: number }
+
   currentSelectedCell: { rowIndex: number; colIndex: number }
-  setHeaders: (headers: TableSpace.IHeader[]) => void
+
+  isRowValid: (row: TableSpace.IRow) => boolean
+
+  setColumns: (headers: TableSpace.IColumn[]) => void
+
   setDefaultHeaders: () => void
+
   addRow: (row: TableSpace.IRow) => void
+
   deleteRow: (index: number) => void
+
   clearRows: () => void
+
   selectColumn: (colIndex: number) => void
+
   selectRow: (rowIndex: number) => void
+
   selectCell: (coords: TableSpace.IPoint) => void
+
   mockAddRows: (interval: number, count: number) => void
+
   renderEmpty: () => JSX.Element
 }
 
-export const TableContext = createContext<ITableContext>(null)
+export interface ITableProviderProps {
+  children: JSX.Element | JSX.Element[]
 
-export const TableProvider = ({ children, data, renderEmpty }) => {
-  const [rows, setRows] = useState([])
+  columnsModel: TableSpace.IColumn[]
+
+  data: TableSpace.IRow[]
+
+  renderEmpty: () => JSX.Element
+}
+
+export const TableContext = createContext<ITableContext | null>(null)
+
+export const TableProvider = ({
+  children,
+  columnsModel,
+  data,
+  renderEmpty,
+}: ITableProviderProps) => {
+  const [rows, setRows] = useState<TableSpace.IRow[]>([])
 
   const [currentSelectedRow, setCurrentSelectedRow] = useState<{ rowIndex: number }>({
     rowIndex: -1,
@@ -39,36 +70,49 @@ export const TableProvider = ({ children, data, renderEmpty }) => {
     colIndex: -1,
   })
 
-  const [headers, setHeaders] = useState<TableSpace.IHeader[]>([])
+  const [columns, setColumns] = useState<TableSpace.IColumn[]>([])
 
   const mockAddRows = useCallback((interval: number, count: number) => {
     MockGenHelpers.processRowAddition(interval, count, addRow)
   }, [])
 
   const setDefaultHeaders = useCallback(() => {
-    setHeaders(
-      data.length > 0
-        ? data[0].columns.map((column: TableSpace.IColumn) =>
-            column.type !== TableSpace.IColumnTypes.Enum
-              ? {
-                  label: column.role.toUpperCase(),
-                }
-              : null,
-          )
-        : [],
-    )
+    // Note: Think about this
+    // const initialHeaders: TableSpace.IHeader[] =
+    //   data.length > 0
+    //     ? data[0].columns.reduce<TableSpace.IHeader[]>((acc, cell) => {
+    //         if (cell.type !== TableSpace.IColumnTypes.Enum) {
+    //           // cast via unknown first to satisfy TypeScript's recommendation about potentially incompatible unions
+    //           acc.push({
+    //             label: 'sjkdf',
+    //             type: cell.type,
+    //             role: cell.role,
+    //           } as unknown as TableSpace.IHeader)
+    //         }
+    //         return acc
+    //       }, [])
+    //     : []
+    // setHeaders(initialHeaders)
+  }, [data])
+
+  const isRowValid = useCallback((row: TableSpace.IRow): boolean => {
+    const columnsCountEqual = columnsModel.length === row.columns.length
+    const columnsTypesEqual = row.columns.every((column, index) => {
+      return column.type === columnsModel[index].type
+    })
+    return columnsCountEqual && columnsTypesEqual
   }, [])
 
   const addRow = useCallback((row: TableSpace.IRow) => {
-    setRows((prev) => [...prev, row])
+    setRows((prev: TableSpace.IRow[]) => [...prev, row])
   }, [])
 
   const deleteRow = useCallback((rowIndex: number) => {
-    setRows((prev) => prev.filter((_, index) => index !== rowIndex))
+    setRows((prev: TableSpace.IRow[]) => prev.filter((_, index) => index !== rowIndex))
   }, [])
 
   const clearRows = useCallback(() => {
-    setRows((prev) => [])
+    setRows((prev: TableSpace.IRow[]) => [])
   }, [])
 
   const selectCell = useCallback((coords: TableSpace.IPoint) => {
@@ -87,11 +131,12 @@ export const TableProvider = ({ children, data, renderEmpty }) => {
     <TableContext.Provider
       value={{
         rows,
-        headers,
+        columns,
         currentSelectedColumn,
         currentSelectedRow,
         currentSelectedCell,
-        setHeaders,
+        isRowValid,
+        setColumns,
         addRow,
         deleteRow,
         clearRows,

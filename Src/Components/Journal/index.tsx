@@ -1,7 +1,7 @@
-import { AlertList } from '../Alerts/AlertList'
-import { useAlerts } from '../../Hooks/UseAlerts'
+import { AlertList } from '../Alerts'
+import { useAlerts } from '../Alerts/Hooks/UseAlerts'
 
-import './journal.css'
+import './index.css'
 
 export function Journal() {
   const { alerts } = useAlerts()

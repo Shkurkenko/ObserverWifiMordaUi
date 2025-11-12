@@ -1,6 +1,6 @@
 import { JSX } from 'preact'
 
-export namespace Notifications {
+export namespace FastAlerts {
   export interface ItemStyleConfig {
     icon: JSX.Element
     iconColor: string

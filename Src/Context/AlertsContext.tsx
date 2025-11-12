@@ -1,23 +1,32 @@
 import { createContext, ComponentChildren } from 'preact'
 import { useState, useCallback } from 'preact/hooks'
-import { Alerts } from '../Shared/Interfaces/Alerts.interface'
+import { AlertsSpace } from '../Shared/Interfaces/Alerts.interface'
 
-interface AlertsProviderProps {
+import { v4 as uuidv4 } from 'uuid'
+
+interface IAlertsContext {
+  alerts: AlertsSpace.IAlertType[]
+
+  addAlert: (alert: AlertsSpace.IAlertType) => void
+
+  dismissAlert: (id: string) => void
+}
+
+interface IAlertsProviderProps {
   children: ComponentChildren
 }
 
-export const AlertsContext = createContext(null)
-export const AlertsProvider = ({ children }: AlertsProviderProps) => {
-  const [alerts, setAlerts] = useState([])
+export const AlertsContext = createContext<IAlertsContext | null>(null)
+export const AlertsProvider = ({ children }: IAlertsProviderProps) => {
+  const [alerts, setAlerts] = useState<AlertsSpace.IAlertType[]>([])
 
-  const addAlert = useCallback((alert: Alerts.IAlertType) => {
-    const id = Date.now()
-    setAlerts((prev) => [{ ...alert, id }, ...prev])
-    return id
+  const addAlert = useCallback((alert: AlertsSpace.IAlertType) => {
+    const id = uuidv4()
+    setAlerts((prev: AlertsSpace.IAlertType[]) => [...prev, { ...alert, id }])
   }, [])
 
-  const dismissAlert = useCallback((id: number) => {
-    setAlerts((prev) => prev.filter((alert) => alert.id !== id))
+  const dismissAlert = useCallback((id: string) => {
+    setAlerts((prev) => prev.filter((alert: AlertsSpace.IAlertType) => alert.id !== id))
   }, [])
 
   return (

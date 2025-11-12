@@ -1,24 +1,24 @@
-import { useSidebar } from '../Hooks/UseSidebar'
-import { MenubarItem } from './MenubarItem'
+import { useSidebar } from '../Sidebar/Hooks/UseSidebar'
+import { IMenubarItem, MenubarItem } from './MenubarItem'
 
-import './menubar.css'
+import './index.css'
 
-interface MenubarProps {
-  model: MenubarModel
+interface IMenubarProps {
+  model: IMenubarModel
   itemOnClick: Function
 }
-export interface MenubarModel {
+export interface IMenubarModel {
   currentIndex: number
-  items: MenubarItem[]
+  items: IMenubarItem[]
 }
 
-export function Menubar({ model, itemOnClick }: MenubarProps) {
+export function Menubar({ model, itemOnClick }: IMenubarProps) {
   const { show } = useSidebar()
 
   return (
     <div className='menubar w-full'>
       <ul className='menubar-list w-full'>
-        {model.items.map((menubarItem: MenubarItem) => (
+        {model.items.map((menubarItem: IMenubarItem) => (
           <MenubarItem
             data={menubarItem}
             isActive={show && model.currentIndex === menubarItem.id}

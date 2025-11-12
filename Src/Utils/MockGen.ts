@@ -3,6 +3,7 @@ import { TableSpace } from '../Shared/Interfaces/Table.interface'
 import { MockOperators } from '../Data/TableData'
 import { MockCountries } from '../Data/TableData'
 import { getRandomIntegerInclusive, runWithInterval } from './Helpers'
+
 import { v4 as uuidv4 } from 'uuid'
 
 export namespace MockGenHelpers {
@@ -46,9 +47,9 @@ export namespace MockGenHelpers {
     return Array.from(selectedTypes)
   }
 
-  export const generateMockTask = (index: number) => {
+  export const generateMockTask = (index: number): ReoSpace.IScanTask => {
     return {
-      id: uuidv4(),
+      id: uuidv4() as string,
       name: `Сканирование #${index + 1}`,
       date: Date.now().toString(),
       time: new Date().toLocaleTimeString(),

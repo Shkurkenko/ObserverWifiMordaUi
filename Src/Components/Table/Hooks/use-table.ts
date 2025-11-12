@@ -2,13 +2,20 @@ import { useContext } from 'preact/hooks'
 import { TableContext, ITableContext } from '../Context/TableContext'
 
 export function useTable(): ITableContext {
+  const context = useContext(TableContext)
+
+  if (!context) {
+    throw new Error('useTable must be used within a TableProvider')
+  }
+
   const {
     rows,
-    headers,
+    columns,
     currentSelectedRow,
     currentSelectedColumn,
     currentSelectedCell,
-    setHeaders,
+    isRowValid,
+    setColumns,
     addRow,
     deleteRow,
     clearRows,
@@ -18,15 +25,16 @@ export function useTable(): ITableContext {
     renderEmpty,
     setDefaultHeaders,
     mockAddRows,
-  } = useContext(TableContext)
+  } = context
 
   return {
     rows,
-    headers,
+    columns,
     currentSelectedRow,
     currentSelectedColumn,
     currentSelectedCell,
-    setHeaders,
+    isRowValid,
+    setColumns,
     addRow,
     deleteRow,
     clearRows,

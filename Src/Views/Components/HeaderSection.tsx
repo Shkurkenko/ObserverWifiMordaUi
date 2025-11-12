@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks'
-import { Logo } from '../logo'
+import { Logo } from '../../Logo'
 
-import './header-section.css'
+import './HeaderSection.css'
 
 export function HeaderSection() {
   const [nav, setNav] = useState(true)

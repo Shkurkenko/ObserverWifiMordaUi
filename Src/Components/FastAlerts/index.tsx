@@ -1,22 +1,22 @@
-import { Alerts } from '../../Shared/Interfaces/Alerts.interface'
-import { FastNotificationItem } from './FastNotificationItem'
+import { AlertsSpace } from '../../Shared/Interfaces/Alerts.interface'
+import { FastAlertItem } from './FastAlertItem'
 import { ObserverConfig } from '../../Config/ObserverConfig'
-import { useFastNotifications } from '../../Hooks/UseNotifications'
+import { useFastAlerts } from './Hooks/UseFastAlerts'
 
-import './fast-notifications.css'
+import './index.css'
 
-export function FastNotifications() {
-  const { fastAlerts } = useFastNotifications()
+export function FastAlerts() {
+  const { fastAlerts } = useFastAlerts()
 
   const renderFastNotification = (
-    type: Alerts.ILevel,
+    type: AlertsSpace.ILevel,
     message: string,
-    alertObject: Alerts.IAlertType,
+    alertObject: AlertsSpace.IAlertType,
   ) => {
     switch (type) {
-      case Alerts.ILevel.Error:
+      case AlertsSpace.ILevel.Error:
         return (
-          <FastNotificationItem
+          <FastAlertItem
             backgroundColor={ObserverConfig.FastAlerts.error.backgroundColor}
             borderColor={ObserverConfig.FastAlerts.error.borderColor}
             color={ObserverConfig.FastAlerts.error.color}
@@ -26,9 +26,9 @@ export function FastNotifications() {
             data={alertObject}
           />
         )
-      case Alerts.ILevel.Info:
+      case AlertsSpace.ILevel.Info:
         return (
-          <FastNotificationItem
+          <FastAlertItem
             backgroundColor={ObserverConfig.FastAlerts.info.backgroundColor}
             borderColor={ObserverConfig.FastAlerts.info.borderColor}
             color={ObserverConfig.FastAlerts.info.color}
@@ -38,9 +38,9 @@ export function FastNotifications() {
             data={alertObject}
           />
         )
-      case Alerts.ILevel.Warning:
+      case AlertsSpace.ILevel.Warning:
         return (
-          <FastNotificationItem
+          <FastAlertItem
             backgroundColor={ObserverConfig.FastAlerts.warning.backgroundColor}
             borderColor={ObserverConfig.FastAlerts.warning.borderColor}
             color={ObserverConfig.FastAlerts.warning.color}
@@ -50,9 +50,9 @@ export function FastNotifications() {
             data={alertObject}
           />
         )
-      case Alerts.ILevel.Success:
+      case AlertsSpace.ILevel.Success:
         return (
-          <FastNotificationItem
+          <FastAlertItem
             backgroundColor={ObserverConfig.FastAlerts.success.backgroundColor}
             borderColor={ObserverConfig.FastAlerts.success.borderColor}
             color={ObserverConfig.FastAlerts.success.color}
@@ -67,7 +67,7 @@ export function FastNotifications() {
 
   return (
     <div className='fast-notifications'>
-      {fastAlerts.map((notification: Alerts.IAlertType) =>
+      {fastAlerts.map((notification: AlertsSpace.IAlertType) =>
         renderFastNotification(notification.type, notification.header, notification),
       )}
     </div>

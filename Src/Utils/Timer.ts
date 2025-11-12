@@ -6,8 +6,8 @@ export default class Timer {
     this.resume()
   }
 
-  private timerId: ReturnType<typeof setTimeout>
-  private start: number
+  private timerId!: ReturnType<typeof setTimeout>
+  private start!: number
   private remaining: number
   private callback: () => void
 

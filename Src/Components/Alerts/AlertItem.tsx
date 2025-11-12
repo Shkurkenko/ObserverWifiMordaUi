@@ -1,13 +1,13 @@
 import { AlertGeneric } from './AlertGeneric'
-import { Alerts } from '../../Shared/Interfaces/Alerts.interface'
+import { AlertsSpace } from '../../Shared/Interfaces/Alerts.interface'
 import { ObserverConfig } from '../../Config/ObserverConfig'
-import { useAlerts } from '../../Hooks/UseAlerts'
+import { useAlerts } from './Hooks/UseAlerts'
 
-import './alert-item.css'
+import './AlertItem.css'
 
-interface AlertProps {
+interface IAlertProps {
   id: string
-  type: Alerts.ILevel
+  type: AlertsSpace.ILevel
   header: string
   message: string
   handleDismiss: Function | null
@@ -15,13 +15,13 @@ interface AlertProps {
 
 const renderNotificationItem = (
   id: string,
-  type: Alerts.ILevel,
+  type: AlertsSpace.ILevel,
   header: string,
   message: string,
   dismissAlert: Function | null,
 ) => {
   switch (type) {
-    case Alerts.ILevel.Error:
+    case AlertsSpace.ILevel.Error:
       return (
         <AlertGeneric
           id={id}
@@ -32,7 +32,7 @@ const renderNotificationItem = (
           dismissAlert={dismissAlert}
         />
       )
-    case Alerts.ILevel.Success:
+    case AlertsSpace.ILevel.Success:
       return (
         <AlertGeneric
           id={id}
@@ -43,7 +43,7 @@ const renderNotificationItem = (
           dismissAlert={dismissAlert}
         />
       )
-    case Alerts.ILevel.Warning:
+    case AlertsSpace.ILevel.Warning:
       return (
         <AlertGeneric
           id={id}
@@ -54,7 +54,7 @@ const renderNotificationItem = (
           dismissAlert={dismissAlert}
         />
       )
-    case Alerts.ILevel.Info:
+    case AlertsSpace.ILevel.Info:
       return (
         <AlertGeneric
           id={id}
@@ -79,7 +79,7 @@ const renderNotificationItem = (
   }
 }
 
-export function Alert({ id, type, header, message, handleDismiss = null }: AlertProps) {
+export function AlertItem({ id, type, header, message, handleDismiss = null }: IAlertProps) {
   const { dismissAlert } = useAlerts()
 
   return (

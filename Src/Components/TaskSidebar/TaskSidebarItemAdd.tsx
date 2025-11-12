@@ -1,4 +1,6 @@
-import { useTasks } from '../../Hooks/UseTasks'
+import { useTasks } from './UseTasks'
+
+import './TaskSidebarItemAdd.css'
 
 export function AddTask() {
   const { addTask } = useTasks()
@@ -26,7 +28,6 @@ export function AddTask() {
       </div>
       <div className='new-label ml-3'>
         <h2>Добавить новое сканирование</h2>
-
       </div>
     </div>
   )

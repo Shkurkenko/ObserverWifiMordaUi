@@ -1,4 +1,6 @@
-export const DownloadIcon = ({ width, height, color }) => (
+import { IIconProps } from '../../Shared/Interfaces/Main.interface'
+
+export const DownloadIcon = ({ width, height, color }: IIconProps) => (
   <svg
     width={width}
     height={height}

@@ -1,4 +1,4 @@
-import './table-search.css'
+import './TableSearch.css'
 
 export function TableSearch() {
   return (

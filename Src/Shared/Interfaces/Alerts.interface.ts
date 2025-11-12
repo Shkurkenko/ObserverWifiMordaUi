@@ -1,4 +1,4 @@
-export namespace Alerts {
+export namespace AlertsSpace {
   export enum ILevel {
     Error = 'Error',
     Success = 'Success',
@@ -7,7 +7,7 @@ export namespace Alerts {
   }
 
   export interface IAlertType {
-    id: string 
+    id: string
     type: ILevel
     header: string
     message: string

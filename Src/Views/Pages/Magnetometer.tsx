@@ -60,7 +60,7 @@ export function Magnetometer() {
     let max = 0
     let min = 0
     socket.onmessage = (event) => {
-      setUpdate((d) => {
+      setUpdate((d: any) => {
         const data = JSON.parse(event.data)
         let newData = [...d.datasets[0].data]
         newData.shift()
@@ -71,7 +71,7 @@ export function Magnetometer() {
         newData.push(data.val)
         return {
           ...d,
-          datasets: d.datasets.map((set) => {
+          datasets: d.datasets.map((set: any) => {
             return {
               ...set,
               data: newData,
