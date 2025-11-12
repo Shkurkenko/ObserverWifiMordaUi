@@ -73,7 +73,7 @@ export function TableHelper() {
                 const csv = generateCsv(csvConfig)(getValidData())
                 download(csvConfig)(csv)
               } catch (error) {
-                console.log(error)
+                console.error(error)
               }
             }}
           >

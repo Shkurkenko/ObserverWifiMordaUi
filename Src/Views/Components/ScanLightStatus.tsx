@@ -1,9 +1,10 @@
+import { useEffect } from 'preact/hooks'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 
 import './ScanLightStatus.css'
 
 interface IScanLightStatusProps {
-  statusType: ReoSpace.IScanStatusTypes | string
+  statusType: ReoSpace.IScanStatusTypes
 }
 
 export function ScanLightStatus({ statusType }: IScanLightStatusProps) {
@@ -23,6 +24,10 @@ export function ScanLightStatus({ statusType }: IScanLightStatusProps) {
         return defaultStatusColors.failed
     }
   }
+
+  useEffect(() => {
+    console.log(statusType)
+  }, [])
 
   return (
     <div className='scan-light' style={{ background: getColor() }}>

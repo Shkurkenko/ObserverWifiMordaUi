@@ -7,7 +7,7 @@ export function useLocalStorage<T = any>(key: string, initialValue: any): [T, (v
       const item = window.localStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
-      console.log(error)
+      console.error(error)
 
       return initialValue
     }
@@ -21,7 +21,7 @@ export function useLocalStorage<T = any>(key: string, initialValue: any): [T, (v
           window.localStorage.setItem(key, JSON.stringify(value))
         }
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     },
     [key, storedValue],

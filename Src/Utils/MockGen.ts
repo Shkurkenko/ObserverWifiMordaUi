@@ -2,7 +2,7 @@ import { ReoSpace } from '../Shared/Interfaces/Reo.interface'
 import { TableSpace } from '../Shared/Interfaces/Table.interface'
 import { MockOperators } from '../Data/TableData'
 import { MockCountries } from '../Data/TableData'
-import { getRandomIntegerInclusive, runWithInterval } from './Helpers'
+import { getRandomEnumValue, getRandomIntegerInclusive, runWithInterval } from './Helpers'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -27,12 +27,6 @@ export namespace MockGenHelpers {
     ]
   }
 
-  export const generateRandomScanStatus = (): ReoSpace.IScanStatusTypes | string => {
-    return Object.values(ReoSpace.IScanStatusTypes)[
-      getRandomIntegerInclusive(0, Object.values(ReoSpace.IScanStatusTypes).length - 1)
-    ]
-  }
-
   export const generateRandomUniqueScanTypes = (): ReoSpace.IScanTypes[] => {
     const randomLength = getRandomIntegerInclusive(1, Object.values(ReoSpace.IScanTypes).length)
     const selectedTypes: Set<ReoSpace.IScanTypes> = new Set()
@@ -54,7 +48,7 @@ export namespace MockGenHelpers {
       date: Date.now().toString(),
       time: new Date().toLocaleTimeString(),
       types: generateRandomUniqueScanTypes(),
-      status: generateRandomScanStatus(),
+      status: getRandomEnumValue(ReoSpace.IScanStatusTypes),
     }
   }
 

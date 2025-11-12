@@ -5,7 +5,7 @@ export namespace ReoSpace {
     date: string
     time: string
     types: IScanTypes[]
-    status: IScanStatusTypes | string
+    status: IScanStatusTypes
   }
 
   export enum IRoles {

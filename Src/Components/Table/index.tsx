@@ -13,15 +13,15 @@ interface ITableProps {
 }
 
 export function Table({ columnsProp, recordsProp }: ITableProps) {
-  const { rows, columns, setColumns, mockAddRows, renderEmpty } = useTable()
+  const { rows, columns } = useTable()
 
   return (
     <div className='table-container relative w-full h-full flex flex-col'>
       <TableSearch />
       <TableHelper />
       <TableContainer
-        columns={columnsProp ? columnsProp : columns}
-        records={recordsProp ? recordsProp : rows}
+        columns={columnsProp && columnsProp?.length !== 0 ? columnsProp : columns}
+        records={recordsProp && recordsProp?.length !== 0 ? recordsProp : rows}
       />
     </div>
   )

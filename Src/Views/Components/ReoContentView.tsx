@@ -9,6 +9,7 @@ import { ReoView } from '../Pages/ReoScan'
 import { TabView } from '../../Components/Tabs/TabView'
 import { TableSpace } from '../../Shared/Interfaces/Table.interface'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
+import { ReoTop } from './ReoTop'
 
 import './ReoContentView.css'
 
@@ -97,12 +98,7 @@ export function ReoContentView({ header, model }: IReoContentViewProps) {
 
   return (
     <div className={`reo-content w-full ${model.show ? '' : 'reo-content-view-hide'}`}>
-      <div className='reo-content-top'>
-        <div className='reo-header-info'>
-          <h1 className='reo-content-header'>{`Результаты сканирования`}</h1>
-          <h4 className='reo-content-scan-name'>{header}</h4>
-        </div>
-      </div>
+      <ReoTop data={{ scanName: header }} />
 
       <TabButtonGroup
         currentIndex={activeIndex}

@@ -73,13 +73,12 @@ export const ReoScan = () => {
   }
 
   useEffect(() => {
-    // emitTestAlerts(journalAlertsData, 1000)
+    emitTestAlerts(journalAlertsData, 1000)
   }, [journalAlertsData])
 
   useEffect(() => {
     const loadTasks = async () => {
       const tasks = MockGenHelpers.generateMockScanTasks(10)
-      console.log('Gen tasks: ', tasks)
 
       if (tasks.length !== 0 && tasks !== null && tasks !== undefined) {
         runWithInterval<ReoSpace.IScanTask>(
