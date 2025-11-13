@@ -1,9 +1,12 @@
 import { createContext } from 'preact'
-import { useCallback, useState } from 'preact/hooks'
+import { useCallback, useEffect, useState } from 'preact/hooks'
 import { TableSpace } from '../../../Shared/Interfaces/Table.interface'
 import { MockGenHelpers } from '../../../Utils/MockGen'
+import { ReoSpace } from '../../../Shared/Interfaces/Reo.interface'
 
 export interface ITableContext {
+  tableInfo: unknown
+
   rows: TableSpace.IRow[]
 
   columns: TableSpace.IColumn[]
@@ -13,6 +16,8 @@ export interface ITableContext {
   currentSelectedColumn: { colIndex: number }
 
   currentSelectedCell: { rowIndex: number; colIndex: number }
+
+  setTableInfo: (tableInfo: unknown) => void
 
   isRowValid: (row: TableSpace.IRow) => boolean
 
@@ -42,7 +47,7 @@ export interface ITableProviderProps {
 
   columnsModel: TableSpace.IColumn[]
 
-  data: TableSpace.IRow[]
+  data: TableSpace.ITableData<ReoSpace.IReoTable>
 
   renderEmpty: () => JSX.Element
 }
@@ -56,6 +61,8 @@ export const TableProvider = ({
   renderEmpty,
 }: ITableProviderProps) => {
   const [rows, setRows] = useState<TableSpace.IRow[]>([])
+
+  const [tableInfo, setTableInfo] = useState<unknown>()
 
   const [currentSelectedRow, setCurrentSelectedRow] = useState<{ rowIndex: number }>({
     rowIndex: -1,
@@ -71,6 +78,13 @@ export const TableProvider = ({
   })
 
   const [columns, setColumns] = useState<TableSpace.IColumn[]>([])
+
+  useEffect(() => {
+    if (data !== null && data !== undefined) {
+      setTableInfo(data.metaInfo)
+      setRows(data.rows)
+    }
+  }, [data])
 
   const mockAddRows = useCallback((interval: number, count: number) => {
     MockGenHelpers.processRowAddition(interval, count, addRow)
@@ -130,6 +144,7 @@ export const TableProvider = ({
   return (
     <TableContext.Provider
       value={{
+        tableInfo,
         rows,
         columns,
         currentSelectedColumn,
@@ -137,6 +152,7 @@ export const TableProvider = ({
         currentSelectedCell,
         isRowValid,
         setColumns,
+        setTableInfo,
         addRow,
         deleteRow,
         clearRows,

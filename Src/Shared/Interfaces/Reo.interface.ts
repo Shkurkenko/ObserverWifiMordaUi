@@ -4,6 +4,7 @@ export namespace ReoSpace {
     name: string
     date: string
     time: string
+    currentScanCycle: number
     types: IScanTypes[]
     status: IScanStatusTypes
   }
@@ -33,5 +34,11 @@ export namespace ReoSpace {
     Running,
     Pending,
     Failed,
+  }
+
+  export interface IReoTable {
+    scanType: IScanTypes
+    scanStatus: IScanStatusTypes
+    currentScanCycle: number
   }
 }

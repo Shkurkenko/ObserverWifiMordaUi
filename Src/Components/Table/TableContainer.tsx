@@ -4,7 +4,6 @@ import { TableHeader } from './TableHeader'
 import { TableBody } from './TableBody'
 
 import './TableContainer.css'
-import { useEffect } from 'preact/hooks'
 
 interface ITableContainerProps {
   columns: TableSpace.IColumn[]
@@ -14,11 +13,6 @@ interface ITableContainerProps {
 
 export function TableContainer({ columns, records, customEmpty }: ITableContainerProps) {
   const { renderEmpty } = useTable()
-
-  useEffect(() => {
-    console.log('columns: ', columns)
-    console.log('records: ', records)
-  }, [])
 
   return (
     <div className='table-viewport w-full overflow-auto scrollbar-thin'>

@@ -2,13 +2,13 @@ import { ITab } from '../../Shared/Interfaces/Main.interface'
 
 import './TabButton.css'
 
-export interface ITabButton {
+export interface ITabButton<T> {
   isActive: boolean
-  tabData: ITab
+  tabData: ITab<T>
   handleClick: Function
 }
 
-export const TabButton = ({ tabData, isActive, handleClick }: ITabButton) => {
+export function TabButton<T>({ tabData, isActive, handleClick }: ITabButton<T>) {
   return (
     <button
       type='button'

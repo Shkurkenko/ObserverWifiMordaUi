@@ -1,5 +1,5 @@
 import { h, Fragment } from 'preact'
-import { useState } from 'preact/hooks'
+import { useCallback, useState } from 'preact/hooks'
 import { IMenubarModel } from '../Menubar'
 import { Menubar } from '../Menubar'
 import { IMenubarItem } from '../Menubar/MenubarItem'
@@ -13,23 +13,23 @@ export function SideNavigation() {
   const [menubarModel, setMenubarModel] = useState<IMenubarModel>(ObserverConfig.MenubarConfig)
   const { show, showSidebar, hideSidebar } = useSidebar()
 
-  const loadContent = (index: number) => {
+  const loadContent = useCallback((index: number) => {
     setMenubarModel((prev: IMenubarModel) => ({
       ...prev,
       currentIndex: index,
     }))
-  }
+  }, [])
 
-  const setActiveTab = (index: number) => {
+  const setActiveTab = useCallback((index: number) => {
     setMenubarModel((prev: IMenubarModel) => ({
       items: prev.items.map((item: IMenubarItem) =>
         item.id === index ? { ...item, active: true } : item,
       ),
       currentIndex: index,
     }))
-  }
+  }, [])
 
-  function menubarHandleClick(clickedIndex: number): void {
+  const menubarHandleClick = useCallback((clickedIndex: number): void => {
     if (!show) {
       showSidebar()
     }
@@ -39,14 +39,14 @@ export function SideNavigation() {
     }
 
     loadContent(clickedIndex)
-  }
+  }, [])
 
   return (
-    <>
+    <div className='menubar-container w-full'>
       <Menubar model={menubarModel} itemOnClick={menubarHandleClick} />
       <SlideSidebar>
         {show ? menubarModel.items[menubarModel.currentIndex].content : <></>}
       </SlideSidebar>
-    </>
+    </div>
   )
 }

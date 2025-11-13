@@ -9,6 +9,7 @@ export function useTable(): ITableContext {
   }
 
   const {
+    tableInfo,
     rows,
     columns,
     currentSelectedRow,
@@ -16,6 +17,7 @@ export function useTable(): ITableContext {
     currentSelectedCell,
     isRowValid,
     setColumns,
+    setTableInfo,
     addRow,
     deleteRow,
     clearRows,
@@ -28,6 +30,7 @@ export function useTable(): ITableContext {
   } = context
 
   return {
+    tableInfo,
     rows,
     columns,
     currentSelectedRow,
@@ -35,6 +38,7 @@ export function useTable(): ITableContext {
     currentSelectedCell,
     isRowValid,
     setColumns,
+    setTableInfo,
     addRow,
     deleteRow,
     clearRows,

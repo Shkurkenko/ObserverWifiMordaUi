@@ -9,9 +9,9 @@ interface IColumnCountryProps {
 export const ColumnCountry = ({ data }: IColumnCountryProps) => {
   return (
     <div className='w-full h-full column-text'>
-      <span class={`fi fi-${data.countryCode.toLowerCase()}`}></span>
+      <span class={`fi fi-${data.countryAbb.toLowerCase()}`}></span>
       {'Страна'}
-      <span class={`fi fi-${data.countryCode.toLowerCase()} fis`}></span>
+      <span class={`fi fi-${data.countryAbb.toLowerCase()} fis`}></span>
     </div>
   )
 }

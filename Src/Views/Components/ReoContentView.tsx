@@ -5,11 +5,13 @@ import { ITab } from '../../Shared/Interfaces/Main.interface'
 import { TableProvider } from '../../Components/Table/Context/TableContext'
 import { ObserverTableEmpty } from '../../Components/Table/ObserverTableEmptyState'
 import { TabButtonGroup } from '../../Components/Tabs/TabButtonGroup'
+import { IReoColumnsModelsConfig } from '../../Shared/Interfaces/Main.interface'
 import { ReoView } from '../Pages/ReoScan'
 import { TabView } from '../../Components/Tabs/TabView'
-import { TableSpace } from '../../Shared/Interfaces/Table.interface'
-import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 import { ReoTop } from './ReoTop'
+import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
+import { TableSpace } from '../../Shared/Interfaces/Table.interface'
+import { ObserverConfig } from '../../Config/ObserverConfig'
 
 import './ReoContentView.css'
 
@@ -21,85 +23,31 @@ interface IReoContentViewProps {
 export function ReoContentView({ header, model }: IReoContentViewProps) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [activeTab, setActiveTab] = useState(model.tabsModel[activeIndex].id)
-  const [reoColumnsModel, setReoColumnsModel] = useState<TableSpace.IColumn[]>([
-    {
-      role: TableSpace.IRoles.Enum.toString(),
-      type: TableSpace.IColumnTypes.Enum,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: '#',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.Cid.toString(),
-      type: TableSpace.IColumnTypes.Text,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'CID',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.LacTac.toString(),
-      type: TableSpace.IColumnTypes.Text,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'LAC/TAC',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.Mcc.toString(),
-      type: TableSpace.IColumnTypes.Country,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'Страна',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.Mnc.toString(),
-      type: TableSpace.IColumnTypes.Text,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'Регион',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.Operator.toString(),
-      type: TableSpace.IColumnTypes.Operator,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'Оператор',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-    {
-      role: ReoSpace.IRoles.RxLevel.toString(),
-      type: TableSpace.IColumnTypes.Signal,
-      width: 130,
-      minWidth: 50,
-      maxWidth: 200,
-      label: 'Уровень Сигнала',
-      align: TableSpace.IColumnAlignment.Center,
-    },
-  ])
+  const [reoColumnsModelConfig, setReoColumnsModelConfig] = useState<IReoColumnsModelsConfig>(
+    ObserverConfig.ReoColumnModelsConfig,
+  )
 
   const handleRenderEmpty = useCallback((): JSX.Element => {
     return <ObserverTableEmpty />
   }, [])
 
-  const handleTabClick = useCallback((e: MouseEventHandler<HTMLButtonElement>, tab: ITab) => {
+  const handleTabClick = useCallback((e: Event, tab: ITab<ReoSpace.IReoTable>) => {
+    e.preventDefault()
     setActiveTab(tab.id)
     setActiveIndex(tab.tabIndex)
   }, [])
 
+  const getCurrentColumnsModel = useCallback((): TableSpace.IColumn[] => {
+    return reoColumnsModelConfig[model.tabsModel[activeIndex].data.metaInfo.scanType]
+  }, [reoColumnsModelConfig, model])
+
+  const getCurrentTableModel = useCallback((): TableSpace.ITableData<ReoSpace.IReoTable> => {
+    return model.tabsModel[activeIndex].data
+  }, [model])
+
   return (
     <div className={`reo-content w-full ${model.show ? '' : 'reo-content-view-hide'}`}>
       <ReoTop data={{ scanName: header }} />
-
       <TabButtonGroup
         currentIndex={activeIndex}
         model={model.tabsModel}
@@ -107,8 +55,8 @@ export function ReoContentView({ header, model }: IReoContentViewProps) {
       />
       <TabView currentIndex={activeIndex}>
         <TableProvider
-          columnsModel={reoColumnsModel}
-          data={model.tabsModel[activeIndex].data}
+          columnsModel={getCurrentColumnsModel()}
+          data={getCurrentTableModel()}
           renderEmpty={handleRenderEmpty}
         >
           <Table />

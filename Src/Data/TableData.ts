@@ -14,12 +14,12 @@ export const MockOperators = [
 ]
 
 export const MockCountries = [
-  { name: 'Russia', countryCode: 'RU' },
-  { name: 'United States', countryCode: 'US' },
-  { name: 'Germany', countryCode: 'DE' },
-  { name: 'France', countryCode: 'FR' },
-  { name: 'Italy', countryCode: 'IT' },
-  { name: 'Spain', countryCode: 'ES' },
+  { name: 'Russia', countryAbb: 'RU', countryCode: 250 },
+  { name: 'United States', countryAbb: 'US', countryCode: 251 },
+  { name: 'Germany', countryAbb: 'DE', countryCode: 252 },
+  { name: 'France', countryAbb: 'FR', countryCode: 253 },
+  { name: 'Italy', countryAbb: 'IT', countryCode: 254 },
+  { name: 'Spain', countryAbb: 'ES', countryCode: 255 },
 ]
 
 /* For fast copy

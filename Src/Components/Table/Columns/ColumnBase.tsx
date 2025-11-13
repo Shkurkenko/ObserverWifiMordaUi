@@ -1,8 +1,10 @@
 import { ComponentChildren } from 'preact'
+import { TableSpace } from '../../../Shared/Interfaces/Table.interface'
 
 import './ColumnBase.css'
 
 interface IColumnBaseProps {
+  position: TableSpace.IPoint
   children?: ComponentChildren
   hovered?: boolean
   selected?: boolean
@@ -12,6 +14,7 @@ interface IColumnBaseProps {
 
 export function ColumnBase({
   children,
+  position,
   hovered,
   selected,
   handleHoverEnter,

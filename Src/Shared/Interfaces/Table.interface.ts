@@ -76,7 +76,7 @@ export namespace TableSpace {
 
   export interface IRow {
     index: number
-    columns: ICell<unknown>[] // Unknown type to allow custom cell types data
+    columns: ICell<unknown>[] // Unknown type to allow different and custom cell types data
     status: IRowStatus
     type: IRowTypes
   }
@@ -91,47 +91,57 @@ export namespace TableSpace {
     align?: IColumnAlignment
   }
 
+  export interface ITableData<T> {
+    metaInfo: T
+    rows: IRow[]
+  }
+
   export interface IEnumCellData {
     rowIndex: number
   }
 
-  export interface ITextCellData {
+  export interface IBaseCellData {
+    position: IPoint
+  }
+
+  export interface ITextCellData extends IBaseCellData {
     bold?: boolean
     text: string
   }
 
-  export interface ICheckboxCellData {
+  export interface ICheckboxCellData extends IBaseCellData {
     checked: boolean
     onClick?: (e: Event) => void
   }
 
-  export interface IOperatorCellData {
+  export interface IOperatorCellData extends IBaseCellData {
     name?: string
     iconPath?: string
     code: number
   }
 
-  export interface ICountryCellData {
+  export interface ICountryCellData extends IBaseCellData {
     name: string
-    countryCode: string
+    countryAbb: string
+    countryCode: number
   }
 
-  export interface ISignalRange {
+  export interface ISignalRange extends IBaseCellData {
     beginValue: number
     endValue: number
   }
 
-  export interface ISignalCellData {
+  export interface ISignalCellData extends IBaseCellData {
     range: ISignalRange
     value: number
   }
 
-  export interface IRowProps {
+  export interface IRowProps extends IBaseCellData {
     index: number
     columns: IColumn[]
   }
 
-  export interface IBodyProps {
+  export interface IBodyProps extends IBaseCellData {
     rows: IRowProps[]
   }
 }

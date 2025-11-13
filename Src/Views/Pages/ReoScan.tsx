@@ -5,7 +5,7 @@ import { AlertsSpace } from '../../Shared/Interfaces/Alerts.interface'
 import { TableSpace } from '../../Shared/Interfaces/Table.interface'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 import { ITab } from '../../Shared/Interfaces/Main.interface'
-import { useEffect } from 'preact/hooks'
+import { useCallback, useEffect } from 'preact/hooks'
 import { useScanView } from '../../Hooks/UseScanView'
 import { useFastAlerts } from '../../Components/FastAlerts/Hooks/UseFastAlerts'
 import { useAlerts } from '../../Components/Alerts/Hooks/UseAlerts'
@@ -19,7 +19,7 @@ import './ReoScan.css'
 export interface ReoView {
   show: boolean
   taskId: string
-  tabsModel: ITab[]
+  tabsModel: ITab<ReoSpace.IReoTable>[]
 }
 
 export const ReoScan = () => {
@@ -28,40 +28,50 @@ export const ReoScan = () => {
   const { addAlert } = useAlerts()
   const { addFastNotification } = useFastAlerts()
 
-  const getTabs = (task: ReoSpace.IScanTask): ITab[] => {
-    return task.types.map((type: ReoSpace.IScanTypes, index: number) => ({
-      tabIndex: index,
-      id: `tabs-with-underline-item-${index}}`,
-      label: type,
-      data: MockGenHelpers.generateMockReoTableData(30, [
-        TableSpace.IColumnTypes.Enum,
-        TableSpace.IColumnTypes.Operator,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Signal,
-        TableSpace.IColumnTypes.Checkbox,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Country,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-        TableSpace.IColumnTypes.Text,
-      ]),
-    }))
-  }
+  const getTabs = useCallback(
+    (task: ReoSpace.IScanTask): ITab<ReoSpace.IReoTable>[] => {
+      return task.types.map((type: ReoSpace.IScanTypes, index: number) => ({
+        tabIndex: index,
+        id: `tabs-with-underline-item-${index + 1}`,
+        label: type,
+        data: {
+          metaInfo: {
+            scanType: type,
+            scanStatus: task.status,
+            currentScanCycle: task.currentScanCycle,
+          },
+          rows: MockGenHelpers.generateMockReoTableData(30, [
+            TableSpace.IColumnTypes.Enum,
+            TableSpace.IColumnTypes.Operator,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Signal,
+            TableSpace.IColumnTypes.Checkbox,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Country,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+            TableSpace.IColumnTypes.Text,
+          ]),
+        },
+      }))
+    },
+    [tasks],
+  )
 
-  const addReoTask = (task: ReoSpace.IScanTask) => {
+  const addReoTask = useCallback((task: ReoSpace.IScanTask) => {
     addTask(task)
     addView({
       taskId: task.id,
       show: scanViews.length === 0,
       tabsModel: getTabs(task),
     })
-  }
+  }, [])
 
   const emitTestAlerts = async (data: AlertsSpace.IAlertType[], testDelay: number) => {
     for (let i = 0; i < data.length; i++) {
@@ -73,7 +83,7 @@ export const ReoScan = () => {
   }
 
   useEffect(() => {
-    emitTestAlerts(journalAlertsData, 1000)
+    // emitTestAlerts(journalAlertsData, 1000)
   }, [journalAlertsData])
 
   useEffect(() => {
@@ -91,12 +101,12 @@ export const ReoScan = () => {
         )
       }
     }
+
     loadTasks()
   }, [])
 
   return (
     <div className='reo-scan-container w-full flex'>
-      <SideNavigation />
       {tasks.length !== 0 &&
         scanViews.length !== 0 &&
         scanViews.map((view: ReoView, index: number) => (

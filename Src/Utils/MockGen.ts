@@ -2,7 +2,7 @@ import { ReoSpace } from '../Shared/Interfaces/Reo.interface'
 import { TableSpace } from '../Shared/Interfaces/Table.interface'
 import { MockOperators } from '../Data/TableData'
 import { MockCountries } from '../Data/TableData'
-import { getRandomEnumValue, getRandomIntegerInclusive, runWithInterval } from './Helpers'
+import { getRandomEnumValue, getRandomIntegerInclusive } from './Helpers'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -47,6 +47,7 @@ export namespace MockGenHelpers {
       name: `Сканирование #${index + 1}`,
       date: Date.now().toString(),
       time: new Date().toLocaleTimeString(),
+      currentScanCycle: getRandomIntegerInclusive(0, 10),
       types: generateRandomUniqueScanTypes(),
       status: getRandomEnumValue(ReoSpace.IScanStatusTypes),
     }
@@ -126,6 +127,9 @@ export namespace MockGenHelpers {
       const newRow = generateReoRow(i, columnsPattern)
       rows.push(newRow)
     }
+
+    console.log('gen mock: ', rows)
+
     return rows
   }
 

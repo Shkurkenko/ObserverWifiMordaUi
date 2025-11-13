@@ -1,3 +1,4 @@
+import { useCallback } from 'preact/hooks'
 import { useScanView } from '../../Hooks/UseScanView'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 import { ScanLightStatus } from '../../Views/Components/ScanLightStatus'
@@ -6,16 +7,14 @@ import './TaskSidebarItem.css'
 
 interface TaskSidebarItem {
   task: ReoSpace.IScanTask
-  onClick?: Function
 }
 
-export function TaskSidebarItem({ task, onClick }: TaskSidebarItem) {
+export function TaskSidebarItem({ task }: TaskSidebarItem) {
   const { showView } = useScanView()
 
-  const loadTaskContent = () => {
-    if (onClick) onClick()
+  const loadTaskContent = useCallback(() => {
     showView(task.id)
-  }
+  }, [])
 
   return (
     <li key={task.name} className='task-item' onClick={loadTaskContent}>
@@ -69,6 +68,7 @@ export function TaskSidebarItem({ task, onClick }: TaskSidebarItem) {
             </div>
           </div>
         </div>
+
         <div className='scan-types'>
           {task.types.map((type: ReoSpace.IScanTypes, index: number) => (
             <div key={index} className='scan-type-label'>
@@ -76,6 +76,7 @@ export function TaskSidebarItem({ task, onClick }: TaskSidebarItem) {
             </div>
           ))}
         </div>
+
         <div className='task-item-expand'>
           <svg
             class='w-4 h-4 text-gray-800 dark:text-white'
