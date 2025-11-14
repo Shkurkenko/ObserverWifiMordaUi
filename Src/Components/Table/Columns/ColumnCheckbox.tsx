@@ -1,3 +1,5 @@
+import { h, Fragment } from 'preact'
+
 export const ColumnCheckbox = () => {
-  return <span>Checkbox here</span>
+  return <div>Checkbox here</div>
 }
