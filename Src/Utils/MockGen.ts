@@ -57,7 +57,7 @@ export namespace MockGenHelpers {
     rowIndex: number,
     columnsPattern: TableSpace.IColumnTypes[],
   ): TableSpace.IRow => {
-    if (columnsPattern.length === 0) throw new Error('columnsPattern should not be empty')
+    if (columnsPattern.length === 0) throw new Error('ColumnsPattern should not be empty')
 
     const columns: TableSpace.ICell<unknown>[] = columnsPattern.map((colType, index) => {
       const position = { rowIndex, colIndex: index }
