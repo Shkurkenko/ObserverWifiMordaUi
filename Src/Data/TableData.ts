@@ -13,13 +13,50 @@ export const MockOperators = [
   { name: 'AnotherTelecom', code: 9 },
 ]
 
-export const MockCountries = [
-  { name: 'Russia', countryAbb: 'RU', countryCode: 250 },
-  { name: 'United States', countryAbb: 'US', countryCode: 251 },
-  { name: 'Germany', countryAbb: 'DE', countryCode: 252 },
-  { name: 'France', countryAbb: 'FR', countryCode: 253 },
-  { name: 'Italy', countryAbb: 'IT', countryCode: 254 },
-  { name: 'Spain', countryAbb: 'ES', countryCode: 255 },
+export const MockCountries: TableSpace.ICountryCellData = [
+  { name: 'Russia', countryAbb: 'RU', countryCode: 250, position: { rowIndex: 0, columnIndex: 0 } },
+  {
+    name: 'United States',
+    countryAbb: 'US',
+    countryCode: 251,
+    position: { rowIndex: 0, colIndex: 0 },
+  },
+  {
+    name: 'Germany',
+    countryAbb: 'DE',
+    countryCode: 252,
+    position: {
+      rowIndex: 0,
+      colIndex: 0,
+    },
+  },
+  {
+    name: 'France',
+    countryAbb: 'FR',
+    countryCode: 253,
+    position: {
+      rowIndex: 0,
+      colIndex: 0,
+    },
+  },
+  {
+    name: 'Italy',
+    countryAbb: 'IT',
+    countryCode: 254,
+    position: {
+      rowIndex: 0,
+      colIndex: 0,
+    },
+  },
+  {
+    name: 'Spain',
+    countryAbb: 'ES',
+    countryCode: 255,
+    position: {
+      rowIndex: 0,
+      colIndex: 0,
+    },
+  },
 ]
 
 /* For fast copy
