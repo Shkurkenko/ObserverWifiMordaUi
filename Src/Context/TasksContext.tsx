@@ -1,8 +1,8 @@
 import { createContext, ComponentChildren } from 'preact'
-import { useState } from 'preact/hooks'
+import { useCallback, useState } from 'preact/hooks'
 import { ReoSpace } from '../Shared/Interfaces/Reo.interface'
 
-interface ITasksContext {
+export interface ITasksContext {
   tasks: ReoSpace.IScanTask[]
 
   setTasks: (tasks: ReoSpace.IScanTask[]) => void
@@ -22,7 +22,7 @@ interface ITasksContext {
   failTask: (id: string) => void
 }
 
-interface ITaskProviderProps {
+export interface ITaskProviderProps {
   children: ComponentChildren
 }
 
@@ -30,37 +30,37 @@ export const TasksContext = createContext<ITasksContext | null>(null)
 export const TasksProvider = ({ children }: ITaskProviderProps) => {
   const [tasks, setTasks] = useState<ReoSpace.IScanTask[]>([])
 
-  const addTask = (task: ReoSpace.IScanTask) => {
+  const addTask = useCallback((task: ReoSpace.IScanTask) => {
     setTasks((prev: ReoSpace.IScanTask[]) => [...prev, task])
-  }
+  }, [])
 
-  const deleteTask = (id: string) => {
+  const deleteTask = useCallback((id: string) => {
     setTasks((prev: ReoSpace.IScanTask[]) =>
       prev.filter((task: ReoSpace.IScanTask) => task.id !== id),
     )
-  }
+  }, [])
 
-  const setTaskStatus = (id: string, status: ReoSpace.IScanStatusTypes) => {
+  const setTaskStatus = useCallback((id: string, status: ReoSpace.IScanStatusTypes) => {
     setTasks((prev: ReoSpace.IScanTask[]) =>
       prev.map((task: ReoSpace.IScanTask) => (id === task.id ? { ...task, status } : task)),
     )
-  }
+  }, [])
 
-  const startTask = (id: string) => {
+  const startTask = useCallback((id: string) => {
     setTaskStatus(id, ReoSpace.IScanStatusTypes.Running)
-  }
+  }, [])
 
-  const stopTask = (id: string) => {
+  const stopTask = useCallback((id: string) => {
     setTaskStatus(id, ReoSpace.IScanStatusTypes.Finished)
-  }
+  }, [])
 
-  const waitTask = (id: string) => {
+  const waitTask = useCallback((id: string) => {
     setTaskStatus(id, ReoSpace.IScanStatusTypes.Pending)
-  }
+  }, [])
 
-  const failTask = (id: string) => {
+  const failTask = useCallback((id: string) => {
     setTaskStatus(id, ReoSpace.IScanStatusTypes.Failed)
-  }
+  }, [])
 
   return (
     <TasksContext.Provider

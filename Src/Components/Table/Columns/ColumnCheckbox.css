@@ -1,0 +1,8 @@
+.table-checkbox {
+  display: flex;
+}
+
+.table-checkbox > input {
+    background-color: black;
+    accent-color: black;
+}

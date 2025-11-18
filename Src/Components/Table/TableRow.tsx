@@ -18,7 +18,7 @@ export function ColumnMatcher({
     case TableSpace.IColumnTypes.Enum:
       return (
         <ColumnBase position={columnData.position}>
-          <ColumnEnum index={(columnData.data as TableSpace.IEnumCellData).rowIndex} />
+          <ColumnEnum index={columnData.position.rowIndex} />
         </ColumnBase>
       )
     case TableSpace.IColumnTypes.Text:

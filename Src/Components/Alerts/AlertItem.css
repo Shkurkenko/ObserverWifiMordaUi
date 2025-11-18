@@ -29,6 +29,10 @@
   font-size: 18px;
 }
 
+.notification-content p {
+  color: #8e959d;
+}
+
 .close-notification {
   position: absolute;
   right: 15px;

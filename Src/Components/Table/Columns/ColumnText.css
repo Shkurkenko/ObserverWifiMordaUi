@@ -1,0 +1,18 @@
+.column-country {
+    display: flex;
+}
+
+.column-country-name {
+    width: 70%;
+    display: flex;
+    line-height: 25px;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.column-country-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

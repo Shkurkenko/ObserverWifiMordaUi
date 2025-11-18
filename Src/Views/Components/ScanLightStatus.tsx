@@ -25,10 +25,6 @@ export function ScanLightStatus({ statusType }: IScanLightStatusProps) {
     }
   }
 
-  useEffect(() => {
-    console.log(statusType)
-  }, [])
-
   return (
     <div className='scan-light' style={{ background: getColor() }}>
       <div className='scan-light-core' style={{ background: getColor() }}></div>

@@ -83,23 +83,27 @@ export const ReoScan = () => {
   }
 
   useEffect(() => {
-    // emitTestAlerts(journalAlertsData, 1000)
+    emitTestAlerts(journalAlertsData, 1000)
   }, [journalAlertsData])
 
   useEffect(() => {
     const loadTasks = async () => {
       const tasks = MockGenHelpers.generateMockScanTasks(10)
 
-      if (tasks.length !== 0 && tasks !== null && tasks !== undefined) {
-        runWithInterval<ReoSpace.IScanTask>(
-          tasks,
-          1000,
-          tasks.length,
-          (task: ReoSpace.IScanTask) => {
-            addReoTask(task)
-          },
-        )
+      for (let i = 0; i < tasks.length; i++) {
+        addReoTask(tasks[i])
       }
+
+      // if (tasks.length !== 0 && tasks !== null && tasks !== undefined) {
+      //   runWithInterval<ReoSpace.IScanTask>(
+      //     tasks,
+      //     1000,
+      //     tasks.length,
+      //     (task: ReoSpace.IScanTask) => {
+      //       addReoTask(task)
+      //     },
+      //   )
+      // }
     }
 
     loadTasks()

@@ -10,7 +10,9 @@ export function SlideSidebar({ children }: ISlideSidebarProps) {
   const { show } = useSidebar()
 
   return (
-    <div className={`slide-sidebar-container ${show ? 'slide-sidebar-container-active' : ''}`}>
+    <div
+      className={`slide-sidebar-container w-full ${show ? 'slide-sidebar-container-active' : ''}`}
+    >
       {show && children}
     </div>
   )

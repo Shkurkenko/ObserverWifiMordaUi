@@ -1,7 +1,22 @@
 .table-basecol {
-  height: 50px;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   border-bottom: 1px solid #262b36;
-  line-height: 50px;
+  line-height: 35px;
+  position: relative;
+  text-align: center;
+}
+
+.table-basecol::after {
+  content: '';
+  width: 1px;
+  height: 70%;
+  background-color: #262b36;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .table-basecol-hovered {

@@ -8,10 +8,13 @@ interface IColumnCountryProps {
 
 export const ColumnCountry = ({ data }: IColumnCountryProps) => {
   return (
-    <div className='w-full h-full column-text'>
-      <b>{data.name}</b>
-      <span class={`fi fi-${data.countryAbb.toLowerCase()}`}></span>
-      {/* <span class={`fi fi-${data.countryAbb.toLowerCase()} fis`}></span> */}
+    <div className='w-full h-full column-country'>
+      <div className='column-country-name'>
+        <b>{data.name}</b>
+      </div>
+      <div className='column-country-icon'>
+        <div class={`fi fi-${data.countryAbb.toLowerCase()}`}></div>
+      </div>
     </div>
   )
 }

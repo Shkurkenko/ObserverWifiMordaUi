@@ -1,20 +1,20 @@
 import { TableSpace } from '../Shared/Interfaces/Table.interface'
 import { MockGenHelpers } from '../Utils/MockGen'
 
-export const MockOperators = [
-  { name: 'MTS', code: 1 },
-  { name: 'Beeline', code: 2 },
-  { name: 'Megafon', code: 3 },
-  { name: 'Tele2', code: 4 },
-  { name: 'Yota', code: 5 },
-  { name: 'SkyLink', code: 6 },
-  { name: 'Rostelecom', code: 7 },
-  { name: 'HzTelecom', code: 8 },
-  { name: 'AnotherTelecom', code: 9 },
+export const MockOperators: TableSpace.IOperatorCellData[] = [
+  { name: 'MTS', code: 1, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Beeline', code: 2, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Megafon', code: 3, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Tele2', code: 4, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Yota', code: 5, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'SkyLink', code: 6, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Rostelecom', code: 7, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'HzTelecom', code: 8, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'AnotherTelecom', code: 9, position: { rowIndex: 0, colIndex: 0 } },
 ]
 
-export const MockCountries: TableSpace.ICountryCellData = [
-  { name: 'Russia', countryAbb: 'RU', countryCode: 250, position: { rowIndex: 0, columnIndex: 0 } },
+export const MockCountries: TableSpace.ICountryCellData[] = [
+  { name: 'Russia', countryAbb: 'RU', countryCode: 250, position: { rowIndex: 0, colIndex: 0 } },
   {
     name: 'United States',
     countryAbb: 'US',

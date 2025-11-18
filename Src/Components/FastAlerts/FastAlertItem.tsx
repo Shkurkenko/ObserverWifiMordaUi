@@ -30,9 +30,13 @@ export function FastAlertItem({
 
   function closeHandler() {
     hideFastNotification(data.id, () => {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         deleteFastNotification(data.id)
       }, transitionTime * 1000)
+
+      return () => {
+        clearTimeout(timeout)
+      }
     })
   }
 

@@ -1,3 +1,5 @@
+import './ReoTop.css'
+
 interface ReoTopData {
   scanName: string
 }

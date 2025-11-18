@@ -23,9 +23,32 @@ export function runWithInterval<T>(
   times: number,
   cb: DynamicCallback,
 ) {
+  const timeouts: number[] = []
   for (let i = 0; i < times; i++) {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       if (data[i] !== undefined && data[i] !== null) cb(data[i])
     }, intervalMs * i)
+
+    timeouts.push(timeout)
   }
+
+  return () => {
+    timeouts.forEach((t) => clearTimeout(t))
+  }
+}
+
+export function getCurrentDDMMYY() {
+  const now = new Date()
+  const day = String(now.getDate()).padStart(2, '0')
+  const month = String(now.getMonth() + 1).padStart(2, '0') // +1 because months are 0-indexed
+  const year = String(now.getFullYear()).slice(-2)
+  return `${day}/${month}/${year}`
+}
+
+export function getCurrentTime24() {
+  return new Date().toLocaleTimeString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })
 }

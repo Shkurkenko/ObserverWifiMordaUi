@@ -16,7 +16,7 @@ export function Menubar({ model, itemOnClick }: IMenubarProps) {
   const { show } = useSidebar()
 
   return (
-    <div className='menubar w-full'>
+    <div className='menubar'>
       <ul className='menubar-list w-full'>
         {model.items.map((menubarItem: IMenubarItem) => (
           <MenubarItem
