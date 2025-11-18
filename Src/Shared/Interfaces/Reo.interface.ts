@@ -36,6 +36,19 @@ export namespace ReoSpace {
     Failed,
   }
 
+  export enum ISignalLevels {
+    Excellent = 'excellent',
+    Good = 'good',
+    Fair = 'fair',
+    Poor = 'poor',
+    No = 'no',
+  }
+
+  export interface ISignalRange {
+    beginValue: number
+    endValue: number
+  }
+
   export interface IReoTable {
     scanType: IScanTypes
     scanStatus: IScanStatusTypes

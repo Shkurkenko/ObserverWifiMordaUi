@@ -1,3 +1,4 @@
+import { ReoSpace } from './Reo.interface'
 export namespace TableSpace {
   export interface IStyleSettings {
     columnWidth?: number
@@ -126,13 +127,8 @@ export namespace TableSpace {
     countryCode: number
   }
 
-  export interface ISignalRange extends IBaseCellData {
-    beginValue: number
-    endValue: number
-  }
-
   export interface ISignalCellData extends IBaseCellData {
-    range: ISignalRange
+    range: ReoSpace.ISignalRange
     value: number
   }
 

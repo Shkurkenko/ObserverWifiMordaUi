@@ -1,5 +1,9 @@
 export type DynamicCallback = (...args: any[]) => void
 
+export function inRange(num: number, min: number, max: number): boolean {
+  return num >= min && num <= max
+}
+
 export function getRandomIntegerInclusive(min: number, max: number): number {
   min = Math.ceil(min)
   max = Math.floor(max)
