@@ -1,5 +1,4 @@
 import { TableSpace } from '../Shared/Interfaces/Table.interface'
-import { MockGenHelpers } from '../Utils/MockGen'
 
 export const MockOperators: TableSpace.IOperatorCellData[] = [
   { name: 'MTS', code: 1, position: { rowIndex: 0, colIndex: 0 } },
@@ -14,15 +13,15 @@ export const MockOperators: TableSpace.IOperatorCellData[] = [
 ]
 
 export const MockCountries: TableSpace.ICountryCellData[] = [
-  { name: 'Russia', countryAbb: 'RU', countryCode: 250, position: { rowIndex: 0, colIndex: 0 } },
+  { name: 'Россия', countryAbb: 'RU', countryCode: 250, position: { rowIndex: 0, colIndex: 0 } },
   {
-    name: 'United States',
+    name: 'США',
     countryAbb: 'US',
     countryCode: 251,
     position: { rowIndex: 0, colIndex: 0 },
   },
   {
-    name: 'Germany',
+    name: 'Германия',
     countryAbb: 'DE',
     countryCode: 252,
     position: {
@@ -31,7 +30,7 @@ export const MockCountries: TableSpace.ICountryCellData[] = [
     },
   },
   {
-    name: 'France',
+    name: 'Франция',
     countryAbb: 'FR',
     countryCode: 253,
     position: {
@@ -40,7 +39,7 @@ export const MockCountries: TableSpace.ICountryCellData[] = [
     },
   },
   {
-    name: 'Italy',
+    name: 'Италия',
     countryAbb: 'IT',
     countryCode: 254,
     position: {
@@ -49,7 +48,7 @@ export const MockCountries: TableSpace.ICountryCellData[] = [
     },
   },
   {
-    name: 'Spain',
+    name: 'Испания',
     countryAbb: 'ES',
     countryCode: 255,
     position: {

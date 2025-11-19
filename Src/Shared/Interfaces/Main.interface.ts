@@ -1,3 +1,4 @@
+import preact from 'preact'
 import { TableSpace } from './Table.interface'
 import { ReoSpace } from './Reo.interface'
 
@@ -6,9 +7,10 @@ export type IReoColumnsModelsConfig = {
 }
 
 export interface IIconProps {
-  width: number
-  height: number
-  color: string
+  width?: number
+  height?: number
+  color?: string
+  style?: preact.JSX.CSSProperties
 }
 
 export interface ITab<T> {

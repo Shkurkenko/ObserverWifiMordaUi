@@ -1,4 +1,8 @@
 .signal-stick {
   background-color: grey;
-  width: 7px;
+}
+
+.signal-strength-container {
+  max-width: 150px;
+  align-items: flex-end;
 }

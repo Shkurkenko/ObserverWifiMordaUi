@@ -3,7 +3,7 @@ import { inRange } from '../../Utils/Helpers'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
 
 import './index.css'
-import { RefObject } from 'preact'
+import { NoSignIcon } from '../Icons/NoSignIcon'
 
 export const SignalStrengthMap: Record<ReoSpace.ISignalLevels, ReoSpace.ISignalRange> = {
   [ReoSpace.ISignalLevels.Excellent]: {
@@ -28,14 +28,6 @@ export const SignalStrengthMap: Record<ReoSpace.ISignalLevels, ReoSpace.ISignalR
   },
 }
 
-export const SignalSticksHeightsMap: Record<ReoSpace.ISignalLevels, string> = {
-  [ReoSpace.ISignalLevels.Excellent]: '100%',
-  [ReoSpace.ISignalLevels.Good]: '75%',
-  [ReoSpace.ISignalLevels.Fair]: '50%',
-  [ReoSpace.ISignalLevels.Poor]: '25%',
-  [ReoSpace.ISignalLevels.No]: '0',
-}
-
 export const SignalSticksColorMap: Record<ReoSpace.ISignalLevels, string> = {
   [ReoSpace.ISignalLevels.Excellent]: 'green',
   [ReoSpace.ISignalLevels.Good]: 'lightgreen',
@@ -44,8 +36,9 @@ export const SignalSticksColorMap: Record<ReoSpace.ISignalLevels, string> = {
   [ReoSpace.ISignalLevels.No]: 'red',
 }
 
-export function getSignalStrengthStatus(dbm: number): ReoSpace.ISignalLevels | undefined {
+export function getSignalStrengthStatus(dbm: number): ReoSpace.ISignalLevels {
   for (const key in SignalStrengthMap) {
+    console.log(inRange(10, 11, 12))
     if (
       inRange(
         dbm,
@@ -56,24 +49,25 @@ export function getSignalStrengthStatus(dbm: number): ReoSpace.ISignalLevels | u
       return key as ReoSpace.ISignalLevels
     }
   }
-  return undefined
+  return ReoSpace.ISignalLevels.No
 }
 
 export function getStickBackgroundColor(maxDbm: number, currentStickType: ReoSpace.ISignalLevels) {
   const currentMaxSignalStatus = getSignalStrengthStatus(maxDbm)
-  const stickColored =
-    SignalStrengthMap[currentMaxSignalStatus as ReoSpace.ISignalLevels].beginValue >
-    SignalStrengthMap[currentStickType as ReoSpace.ISignalLevels].endValue
+
   const currentColor = SignalSticksColorMap[currentMaxSignalStatus as ReoSpace.ISignalLevels]
 
-  return stickColored ? currentColor : 'grey'
+  //   return stickColored ? currentColor : 'grey'
+  return 'grey'
 }
 
 export interface SignalStrengthProps {
+  width: number
+  height: number
   dbm: number
 }
 
-export function SignalStrength({ dbm }: SignalStrengthProps) {
+export function SignalStrength({ width, height, dbm }: SignalStrengthProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [sticks, setSticks] = useState<JSX.Element[]>([])
 
@@ -81,22 +75,23 @@ export function SignalStrength({ dbm }: SignalStrengthProps) {
     if (!containerRef.current) return
 
     const container = containerRef.current
-    const width = container.offsetWidth
-    const height = container.offsetHeight
+
+    const sticksWidth = container.offsetWidth * 0.5
+    const sticksHeight = container.offsetHeight * 1.2
 
     const levelsCount = Object.keys(ReoSpace.ISignalLevels).length
-    const partHeight = height / levelsCount
-    const partWidth = width / levelsCount
+    const partHeight = sticksHeight / levelsCount
+    const partWidth = sticksWidth / levelsCount
 
-    if (width !== 0 || height !== 0) {
+    if (width !== 0 && height !== 0) {
       const newSticks = Object.keys(ReoSpace.ISignalLevels).map((_, i) => (
         <div
           key={i}
           className='signal-stick w-full h-full'
           style={{
-            height: `${height - i * partHeight}px`,
+            height: `${i * partHeight}px`,
             width: `${partWidth}px`,
-            //   backgroundColor: getStickBackgroundColor(dbm, Object.values(ReoSpace.ISignalLevels)[i]),
+            backgroundColor: getStickBackgroundColor(dbm, Object.values(ReoSpace.ISignalLevels)[i]),
           }}
         />
       ))
@@ -108,9 +103,24 @@ export function SignalStrength({ dbm }: SignalStrengthProps) {
   return (
     <div
       ref={containerRef}
-      className='signal-strength-container flex items-end gap-1 w-full h-full'
+      className='signal-strength-container relative flex gap-1 w-full h-full'
+      style={{
+        width,
+        height,
+      }}
     >
       {sticks}
+      {getSignalStrengthStatus(dbm) === ReoSpace.ISignalLevels.No && (
+        <NoSignIcon
+          width={width * 0.4}
+          height={width * 0.4}
+          style={{
+            position: 'absolute',
+            bottom: `-${height * 0.3}px`,
+            left: 0,
+          }}
+        />
+      )}
     </div>
   )
 }

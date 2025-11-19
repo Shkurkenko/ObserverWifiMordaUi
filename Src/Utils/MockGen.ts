@@ -92,7 +92,7 @@ export namespace MockGenHelpers {
           return {
             position,
             type: TableSpace.IColumnTypes.Text,
-            data: { text: `Sample Text ${getRandomIntegerInclusive(1, 100)}` },
+            data: { text: `${getRandomIntegerInclusive(1, 100)}` },
           } as TableSpace.ICell<TableSpace.ITextCellData>
         case TableSpace.IColumnTypes.Signal:
           return {
