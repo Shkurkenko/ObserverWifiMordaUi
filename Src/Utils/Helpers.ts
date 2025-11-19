@@ -1,6 +1,8 @@
 export type DynamicCallback = (...args: any[]) => void
 
-export function inRange(num: number, min: number, max: number): boolean {
+export function inRange(num: number, firstNum: number, secondNum: number): boolean {
+  const max = Math.max(firstNum, secondNum)
+  const min = Math.min(firstNum, secondNum)
   return num >= min && num <= max
 }
 
@@ -27,9 +29,9 @@ export function runWithInterval<T>(
   times: number,
   cb: DynamicCallback,
 ) {
-  const timeouts: number[] = []
+  const timeouts: NodeJS.Timeout[] = []
   for (let i = 0; i < times; i++) {
-    const timeout = setTimeout(() => {
+    const timeout: NodeJS.Timeout = setTimeout(() => {
       if (data[i] !== undefined && data[i] !== null) cb(data[i])
     }, intervalMs * i)
 

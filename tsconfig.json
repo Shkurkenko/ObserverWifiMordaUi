@@ -19,6 +19,6 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"
   },
-  "include": ["Src", "global.d.ts"],
+  "include": ["Src", "global.d.ts", "Tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
