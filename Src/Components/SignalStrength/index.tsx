@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { inRange } from '../../Utils/Helpers'
 import { ReoSpace } from '../../Shared/Interfaces/Reo.interface'
+import { NoSignIcon } from '../Icons/NoSignIcon'
 
 import './index.css'
-import { NoSignIcon } from '../Icons/NoSignIcon'
 
 export const SignalStrengthMap: Record<ReoSpace.ISignalLevels, ReoSpace.ISignalRange> = {
   [ReoSpace.ISignalLevels.Excellent]: {
@@ -38,7 +38,6 @@ export const SignalSticksColorMap: Record<ReoSpace.ISignalLevels, string> = {
 
 export function getSignalStrengthStatus(dbm: number): ReoSpace.ISignalLevels {
   for (const key in SignalStrengthMap) {
-    console.log(inRange(10, 11, 12))
     if (
       inRange(
         dbm,
@@ -57,7 +56,6 @@ export function getStickBackgroundColor(maxDbm: number, currentStickType: ReoSpa
 
   const currentColor = SignalSticksColorMap[currentMaxSignalStatus as ReoSpace.ISignalLevels]
 
-  //   return stickColored ? currentColor : 'grey'
   return 'grey'
 }
 

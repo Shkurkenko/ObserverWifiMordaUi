@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals'
-import { inRange } from '../Src/Utils/Helpers'
+import { inRange } from '../../Src/Utils/Helpers'
 
 describe('InRange Helper', () => {
   test('zeros test 0, [0, 0]', () => {
