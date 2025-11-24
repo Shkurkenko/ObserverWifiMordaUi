@@ -4,9 +4,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write Src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc.json"
@@ -18,7 +15,8 @@
     "export-to-csv": "^1.4.0",
     "flag-icons": "^7.5.0",
     "lodash.debounce": "^4.0.8",
-    "preact": "^10.27.2",
+    "preact": "^10.26.9",
+    "preact-iso": "^2.11.0",
     "react-chartjs-2": "^4.0.1",
     "uuid": "^13.0.0",
     "wouter": "^2.8.0-alpha.2"
@@ -28,18 +26,18 @@
     "@preact/preset-vite": "^2.10.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
-    "@types/jest": "^30.0.0",
     "@types/lodash.debounce": "^4.0.6",
-    "autoprefixer": "^10.4.4",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^30.2.0",
-    "jest-environment-jsdom": "^30.2.0",
-    "postcss": "^8.4.12",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-preact": "^2.0.0",
+    "postcss": "^8.5.6",
+    "postcss-preset-env": "^10.4.0",
     "prettier": "^3.6.2",
-    "svg-jest": "^1.0.1",
-    "tailwindcss": "^3.0.23",
-    "ts-jest": "^29.4.5",
+    "tailwind": "^4.0.0",
     "typescript": "^5.9.3",
-    "vite": "^2.9.0"
+    "vite": "^7.0.4"
+  },
+  "eslintConfig": {
+    "extends": "preact"
   }
 }
