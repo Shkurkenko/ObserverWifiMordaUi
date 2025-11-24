@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "vite",
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write Src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc.json"
@@ -23,14 +25,18 @@
   },
   "devDependencies": {
     "@jest/globals": "^30.2.0",
-    "@preact/preset-vite": "^2.1.5",
+    "@preact/preset-vite": "^2.10.2",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/preact": "^3.2.4",
     "@types/jest": "^30.0.0",
     "@types/lodash.debounce": "^4.0.6",
     "autoprefixer": "^10.4.4",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "postcss": "^8.4.12",
     "prettier": "^3.6.2",
+    "svg-jest": "^1.0.1",
     "tailwindcss": "^3.0.23",
     "ts-jest": "^29.4.5",
     "typescript": "^5.9.3",
